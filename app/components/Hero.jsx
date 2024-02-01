@@ -1,23 +1,32 @@
 import React from "react";
+import animal from "@/public/fu_images/animal.jpeg";
+import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section className="relative bg-[url(https://images.unsplash.com/photo-1604014237800-1c9102c219da?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80)] bg-cover bg-center bg-no-repeat">
-      <div className="absolute inset-0 sm:from-white/95 sm:to-white/15 rtl:bg-gradient-to-l bg-white/65"></div>
-
-      <div className="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
+    <section className="relative">
+      <div className="absolute top-0 z-10 inset-0 bg-gradient-to-r from-primary-50/30  to-white/5 bg-white/5"></div>
+      <Image
+        src={animal}
+        layout="fill"
+        objectFit="cover"
+        quality={100}
+        priority
+        // className=" opacity-60"
+      />
+      <div className="relative z-20 mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
         <div className="max-w-xl text-left rtl:sm:text-right">
-          <h1 className="text-3xl font-extrabold sm:text-5xl">
+          <h1 className="text-3xl font-extrabold sm:text-5xl text-fuchsia-300">
             Software Engineering Bootcamp
-            <strong className="block font-extrabold text-rose-700">
+            <strong className="block font-extrabold text-white">
               {" "}
               Online and In-Person.{" "}
             </strong>
           </h1>
 
-          <p className="mt-4 max-w-lg sm:text-xl/relaxed text-[#001d62] font-bold">
-            በዚህ የተጠናከረ የሶፍትዌር ምህንድስና ቡት ካምፕ ጋር ተፈላጊ ችሎታዎችን ይማሩ እና እንደ ሶፍትዌር
-            መሐንዲስ አዲስ ስራ ይጀምሩ።
+          <p className="mt-4 max-w-lg sm:text-xl/relaxed text-yellow-200 font-bold">
+            በዚህ የተጠናከረ የሶፍትዌር ምህንድስና ቡት ካምፕ; ተፈላጊ ችሎታዎችን ይማሩ እና እንደ ሶፍትዌር መሐንዲስ
+            አዲስ ስራ ይጀምሩ።
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4 text-center">

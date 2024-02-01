@@ -2,11 +2,12 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-white dark:bg-gray-900">
+    //
+    <footer className="bg-white dark:bg-gray-900 ">
       <div className="mx-auto max-w-screen-xl px-4 pb-8 pt-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-md">
           <strong className="block text-center text-lg font-bold text-gray-900 dark:text-white sm:text-3xl">
-            እንድንጠራህ ስልክ ቁጥራችሁን ተዉልን
+            እንድንጠራህ ስልክ ቁጥን ተዉልን
           </strong>
 
           <form className="mt-6">
@@ -36,10 +37,11 @@ const Footer = () => {
               Get ready to code like a pro! <br /> Our curriculum starts with
               the building blocks of code and takes you all the way through
               mastering JavaScript and building cool websites. You'll even learn
-              how to tame the data beast and design sleek web pages. <br />{" "}
+              how to tame the data beast and design sleek web pages.
+              {/* <br />{" "}
               Plus, you'll explore the world of powerful Python and flexible
               databases. This is your chance to unlock your tech potential and
-              land your dream job!
+              land your dream job! */}
             </p>
 
             <div className="mt-6 flex justify-center gap-4 lg:justify-start">
