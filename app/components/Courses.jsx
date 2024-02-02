@@ -9,6 +9,7 @@ import h from "@/public/fu_images/h.webp";
 import "swiper/css";
 import "swiper/css/pagination";
 import details from "@/assets/courseDetail";
+import { programmingCourses } from "@/assets/newCourses";
 
 // import "./styles.css";
 
@@ -36,179 +37,44 @@ export default function App() {
         >
           <SwiperSlide>
             <section className="text-gray-400  body-font">
-              <div className="container py-24 px-3 block mx-auto">
+              <div className="container py-24 px-3 block mx-auto ">
                 <Image
                   src={h}
                   layout="fill"
                   objectFit="cover"
                   quality={100}
                   priority
-                  className=" z-[-1] "
+                  className=" z-[-1] opacity-90"
                 />
 
                 <div className="flex flex-wrap gap-4 justify-center max-h-[600px] overflow-auto sm:max-h-full">
-                  <div className="lg:w-[22%] md:w-[45%] w-full border-2 border-blue-400 rounded-lg backdrop-blur-lg">
-                    <a className="block relative h-48 rounded overflow-hidden">
-                      <Image
-                        width={300}
-                        height={300}
-                        alt="ecommerce"
-                        className="object-cover object-center w-full h-full block rounded-lg"
-                        src={tenor}
-                      />
-                    </a>
-                    <div className="flex flex-col z-1 mt-4">
-                      <h3 className="text-white text-xl tracking-widest title-font mb-1">
-                        CATEGORY
-                      </h3>
-                      <h2 className="text-white title-font text-sm font-medium">
-                        The Catalyzer
-                      </h2>
-                      <button className="flex mx-auto my-3 text-white bg-indigo-500 border-0 py-2 px-8 hover:bg-indigo-600 rounded text-lg">
-                        Read More ...
-                      </button>
-                    </div>
-                  </div>
-                  <div className="lg:w-[22%] md:w-[45%] w-full border-2 border-blue-400 rounded-lg ">
-                    <a className="block relative h-48 rounded overflow-hidden">
-                      <Image
-                        width={300}
-                        height={300}
-                        alt="ecommerce"
-                        className="object-cover object-center w-full h-full block rounded-lg"
-                        src={tenor}
-                      />
-                    </a>
-                    <div className="flex flex-col z-1 mt-4">
-                      <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                        CATEGORY
-                      </h3>
-                      <h2 className="text-white title-font text-lg font-medium">
-                        The Catalyzer
-                      </h2>
-                      <p className="mt-1">$16.00</p>
-                    </div>
-                  </div>
-                  <div className="lg:w-[22%] md:w-[45%] w-full border-2 border-blue-400 rounded-lg ">
-                    <a className="block relative h-48 rounded overflow-hidden">
-                      <Image
-                        width={300}
-                        height={300}
-                        alt="ecommerce"
-                        className="object-cover object-center w-full h-full block rounded-lg"
-                        src={tenor}
-                      />
-                    </a>
-                    <div className="flex flex-col z-1 mt-4">
-                      <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                        CATEGORY
-                      </h3>
-                      <h2 className="text-white title-font text-lg font-medium">
-                        The Catalyzer
-                      </h2>
-                      <p className="mt-1">$16.00</p>
-                    </div>
-                  </div>
-                  <div className="lg:w-[22%] md:w-[45%] w-full border-2 border-blue-400 rounded-lg ">
-                    <a className="block relative h-48 rounded overflow-hidden">
-                      <Image
-                        width={300}
-                        height={300}
-                        alt="ecommerce"
-                        className="object-cover object-center w-full h-full block rounded-lg"
-                        src={tenor}
-                      />
-                    </a>
-                    <div className="flex flex-col z-1 mt-4">
-                      <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                        CATEGORY
-                      </h3>
-                      <h2 className="text-white title-font text-lg font-medium">
-                        The Catalyzer
-                      </h2>
-                      <p className="mt-1">$16.00</p>
-                    </div>
-                  </div>
-                  <div className="lg:w-[22%] md:w-[45%] w-full border-2 border-blue-400 rounded-lg ">
-                    <a className="block relative h-48 rounded overflow-hidden">
-                      <Image
-                        width={300}
-                        height={300}
-                        alt="ecommerce"
-                        className="object-cover object-center w-full h-full block rounded-lg"
-                        src={tenor}
-                      />
-                    </a>
-                    <div className="flex flex-col z-1 mt-4">
-                      <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                        CATEGORY
-                      </h3>
-                      <h2 className="text-white title-font text-lg font-medium">
-                        The Catalyzer
-                      </h2>
-                      <p className="mt-1">$16.00</p>
-                    </div>
-                  </div>
-                  <div className="lg:w-[22%] md:w-[45%] w-full border-2 border-blue-400 rounded-lg ">
-                    <a className="block relative h-48 rounded overflow-hidden">
-                      <Image
-                        width={300}
-                        height={300}
-                        alt="ecommerce"
-                        className="object-cover object-center w-full h-full block rounded-lg"
-                        src={tenor}
-                      />
-                    </a>
-                    <div className="flex flex-col z-1 mt-4">
-                      <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                        CATEGORY
-                      </h3>
-                      <h2 className="text-white title-font text-lg font-medium">
-                        The Catalyzer
-                      </h2>
-                      <p className="mt-1">$16.00</p>
-                    </div>
-                  </div>
-                  <div className="lg:w-[22%] md:w-[45%] w-full border-2 border-blue-400 rounded-lg ">
-                    <a className="block relative h-48 rounded overflow-hidden">
-                      <Image
-                        width={300}
-                        height={300}
-                        alt="ecommerce"
-                        className="object-cover object-center w-full h-full block rounded-lg"
-                        src={tenor}
-                      />
-                    </a>
-                    <div className="flex flex-col z-1 mt-4">
-                      <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                        CATEGORY
-                      </h3>
-                      <h2 className="text-white title-font text-lg font-medium">
-                        The Catalyzer
-                      </h2>
-                      <p className="mt-1">$16.00</p>
-                    </div>
-                  </div>
-                  <div className="lg:w-[22%] md:w-[45%] w-full border-2 border-blue-400 rounded-lg ">
-                    <a className="block relative h-48 rounded overflow-hidden">
-                      <Image
-                        width={300}
-                        height={300}
-                        alt="ecommerce"
-                        className="object-cover object-center w-full h-full block rounded-lg"
-                        src={tenor}
-                      />
-                    </a>
-                    <div className="flex flex-col z-1 mt-4">
-                      <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                        CATEGORY
-                      </h3>
-                      <h2 className="text-white title-font text-lg font-medium">
-                        The Catalyzer
-                      </h2>
-                      <p className="mt-1">$16.00</p>
-                    </div>
-                  </div>
+                  {programmingCourses &&
+                    programmingCourses.map((ele) => {
+                      return (
+                        <div className="lg:w-[22%] md:w-[45%] w-full border-2 border-blue-400 rounded-lg backdrop-blur-lg">
+                          <a className="block relative h-48 rounded overflow-hidden">
+                            <Image
+                              width={300}
+                              height={300}
+                              alt="ecommerce"
+                              className="object-cover object-center w-full h-full block rounded-lg"
+                              src={tenor}
+                            />
+                          </a>
+                          <div className="flex flex-col z-1 mt-4">
+                            <h3 className="text-white text-xl tracking-widest title-font mb-1">
+                              {ele.title}
+                            </h3>
+                            <h2 className="text-white title-font text-sm font-medium">
+                              {ele.short}
+                            </h2>
+                            <button className="flex mx-auto my-3 text-white bg-indigo-500 border-0 py-2 px-8 hover:bg-indigo-600 rounded text-lg">
+                              Read More ...
+                            </button>
+                          </div>
+                        </div>
+                      );
+                    })}
                 </div>
               </div>
             </section>

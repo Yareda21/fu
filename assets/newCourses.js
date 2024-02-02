@@ -1,13 +1,15 @@
-const programmingCourses = [
+export const programmingCourses = [
   {
-    title: "Python for Data Science and Machine Learning",
+    title: "Python for Data Science",
+    short: "Master data analysis and machine learning using Python",
     description:
       "Master data analysis and machine learning using Python, equipping yourself with in-demand skills for various industries.",
     image: "https://cdn.example.com/python-course.jpg", // Replace with your image URL
     // ... detailed information from the previous example
   },
   {
-    title: "Full-Stack Web Development with Java Spring Boot",
+    title: "Full-Stack MERN",
+    short: "Build dynamic and interactive web applications from scratch",
     description:
       "Build dynamic and interactive web applications from scratch using Java, Spring Boot, and modern web development practices.",
     image: "https://cdn.example.com/java-spring-course.jpg", // Replace with your image URL
@@ -80,21 +82,18 @@ const programmingCourses = [
     },
   },
   {
-    title: "Mastering Artificial Intelligence with Python",
+    title: "Artificial Intelligence with Python",
+    short: "Dive into the exciting world of AI and machine learning",
     description:
       "Dive into the exciting world of AI and machine learning, building intelligent systems using Python and popular libraries.",
     image: "https://cdn.example.com/ai-course.jpg", // Replace with your image URL
     // ... detailed information based on the Python course structure
   },
+
   {
-    title: "Data Science Foundations with R and Python",
-    description:
-      "Gain a comprehensive understanding of data science principles and tools, working with both R and Python for in-depth analysis.",
-    image: "https://cdn.example.com/data-science-course.jpg", // Replace with your image URL
-    // ... detailed information based on the Python course structure
-  },
-  {
-    title: "Android App Development with Kotlin",
+    title: "Android App Development",
+    short:
+      "Create professional-quality Android apps from the ground up with React Native",
     description:
       "Create professional-quality Android apps from the ground up, mastering Kotlin, the modern language for Android development.",
     image: "https://cdn.example.com/android-course.jpg", // Replace with your image URL
@@ -103,7 +102,8 @@ const programmingCourses = [
   // Add more courses from other well-sought-after areas like cybersecurity, cloud computing, etc.
   // Web Development
   {
-    title: "Front-End Web Development with React.js and Next.js",
+    title: "Front-End Web Development with React.js",
+    short: "Master modern UI/UX practices, build single-page applications",
     description:
       "Master modern UI/UX practices, build single-page applications, and optimize web performance.",
     image: "https://cdn.example.com/react-next-course.jpg",
@@ -111,13 +111,16 @@ const programmingCourses = [
   },
   {
     title: "JavaScript for Web Developers",
+    short: "Deep dive into core JavaScript projects",
     description:
       "Deep dive into core JavaScript principles, advanced concepts, and popular frameworks.",
     image: "https://cdn.example.com/javascript-course.jpg",
     // ... detailed information
   },
   {
-    title: "Building Web Apps with Node.js and Express.js",
+    title: "Backend - Node.js and Express.js",
+    short:
+      "Back-end development with Node.js, build RESTful APIs, and databases",
     description:
       "Learn back-end development with Node.js, build RESTful APIs, and integrate databases.",
     image: "https://cdn.example.com/nodejs-express-course.jpg",
@@ -126,21 +129,20 @@ const programmingCourses = [
 
   // Artificial Intelligence & Machine Learning
   {
-    title: "Deep Learning with TensorFlow and PyTorch",
+    title: "DL TensorFlow and PyTorch",
+    short: "Build deep neural networks for image, text, and audio processing.",
     description:
       "Build deep neural networks for image, text, and audio processing.",
     image: "https://cdn.example.com/deep-learning-course.jpg",
     // ... detailed information
   },
+];
+
+export const additional = [
   {
-    title: "Natural Language Processing with Python",
-    description:
-      "Explore text analysis, sentiment analysis, chatbots, and more.",
-    image: "https://cdn.example.com/nlp-course.jpg",
-    // ... detailed information
-  },
-  {
-    title: "Computer Vision with OpenCV and Python",
+    title: "Computer Vision",
+    short:
+      "Master image processing, object detection, and computer vision pipelines.",
     description:
       "Master image processing, object detection, and computer vision pipelines.",
     image: "https://cdn.example.com/computer-vision-course.jpg",
@@ -149,21 +151,16 @@ const programmingCourses = [
 
   // Data Science & Big Data
   {
-    title: "Spark and Hadoop for Big Data Analytics",
-    description:
-      "Learn distributed computing for large datasets with Spark and Hadoop.",
-    image: "https://cdn.example.com/spark-hadoop-course.jpg",
-    // ... detailed information
-  },
-  {
-    title: "Data Warehousing and Business Intelligence",
+    title: "DW and BI",
+    short: "Data Warehousing and Business Intelligence",
     description:
       "Design data pipelines, build dashboards, and gain insights with BI tools.",
     image: "https://cdn.example.com/data-warehousing-course.jpg",
     // ... detailed information
   },
   {
-    title: "Data Analysis with SQL and Python",
+    title: "DA - SQL and Python",
+    short: "Data Analysis with SQL and Python",
     description:
       "Master data querying, manipulation, and analysis with SQL and Python.",
     image: "https://cdn.example.com/sql-python-course.jpg",
@@ -172,21 +169,25 @@ const programmingCourses = [
 
   // Cybersecurity
   {
-    title: "Ethical Hacking and Penetration Testing",
+    title: "Hacking",
+    short: "Ethical Hacking and Penetration Testing",
     description:
       "Learn ethical hacking techniques and practice penetration testing.",
     image: "https://cdn.example.com/ethical-hacking-course.jpg",
     // ... detailed information
   },
   {
-    title: "Network Security Essentials",
+    title: "NSE",
+    short: "Network Security Essentials",
     description:
       "Understand network security fundamentals and secure infrastructure.",
     image: "https://cdn.example.com/network-security-course.jpg",
     // ... detailed information
   },
   {
-    title: "Cryptography and Secure Coding",
+    title: "Cryptography",
+    short:
+      "Explore encryption, digital signatures, and secure coding practices",
     description:
       "Explore encryption, digital signatures, and secure coding practices.",
     image: "https://cdn.example.com/cryptography-course.jpg",
@@ -212,5 +213,13 @@ const programmingCourses = [
     description:
       "Explore GCP services and learn cloud deployment and management.",
     image: "https://cdn.example.com/g",
+  },
+  {
+    title: "NLP with Python",
+    short: "Explore text analysis, sentiment analysis, chatbots, and more.",
+    description:
+      "Explore text analysis, sentiment analysis, chatbots, and more.",
+    image: "https://cdn.example.com/nlp-course.jpg",
+    // ... detailed information
   },
 ];
