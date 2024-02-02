@@ -47,11 +47,11 @@ export default function App() {
                   className=" z-[-1] opacity-90"
                 />
 
-                <div className="flex flex-wrap gap-4 justify-center max-h-[600px] overflow-auto sm:max-h-full">
+                <div className="flex flex-wrap gap-4 p-4 justify-center max-h-[600px] overflow-auto sm:max-h-full">
                   {programmingCourses &&
                     programmingCourses.map((ele) => {
                       return (
-                        <div className="lg:w-[22%] md:w-[45%] w-full border-2 border-blue-400 rounded-lg backdrop-blur-lg">
+                        <div className="lg:w-[22%] md:w-[45%] w-full border-2 hover:scale-105 border-blue-400 rounded-lg backdrop-blur-lg">
                           <a className="block relative h-48 rounded overflow-hidden">
                             <Image
                               width={300}
@@ -62,10 +62,10 @@ export default function App() {
                             />
                           </a>
                           <div className="flex flex-col z-1 mt-4">
-                            <h3 className="text-white text-xl tracking-widest title-font mb-1">
+                            <h3 className=" text-black font-bold text-xl tracking-widest mb-1">
                               {ele.title}
                             </h3>
-                            <h2 className="text-white title-font text-sm font-medium">
+                            <h2 className="text-white text-sm font-medium">
                               {ele.short}
                             </h2>
                             <button className="flex mx-auto my-3 text-white bg-indigo-500 border-0 py-2 px-8 hover:bg-indigo-600 rounded text-lg">
