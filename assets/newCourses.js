@@ -1,15 +1,47 @@
 export const programmingCourses = [
   {
-    title: "Python for Data Science",
-    short: "Master data analysis and machine learning using Python",
-    description:
-      "Master data analysis and machine learning using Python, equipping yourself with in-demand skills for various industries.",
-    image: "https://cdn.example.com/python-course.jpg", // Replace with your image URL
-    // ... detailed information from the previous example
+    title: "Full Software Engineering ",
+    short:
+      "You want to get Harvard University Certificate! Starting from C Programing language up to web development and AI is included!",
   },
   {
+    title: "HTML and CSS",
+    short:
+      "HTML and CSS bring web pages to life. HTML provides the foundation, and CSS adds the style and presentation.",
+    image: "",
+  },
+  {
+    title: "JavaScript for Web Developers",
+    short:
+      " delves into the world of utilizing JavaScript to craft interactive and dynamic web applications. ",
+    description:
+      "Deep dive into core JavaScript principles, advanced concepts, and popular frameworks.  delves into the world of utilizing JavaScript to craft interactive and dynamic web applications. It's a vast domain encompassing both fundamental building blocks and advanced techniques, empowering you to breathe life into web pages.",
+    image: "https://cdn.example.com/javascript-course.jpg",
+    // ... detailed information
+  },
+
+  {
+    title: "Front-End Web Development with React.js",
+    short: "Master modern UI/UX practices, build single-page applications",
+    description:
+      "Master modern UI/UX practices, build single-page applications, and optimize web performance.",
+    image: "https://cdn.example.com/react-next-course.jpg",
+    // ... detailed information based on the existing structure
+  },
+  {
+    title: "Backend - Node.js and Express.js",
+    short:
+      "Back-end development with Node.js, build RESTful APIs, and databases",
+    description:
+      "Learn back-end development with Node.js, build RESTful APIs, and integrate databases.",
+    image: "https://cdn.example.com/nodejs-express-course.jpg",
+    // ... detailed information
+  },
+
+  {
     title: "Full-Stack MERN",
-    short: "Build dynamic and interactive web applications from scratch",
+    short:
+      "MongoDB, Express.js, React.js, and Node.js, is a popular full-stack web development framework used to build modern and interactive web applications.",
     description:
       "Build dynamic and interactive web applications from scratch using Java, Spring Boot, and modern web development practices.",
     image: "https://cdn.example.com/java-spring-course.jpg", // Replace with your image URL
@@ -82,15 +114,6 @@ export const programmingCourses = [
     },
   },
   {
-    title: "Artificial Intelligence with Python",
-    short: "Dive into the exciting world of AI and machine learning",
-    description:
-      "Dive into the exciting world of AI and machine learning, building intelligent systems using Python and popular libraries.",
-    image: "https://cdn.example.com/ai-course.jpg", // Replace with your image URL
-    // ... detailed information based on the Python course structure
-  },
-
-  {
     title: "Android App Development",
     short:
       "Create professional-quality Android apps from the ground up with React Native",
@@ -99,35 +122,17 @@ export const programmingCourses = [
     image: "https://cdn.example.com/android-course.jpg", // Replace with your image URL
     // ... detailed information based on the Java course structure, focusing on Android development and Kotlin
   },
-  // Add more courses from other well-sought-after areas like cybersecurity, cloud computing, etc.
-  // Web Development
   {
-    title: "Front-End Web Development with React.js",
-    short: "Master modern UI/UX practices, build single-page applications",
+    title: "NSE",
+    short: "Network Security Essentials",
     description:
-      "Master modern UI/UX practices, build single-page applications, and optimize web performance.",
-    image: "https://cdn.example.com/react-next-course.jpg",
-    // ... detailed information based on the existing structure
-  },
-  {
-    title: "JavaScript for Web Developers",
-    short: "Deep dive into core JavaScript projects",
-    description:
-      "Deep dive into core JavaScript principles, advanced concepts, and popular frameworks.",
-    image: "https://cdn.example.com/javascript-course.jpg",
+      "Understand network security fundamentals and secure infrastructure.",
+    image: "https://cdn.example.com/network-security-course.jpg",
     // ... detailed information
   },
-  {
-    title: "Backend - Node.js and Express.js",
-    short:
-      "Back-end development with Node.js, build RESTful APIs, and databases",
-    description:
-      "Learn back-end development with Node.js, build RESTful APIs, and integrate databases.",
-    image: "https://cdn.example.com/nodejs-express-course.jpg",
-    // ... detailed information
-  },
+];
 
-  // Artificial Intelligence & Machine Learning
+export const aiAndMachineLearning = [
   {
     title: "DL TensorFlow and PyTorch",
     short: "Build deep neural networks for image, text, and audio processing.",
@@ -136,9 +141,15 @@ export const programmingCourses = [
     image: "https://cdn.example.com/deep-learning-course.jpg",
     // ... detailed information
   },
-];
 
-export const additional = [
+  {
+    title: "Artificial Intelligence with Python",
+    short: "Dive into the exciting world of AI and machine learning",
+    description:
+      "Dive into the exciting world of AI and machine learning, building intelligent systems using Python and popular libraries.",
+    image: "https://cdn.example.com/ai-course.jpg", // Replace with your image URL
+    // ... detailed information based on the Python course structure
+  },
   {
     title: "Computer Vision",
     short:
@@ -149,41 +160,8 @@ export const additional = [
     // ... detailed information
   },
 
-  // Data Science & Big Data
-  {
-    title: "DW and BI",
-    short: "Data Warehousing and Business Intelligence",
-    description:
-      "Design data pipelines, build dashboards, and gain insights with BI tools.",
-    image: "https://cdn.example.com/data-warehousing-course.jpg",
-    // ... detailed information
-  },
-  {
-    title: "DA - SQL and Python",
-    short: "Data Analysis with SQL and Python",
-    description:
-      "Master data querying, manipulation, and analysis with SQL and Python.",
-    image: "https://cdn.example.com/sql-python-course.jpg",
-    // ... detailed information
-  },
-
   // Cybersecurity
-  {
-    title: "Hacking",
-    short: "Ethical Hacking and Penetration Testing",
-    description:
-      "Learn ethical hacking techniques and practice penetration testing.",
-    image: "https://cdn.example.com/ethical-hacking-course.jpg",
-    // ... detailed information
-  },
-  {
-    title: "NSE",
-    short: "Network Security Essentials",
-    description:
-      "Understand network security fundamentals and secure infrastructure.",
-    image: "https://cdn.example.com/network-security-course.jpg",
-    // ... detailed information
-  },
+
   {
     title: "Cryptography",
     short:
@@ -221,5 +199,61 @@ export const additional = [
       "Explore text analysis, sentiment analysis, chatbots, and more.",
     image: "https://cdn.example.com/nlp-course.jpg",
     // ... detailed information
+  },
+];
+
+export const dataAnalysis = [
+  {
+    title: "Hacking",
+    short: "Ethical Hacking and Penetration Testing",
+    description:
+      "Learn ethical hacking techniques and practice penetration testing.",
+    image: "https://cdn.example.com/ethical-hacking-course.jpg",
+    // ... detailed information
+  },
+  {
+    title: "Python for Data Science",
+    short: "Master data analysis and machine learning using Python",
+    description:
+      "Master data analysis and machine learning using Python, equipping yourself with in-demand skills for various industries.",
+    image: "https://cdn.example.com/python-course.jpg", // Replace with your image URL
+    // ... detailed information from the previous example
+  },
+  // Data Science & Big Data
+  {
+    title: "DW and BI",
+    short: "Data Warehousing and Business Intelligence",
+    description:
+      "Design data pipelines, build dashboards, and gain insights with BI tools.",
+    image: "https://cdn.example.com/data-warehousing-course.jpg",
+    // ... detailed information
+  },
+  {
+    title: "DA - SQL and Python",
+    short: "Data Analysis with SQL and Python",
+    description:
+      "Master data querying, manipulation, and analysis with SQL and Python.",
+    image: "https://cdn.example.com/sql-python-course.jpg",
+    // ... detailed information
+  },
+  {
+    title: "Digital Marketing",
+    short:
+      "marketing efforts that utilize electronic devices and online platforms to connect with your target audience and achieve marketing objectives.",
+  },
+  {
+    title: "IBM SPSS Statistics",
+    short:
+      "IBM SPSS Statistics, is a powerful statistical software suite used for a wide range of data analysis tasks in various fields.",
+  },
+  {
+    title: "Project Management Professional - PMP",
+    short:
+      "The Project Management Professional (PMP)® certification is a globally recognized credential that validates your ability to manage projects effectively. ",
+  },
+  {
+    title: "Monitoring and Evaluation",
+    short:
+      "Monitoring and evaluation (M&E) are two vital processes used in various fields to assess progress, ensure accountability, and improve performance.",
   },
 ];
