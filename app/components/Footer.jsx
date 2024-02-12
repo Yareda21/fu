@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="mx-auto max-w-screen-xl px-4 pb-8 pt-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-md">
           <strong className="block text-center text-lg font-bold text-gray-900 dark:text-white sm:text-3xl">
-            እንድንጠራህ ስልክ ቁጥን ተዉልን
+            Leave Us Your Phone Number, We Can Call You
           </strong>
 
           <form className="mt-6">
@@ -44,7 +44,7 @@ const Footer = () => {
               land your dream job! */}
             </p>
 
-            <div className="mt-6 flex justify-center gap-4 lg:justify-start">
+            <div className="hidden lg:flex mt-6 justify-center gap-4 lg:justify-start">
               <a
                 className="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
                 href=""
@@ -153,7 +153,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 text-center lg:grid-cols-3 lg:text-left">
+          <div className="hidden lg:grid grid-cols-1 gap-8 text-center lg:grid-cols-3 lg:text-left">
             <div>
               <strong className="font-medium text-gray-900 dark:text-white">
                 {" "}

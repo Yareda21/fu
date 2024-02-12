@@ -51,7 +51,7 @@ export default function Login() {
                 type="email"
                 label="Email address"
                 size="lg"
-                className="mb-6 mx-2 text-black p-3"
+                className="mb-6 w-full text-black p-3"
                 placeholder="Enter your email address"
               />
 
@@ -59,7 +59,7 @@ export default function Login() {
               <input
                 type="password"
                 label="Password"
-                className="mb-6 text-black p-3"
+                className="mb-6 w-full text-black p-3"
                 size="lg"
                 placeholder="Enter your password"
               />
