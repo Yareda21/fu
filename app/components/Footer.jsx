@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="mx-auto max-w-screen-xl px-4 pb-8 pt-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-md">
           <strong className="block text-center text-lg font-bold text-gray-900 dark:text-white sm:text-3xl">
-            እንድንጠራህ ስልክ ቁጥን ተዉልን
+            Leave us your phone number
           </strong>
 
           <form className="mt-6">
@@ -153,7 +153,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 text-center lg:grid-cols-3 lg:text-left">
+          <div className="hidden lg:grid grid-cols-1 gap-8 text-center lg:grid-cols-3 lg:text-left">
             <div>
               <strong className="font-medium text-gray-900 dark:text-white">
                 {" "}
