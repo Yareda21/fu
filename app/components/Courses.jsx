@@ -18,6 +18,7 @@ import {
 // import required modules
 import { Navigation, Pagination } from "swiper/modules";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function App() {
   return (
@@ -55,7 +56,7 @@ export default function App() {
                     programmingCourses.map((ele) => {
                       return (
                         <div className="lg:w-[22%] md:w-[45%] w-full border-2 hover:scale-105 border-blue-400 rounded-xl backdrop-blur-lg">
-                          <a className="block relative h-48 rounded mb-2 overflow-hidden">
+                          <div className="block relative h-48 rounded mb-2 overflow-hidden">
                             <Image
                               width={300}
                               height={300}
@@ -63,7 +64,7 @@ export default function App() {
                               className="object-cover object-center w-full h-full block rounded-xl"
                               src={tenor}
                             />
-                          </a>
+                          </div>
                           <div className="flex flex-col z-1 px-3 mt-4">
                             <h3 className=" text-black font-bold text-xl px-2 tracking-widest mb-3">
                               {ele.title}
@@ -72,7 +73,9 @@ export default function App() {
                               {ele.short}
                             </h2>
                             <button className="flex mx-auto my-3 text-white bg-indigo-500 border-0 py-2 px-8 hover:bg-indigo-600 rounded text-lg">
-                              Read More ...
+                              <Link href={`/courseDetail/webdev/${ele.title}`}>
+                                Read More ...
+                              </Link>
                             </button>
                           </div>
                         </div>
@@ -120,7 +123,9 @@ export default function App() {
                               {ele.short}
                             </h2>
                             <button className="flex mx-auto my-3 text-white bg-indigo-500 border-0 py-2 px-8 hover:bg-indigo-600 rounded text-lg">
-                              Read More ...
+                              <Link href={`/courseDetail/AI&ML/${ele.title}`}>
+                                Read More ...
+                              </Link>
                             </button>
                           </div>
                         </div>
@@ -168,7 +173,11 @@ export default function App() {
                               {ele.short}
                             </h2>
                             <button className="flex mx-auto my-3 text-white bg-indigo-500 border-0 py-2 px-8 hover:bg-indigo-600 rounded text-lg">
-                              Read More ...
+                              <Link
+                                href={`/courseDetail/DataAnalysis/${ele.title}`}
+                              >
+                                Read More ...
+                              </Link>
                             </button>
                           </div>
                         </div>

@@ -1,6 +1,6 @@
 export const programmingCourses = [
   {
-    title: "Full Software Engineering ",
+    title: "Full Software Engineering",
     short:
       "You want to get Harvard University Certificate! Starting from C Programing language up to web development and AI is included!",
   },

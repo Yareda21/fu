@@ -1,8 +1,75 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import { SiGmail } from "react-icons/si";
 import { FaPhoneAlt } from "react-icons/fa";
+import {
+  getAuth,
+  signInWithPhoneNumber,
+  signInWithEmailAndPassword,
+  signInWithEmailLink,
+  RecaptchaVerifier,
+} from "firebase/auth";
+import app from "@/firebase/firebase";
+import { useRouter } from "next/navigation";
 
 export default function Login() {
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [data, setData] = useState("");
+  const [otp, setOtp] = useState("");
+  const [confirmationResult, setConfirmationResult] = useState(null);
+  const [otpSent, setOtpSent] = useState(false);
+  const auth = getAuth(app);
+  const router = useRouter();
+
+  useEffect(() => {
+    window.recaptchaVerifier = new RecaptchaVerifier(
+      auth,
+      "recaptcha-container",
+      {
+        size: "normal",
+        callback: (response) => {},
+        "expired-callback": () => {},
+      }
+    );
+  }, [auth]);
+
+  const handlePhoneNumberChange = (e) => {
+    setPhoneNumber(e.target.value);
+  };
+
+  const handleOtpChange = (e) => {
+    setOtp(e.target.value);
+  };
+
+  const handleSendOtp = async () => {
+    try {
+      const formattedPhoneNumber = `+${phoneNumber.replace(/\D/g, "")}`; // Remove all non-digit characters from the phone number input field
+      const confirmation = await signInWithPhoneNumber(
+        auth,
+        formattedPhoneNumber,
+        window.recaptchaVerifier
+      );
+      setConfirmationResult(confirmation);
+      setOtpSent(true);
+      setPhoneNumber("");
+      alert(
+        "OTP sent! Please enter the OTP received to verify your phone number."
+      );
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleOtpSubmit = async () => {
+    try {
+      await confirmationResult.confirm(otp);
+      // User signed in successfully.
+      setOtp("");
+      router.push("/dashboard");
+    } catch (error) {
+      console.error(error);
+    }
+  };
   return (
     <section>
       <h1 className=" text-center text-2xl my-3">Register</h1>
@@ -59,7 +126,7 @@ export default function Login() {
               <input
                 type="password"
                 label="Password"
-                className="mb-6 w-full text-black p-3"
+                className="mb-6 text-black p-3 w-full"
                 size="lg"
                 placeholder="Enter your password"
               />

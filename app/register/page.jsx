@@ -1,10 +1,14 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import poster from "@/public/poster.jpg";
 import Image from "next/image";
 import { SiGmail } from "react-icons/si";
 import { FaPhoneAlt } from "react-icons/fa";
 
-const page = () => {
+const page = ({ searchParams }) => {
+  const [name, setName] = useState("");
+  const [subject, setSubject] = useState("");
+  const [phone, setPhone] = useState("");
   return (
     <section className="bg-white p-5">
       <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
@@ -18,7 +22,9 @@ const page = () => {
 
         <main className="flex items-center bg-slate-800 text-white justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6">
           <div className="max-w-xl lg:max-w-3xl">
-            <h1 className="text-center text-amber-500 text-2xl">Register</h1>
+            <h1 className="text-center text-amber-500 text-2xl">
+              Registeration <br /> {searchParams && searchParams.title}
+            </h1>
             <form action="#" className="mt-8 grid grid-cols-6 gap-6">
               {/* first name */}
               <div className="col-span-6 sm:col-span-3">
@@ -26,7 +32,7 @@ const page = () => {
                   htmlFor="FirstName"
                   className="block text-sm font-medium text-white"
                 >
-                  First Name
+                  Full Name
                 </label>
 
                 <input
@@ -42,7 +48,7 @@ const page = () => {
                   htmlFor="LastName"
                   className="block text-sm font-medium text-white"
                 >
-                  Last Name
+                  Subject
                 </label>
 
                 <input
@@ -50,6 +56,8 @@ const page = () => {
                   id="LastName"
                   name="last_name"
                   className="mt-1 px-3 py-2 w-full rounded-md border-gray bg-white text-sm text-gray-700 shadow-sm"
+                  value={searchParams.title}
+                  blocked
                 />
               </div>
               {/* email */}
