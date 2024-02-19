@@ -17,7 +17,7 @@ const page = () => {
           <div className="border border-gray-100 dark:border-blue-600 hover:dark:border-blue-500 transition-colors duration-200 ease-in-out overflow-hidden rounded-lg dark:bg-blue-700 relative ">
             <div className="h-[196px] relative">
               <Link className="relative w-full h-full inline-block" href="/p/fundamentals">
-                <Image alt="Fundamentals" fetchpriority="high" decoding="async"  className="object-cover absolute inset-0 h-full w-full bg-transparent text-transparent" src="http://res.cloudinary.com/codewithmosh/image/upload/v1685118742/images/fundamentals.svg" />
+                <Image alt="Fundamentals" layout='' fetchpriority="high" decoding="async"  className="object-cover absolute inset-0 h-full w-full bg-transparent text-transparent" src="http://res.cloudinary.com/codewithmosh/image/upload/v1685118742/images/fundamentals.svg" />
               </Link>
             </div>
             <div className="p-6">
