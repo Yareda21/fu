@@ -1,5 +1,5 @@
 import React from 'react'
-
+import selam from "@/public/selam.PNG";
 const Intro = () => {
   return (
     <section class="flex flex-col mb-10 my-5">
@@ -16,7 +16,7 @@ const Intro = () => {
                 Are you feeling stuck or overwhelmed in your coding journey? Don't worry, I've got your back! Together, we'll work to level up your skills, increase your earning potential, and build a brighter future.
             </p>
             <div class="max-w-[725px] mx-auto px-3 w-full">
-                <video class="max-w-[725px] mx-auto px-3 w-full" controls autoPlay src="https://youtu.be/qARdYnp5akY" poster="" __idm_id__="24577"></video>
+                <video class="max-w-[725px] mx-auto px-3 w-full" controls src="https://res.cloudinary.com/dlomcic7f/video/upload/v1708350869/full/Selam_Food_Delivery_Website_wnuvbx.mp4" poster={selam} __idm_id__="24577"></video>
             </div>
         </div>
     </section>

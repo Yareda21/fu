@@ -2,7 +2,7 @@
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import tenor from "@/public/tenor.gif";
-import i from "@/public/fu_images/f.jpg";
+import b from "@/public/fu_images/b.jpg";
 import h from "@/public/fu_images/h.webp";
 // Import Swiper styles
 import "swiper/css";
@@ -94,7 +94,7 @@ export default function App() {
             <section className="text-gray-400  body-font">
               <div className="container py-24 px-3 block mx-auto ">
                 <Image
-                  src={i}
+                  src={b}
                   layout="fill"
                   quality={100}
                   priority
