@@ -2,7 +2,7 @@
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import tenor from "@/public/tenor.gif";
-import e from "@/public/fu_images/e.jpg";
+import i from "@/public/fu_images/f.jpg";
 import h from "@/public/fu_images/h.webp";
 // Import Swiper styles
 import "swiper/css";
@@ -23,7 +23,7 @@ import Link from "next/link";
 export default function App() {
   return (
     <>
-      <h1 className="flex text-center text-3xl justify-center p-10">
+      <h1 className="flex text-center bg-blue-800 text-3xl justify-center p-10">
         Courses at our disposal
       </h1>
       <div className="relative">
@@ -94,7 +94,7 @@ export default function App() {
             <section className="text-gray-400  body-font">
               <div className="container py-24 px-3 block mx-auto ">
                 <Image
-                  src={e}
+                  src={i}
                   layout="fill"
                   quality={100}
                   priority
