@@ -58,15 +58,15 @@ const Nav = () => {
                 className="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700 dark:hover:bg-teal-500"
                 href="/signup"
               >
-                Login
+                Member Login
               </a>
 
-              <a
+              {/* <a
                 className="hidden rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600 transition hover:text-teal-600/75 dark:bg-gray-800 dark:text-white dark:hover:text-white/75 sm:block"
                 href="/register"
               >
                 Register
-              </a>
+              </a> */}
             </div>
 
             <div>

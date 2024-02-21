@@ -10,13 +10,13 @@ const page = ({ searchParams }) => {
   const [subject, setSubject] = useState("");
   const [phone, setPhone] = useState("");
   return (
-    <section className="bg-white p-5">
+    <section className="bg-white ">
       <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
         <section className="hidden lg:relative lg:flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6">
           <Image
             alt="Night"
             src={poster}
-            className="absolute inset-0 h-full w-full object-cover opacity-100"
+            className="absolute inset-0 h-full w-full opacity-100"
           />
         </section>
 
@@ -45,7 +45,7 @@ const page = ({ searchParams }) => {
               {/* last name  */}
               <div className="col-span-6 sm:col-span-3">
                 <label
-                  htmlFor="LastName"
+                  htmlFor="Subject"
                   className="block text-sm font-medium text-white"
                 >
                   Subject
@@ -57,23 +57,23 @@ const page = ({ searchParams }) => {
                   name="last_name"
                   className="mt-1 px-3 py-2 w-full rounded-md border-gray bg-white text-sm text-gray-700 shadow-sm"
                   value={searchParams.title}
-                  blocked
+                  readOnly
                 />
               </div>
               {/* email */}
               <div className="col-span-6">
                 <label
-                  htmlFor="Email"
+                  htmlFor="phone"
                   className="block text-sm font-medium text-white"
                 >
                   {" "}
-                  Email{" "}
+                  Phone Number{" "}
                 </label>
 
                 <input
-                  type="email"
-                  id="Email"
-                  name="email"
+                  type="tel"
+                  id="phone"
+                  name="phone"
                   className="mt-1 px-3 py-2 w-full rounded-md border-gray bg-white text-sm text-gray-700 shadow-sm"
                 />
               </div>
@@ -157,15 +157,14 @@ const page = ({ searchParams }) => {
                   .
                 </p>
               </div>
-              
             </form>
-            <div className="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
-                <p className="mx-4 mb-0 text-center font-semibold dark:text-neutral-200">
-                  OR
-                </p>
+            {/* <div className="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
+              <p className="mx-4 mb-0 text-center font-semibold dark:text-neutral-200">
+                OR
+              </p>
             </div>
-                
-                {/* <!-- Social login buttons --> */}
+
+            
             <div className="w-full">
               <a
                 className="mb-3 flex w-full items-center justify-center rounded bg-primary px-7 pb-2.5 pt-3 text-center text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
@@ -173,35 +172,35 @@ const page = ({ searchParams }) => {
                 href="#!"
                 role="button"
               >
-                {/* <!-- Facebook --> */}
+                
                 <SiGmail className="mx-2" /> <span> Continue with Gmail</span>
               </a>
             </div>
             <div className="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
-                <p className="mx-4 mb-0 text-center font-semibold dark:text-neutral-200">
-                  OR
-                </p>
+              <p className="mx-4 mb-0 text-center font-semibold dark:text-neutral-200">
+                OR
+              </p>
             </div>
             <div className="w-full">
-                <input
-                  type="tel"
-                  label="Phone"
-                  className="mb-6 text-black p-3 w-full"
-                  size="lg"
-                  placeholder="Enter your Phone Number"
-                />
+              <input
+                type="tel"
+                label="Phone"
+                className="mb-6 text-black p-3 w-full"
+                size="lg"
+                placeholder="Enter your Phone Number"
+              />
 
-                <a
-                  className="mb-3 flex w-full items-center justify-center rounded bg-info px-7 pb-2.5 pt-3 text-center text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#54b4d3] transition duration-150 ease-in-out hover:bg-info-600 hover:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)] focus:bg-info-600 focus:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)] focus:outline-none focus:ring-0 active:bg-info-700 active:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(84,180,211,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.2),0_4px_18px_0_rgba(84,180,211,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.2),0_4px_18px_0_rgba(84,180,211,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.2),0_4px_18px_0_rgba(84,180,211,0.1)]"
-                  style={{ backgroundColor: "#55acee" }}
-                  href="#!"
-                  role="button"
-                >
-                  {/* <!-- Twitter --> */}
-                  <FaPhoneAlt className="mx-2" />
-                  Continue with Phone Number
-                </a>
-              </div>
+              <a
+                className="mb-3 flex w-full items-center justify-center rounded bg-info px-7 pb-2.5 pt-3 text-center text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#54b4d3] transition duration-150 ease-in-out hover:bg-info-600 hover:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)] focus:bg-info-600 focus:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)] focus:outline-none focus:ring-0 active:bg-info-700 active:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(84,180,211,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.2),0_4px_18px_0_rgba(84,180,211,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.2),0_4px_18px_0_rgba(84,180,211,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.2),0_4px_18px_0_rgba(84,180,211,0.1)]"
+                style={{ backgroundColor: "#55acee" }}
+                href="#!"
+                role="button"
+              >
+                
+                <FaPhoneAlt className="mx-2" />
+                Continue with Phone Number
+              </a>
+            </div> */}
           </div>
         </main>
       </div>
