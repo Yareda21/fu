@@ -19,17 +19,32 @@ import { Navigation, Pagination } from "swiper/modules";
 import Image from "next/image";
 import Link from "next/link";
 
-// Firebase data fetching 
-import { db } from "@/firebase/firebase"
-import {getDoc, collection} from "firebase/firestore"
+// Firebase data fetching
+import { db } from "@/firebase/firebase";
+import { getDocs, collection } from "firebase/firestore";
+import { useEffect, useState } from "react";
 
+async function getMyData() {
+  const querySnapshot = await getDocs(collection(db, "programming"));
 
+  const data = [];
 
+  querySnapshot.forEach((file) => {
+    data.push({ id: file.id, ...file.data() });
+  });
+  console.log(data);
+  return data;
+}
 export default function App() {
   // fetching data from firestore api
-
-
-
+  const [userData, setUserData] = useState([]);
+  useEffect(() => {
+    async function fetchData() {
+      const data = await getMyData();
+      setUserData(data);
+    }
+    fetchData();
+  }, []);
 
   return (
     <>
