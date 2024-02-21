@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import tenor from "@/public/tenor.gif";
 import b from "@/public/fu_images/b.jpg";
 import h from "@/public/fu_images/h.webp";
+
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -13,14 +14,23 @@ import {
   dataAnalysis,
 } from "@/assets/newCourses";
 
-// import "./styles.css";
-
 // import required modules
 import { Navigation, Pagination } from "swiper/modules";
 import Image from "next/image";
 import Link from "next/link";
 
+// Firebase data fetching 
+import { db } from "@/firebase/firebase"
+import {getDoc, collection} from "firebase/firestore"
+
+
+
 export default function App() {
+  // fetching data from firestore api
+
+
+
+
   return (
     <>
       <h1 className="flex text-center bg-blue-800 text-3xl justify-center p-10">
