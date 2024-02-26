@@ -18,9 +18,7 @@ import { Navigation, Pagination } from "swiper/modules";
 import Image from "next/image";
 import Link from "next/link";
 
-
 export default function App() {
-
   return (
     <>
       <h1 className="flex text-center bg-blue-400 text-3xl justify-center p-10">
@@ -63,6 +61,7 @@ export default function App() {
                               alt="ecommerce"
                               className="object-cover object-center w-full h-full block rounded-xl"
                               src={tenor}
+                              priority
                             />
                           </div>
                           <div className="flex flex-col z-1 px-3 mt-4">
@@ -113,6 +112,7 @@ export default function App() {
                               alt="ecommerce"
                               className="object-cover object-center w-full h-full block rounded-xl"
                               src={tenor}
+                              priority
                             />
                           </a>
                           <div className="flex flex-col px-3 z-1 mt-4">
@@ -163,6 +163,7 @@ export default function App() {
                               alt="ecommerce"
                               className="object-cover object-center w-full block rounded-xl"
                               src={tenor}
+                              priority
                             />
                           </a>
                           <div className="flex flex-col px-3 z-1 mt-4">
