@@ -72,7 +72,7 @@ export default function Login() {
   };
   return (
     <section>
-      <h1 className=" text-center text-2xl my-3">Register</h1>
+      <h1 className=" text-center text-2xl my-3">Member Login</h1>
       <div className="container h-full px-6 py-24">
         <div className="g-6 flex h-full flex-wrap items-center justify-center lg:justify-between">
           {/* <!-- Left column container with background--> */}
@@ -87,7 +87,8 @@ export default function Login() {
           {/* <!-- Right column container with form --> */}
           <div className="md:w-8/12 lg:ml-6 lg:w-5/12">
             <form>
-              <div className="w-full">
+              {/* registering using phone number - future */}
+              {/* <div className="w-full">
                 <input
                   type="tel"
                   label="Phone"
@@ -102,17 +103,17 @@ export default function Login() {
                   href="#!"
                   role="button"
                 >
-                  {/* <!-- Twitter --> */}
+                 
                   <FaPhoneAlt className="mx-2" />
                   Continue with Phone Number
                 </a>
-              </div>
+              </div> */}
 
-              <div className="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
+              {/* <div className="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
                 <p className="mx-4 mb-0 text-center font-semibold dark:text-neutral-200">
                   OR
                 </p>
-              </div>
+              </div> */}
               {/* <!-- Email input --> */}
               <input
                 type="email"

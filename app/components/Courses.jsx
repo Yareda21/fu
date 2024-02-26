@@ -3,7 +3,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import tenor from "@/public/tenor.gif";
 import b from "@/public/fu_images/b.jpg";
-import h from "@/public/fu_images/h.webp";
 
 // Import Swiper styles
 import "swiper/css";
@@ -48,13 +47,13 @@ export default function App() {
 
   return (
     <>
-      <h1 className="flex text-center bg-blue-800 text-3xl justify-center p-10">
+      <h1 className="flex text-center bg-blue-400 text-3xl justify-center p-10">
         Courses at our disposal
       </h1>
       <div className="relative">
         <Swiper
           slidesPerView={1}
-          spaceBetween={30}
+          spaceBetween={0}
           loop={true}
           pagination={{
             clickable: true,
@@ -69,7 +68,7 @@ export default function App() {
             <section className="text-gray-400  body-font">
               <div className="container py-24 px-3 block mx-auto ">
                 <Image
-                  src={h}
+                  src={b}
                   layout="fill"
                   quality={100}
                   priority
@@ -169,7 +168,7 @@ export default function App() {
             <section className="text-gray-400  body-font">
               <div className="container py-24 px-3 block mx-auto ">
                 <Image
-                  src={h}
+                  src={b}
                   layout="fill"
                   quality={100}
                   priority

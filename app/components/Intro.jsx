@@ -2,7 +2,7 @@ import React from "react";
 import selam from "@/public/tenor.gif";
 const Intro = () => {
   return (
-    <section class="flex flex-col mb-10 my-5">
+    <section class="flex flex-col  mb-10 my-5">
       <header class="my-12 mb-6 text-center">
         <p class="font-medium my-4 text-violet-500 dark:text-violet-75 text-sm tracking-widest uppercase">
           Hello,
@@ -17,11 +17,11 @@ const Intro = () => {
         </p>
         <div class="max-w-[725px] mx-auto w-full">
           <video
-            poster={selam}
+            poster="https://res.cloudinary.com/dlomcic7f/image/upload/v1708515495/full/me_x0qfek.jpg"
+            
             class="max-w-[725px] mx-auto w-full"
             controls
             src="https://res.cloudinary.com/dlomcic7f/video/upload/v1708350869/full/Selam_Food_Delivery_Website_wnuvbx.mp4"
-            __idm_id__="24577"
           ></video>
         </div>
       </div>

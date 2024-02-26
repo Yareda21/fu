@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { aiAndMachineLearning } from "@/assets/newCourses";
+import Link from "next/link";
 
 const CourseDetailsPage = ({ params }) => {
   const [selectedCourse, setSelectedCourse] = useState(null);
@@ -228,13 +229,17 @@ const CourseDetailsPage = ({ params }) => {
         </div>
 
         <div className="mt-12 text-center">
-          <a
-            href="/register"
-            quer
+          <Link
+            href={{
+              pathname: "/register",
+              query: {
+                title: selectedCourse.title,
+              }
+            }}
             className="inline-block rounded bg-pink-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-pink-700 focus:outline-none focus:ring focus:ring-yellow-400"
           >
             Get Started Today
-          </a>
+          </Link>
         </div>
       </div>
     </section>
