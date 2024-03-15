@@ -44,7 +44,7 @@ const Nav = () => {
               <li>
                 <a
                   className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
-                  href="/"
+                  href="/project"
                 >
                   Projects
                 </a>

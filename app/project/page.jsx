@@ -1,82 +1,17 @@
-"use client";
-import React, { useEffect, useState } from "react";
+import React from 'react'
 import { SiGmail } from "react-icons/si";
-import { FaPhoneAlt } from "react-icons/fa";
-import {
-  getAuth,
-  signInWithPhoneNumber,
-  RecaptchaVerifier,
-} from "firebase/auth";
-import app from "@/firebase/firebase";
-import { useRouter } from "next/navigation";
 
-export default function Login() {
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [data, setData] = useState("");
-  const [otp, setOtp] = useState("");
-  const [confirmationResult, setConfirmationResult] = useState(null);
-  const [otpSent, setOtpSent] = useState(false);
-  const auth = getAuth(app);
-  const router = useRouter();
-
-  // useEffect(() => {
-  //   window.recaptchaVerifier = new RecaptchaVerifier(
-  //     auth,
-  //     "recaptcha-container",
-  //     {
-  //       size: "normal",
-  //       callback: (response) => {},
-  //       "expired-callback": () => {},
-  //     }
-  //   );
-  // }, [auth]);
-
-  const handlePhoneNumberChange = (e) => {
-    setPhoneNumber(e.target.value);
-  };
-
-  const handleOtpChange = (e) => {
-    setOtp(e.target.value);
-  };
-
-  const handleSendOtp = async () => {
-    try {
-      const formattedPhoneNumber = `+${phoneNumber.replace(/\D/g, "")}`; // Remove all non-digit characters from the phone number input field
-      const confirmation = await signInWithPhoneNumber(
-        auth,
-        formattedPhoneNumber,
-        window.recaptchaVerifier
-      );
-      setConfirmationResult(confirmation);
-      setOtpSent(true);
-      setPhoneNumber("");
-      alert(
-        "OTP sent! Please enter the OTP received to verify your phone number."
-      );
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  const handleOtpSubmit = async () => {
-    try {
-      await confirmationResult.confirm(otp);
-      // User signed in successfully.
-      setOtp("");
-      router.push("/dashboard");
-    } catch (error) {
-      console.error(error);
-    }
-  };
+const project = () => {
   return (
+  
     <section>
-      <h1 className=" text-center text-2xl my-3">Member Login</h1>
+      <h1 className=" text-center text-2xl my-3">Project Registration</h1>
       <div className="container h-full px-6 py-24">
         <div className="g-6 flex h-full flex-wrap items-center justify-center lg:justify-between">
           {/* <!-- Left column container with background--> */}
           <div className="mb-12 md:mb-0 md:w-8/12 lg:w-6/12">
             <img
-              src="https://res.cloudinary.com/dlomcic7f/image/upload/v1710402429/full/projectpage_u554s5.jpg"
+              src="https://tecdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
               className="w-full"
               alt="Phone image"
             />
@@ -86,32 +21,7 @@ export default function Login() {
           <div className="md:w-8/12 lg:ml-6 lg:w-5/12">
             <form>
               {/* registering using phone number - future */}
-              {/* <div className="w-full">
-                <input
-                  type="tel"
-                  label="Phone"
-                  className="mb-6 text-black p-3 w-full"
-                  size="lg"
-                  placeholder="Enter your Phone Number"
-                />
-
-                <a
-                  className="mb-3 flex w-full items-center justify-center rounded bg-info px-7 pb-2.5 pt-3 text-center text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#54b4d3] transition duration-150 ease-in-out hover:bg-info-600 hover:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)] focus:bg-info-600 focus:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)] focus:outline-none focus:ring-0 active:bg-info-700 active:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(84,180,211,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.2),0_4px_18px_0_rgba(84,180,211,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.2),0_4px_18px_0_rgba(84,180,211,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.2),0_4px_18px_0_rgba(84,180,211,0.1)]"
-                  style={{ backgroundColor: "#55acee" }}
-                  href="#!"
-                  role="button"
-                >
-                 
-                  <FaPhoneAlt className="mx-2" />
-                  Continue with Phone Number
-                </a>
-              </div> */}
-
-              {/* <div className="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
-                <p className="mx-4 mb-0 text-center font-semibold dark:text-neutral-200">
-                  OR
-                </p>
-              </div> */}
+ 
               {/* <!-- Email input --> */}
               <input
                 type="email"
@@ -192,5 +102,8 @@ export default function Login() {
         </div>
       </div>
     </section>
-  );
+
+  )
 }
+
+export default project

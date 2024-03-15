@@ -68,7 +68,7 @@ export default function App() {
                             <h3 className=" text-black font-bold text-xl px-2 tracking-widest mb-3">
                               {ele.title}
                             </h3>
-                            <h2 className="text-white text-sm px-2 font-medium">
+                            <h2 className="text-black text-sm px-2 font-medium">
                               {ele.short}
                             </h2>
                             <button className="flex mx-auto my-3 text-white bg-indigo-500 border-0 py-2 px-8 hover:bg-indigo-600 rounded text-lg">
