@@ -1,14 +1,138 @@
 export const programmingCourses = [
   {
-    title: "Full Software Engineering",
+    title: "Introduction to Software Engineering",
     short:
       "You want to get Harvard University Certificate! Starting from C Programing language up to web development and AI is included!",
+    image: "",
+    description: "",
+    duration: 6,
+    level: "Begineer",
+    instructor: {
+      name: "Yared Kebede, Software Engineer",
+      expertise: "Web Development",
+      institution: "Exceed",
+    },
+    skillsLearned: [
+      {
+        skill: "Introduction to CS and C",
+        projects: [
+          "Simple Calculator",
+          "Object-oriented programming concepts",
+        ],
+      },
+      {
+        skill: "Introduction to Python Programming",
+        projects: [
+          "ATM Console App",
+          "Ethio Telecom Service App",
+        ],
+      },
+      {
+        skill: "Front-end development",
+        projects: [
+          "Building interactive user interfaces",
+          "Portfolio Page on Github"
+        ],
+      },
+    ],
+    learningFormat: [
+      "Blended learning: video lectures, live coding sessions, hands-on projects",
+      "Personalized mentorship from experienced instructors",
+      "Access to an active online practice platforms",
+    ],
+    careerPaths: [
+      "JS Full-Stack Web Developer",
+      "Python Flask Developer",
+      "Back-End Developer",
+      "Web Developer",
+    ],
+    certification: [
+    {
+      name: "Software Engineering certificate from Exceed",
+      awardingBody: "Exceed Advanced Training and Consultancy",
+      optional: true,
+    },
+
+    {
+      name: "CS50 Introduction to Computer Science from Harvard",
+      awardingBody: "Harvard University",
+      optional: true,
+    },
+
+    ],
+    prerequisites: {
+      programming: "Basic Computer",
+      webDev: "Familiarity with HTML, CSS, and JavaScript (optional)",
+    },
+    platform: "VS Code and Git", // Link to course platform
+    price: {
+      individual: 399, // Individual enrollment price
+      corporate: 699, // Corporate training price
+    },
   },
   {
     title: "HTML and CSS",
     short:
       "HTML and CSS bring web pages to life. HTML provides the foundation, and CSS adds the style and presentation.",
     image: "",
+    description: "",
+    duration: 2,
+    level: "Begineer",
+    instructor: {
+      name: "Yared Kebede, Software Engineer",
+      expertise: "Web Development",
+      institution: "Exceed",
+    },
+    skillsLearned: [
+      {
+        skill: "Static Websites",
+        projects: [
+          "Static Portfolio Project",
+          "Editing and Customizing Webpages",
+        ],
+      },
+      {
+        skill: "Github",
+        projects: [
+          "Github Portfolio",
+          "Forking and Cloning Projects ",
+        ],
+      },
+      {
+        skill: "Content Mangement",
+        projects: [
+          "How to work as a content manager for organizations",
+          "Editing and manuplating content on webpages"
+        ],
+      },
+    ],
+    learningFormat: [
+      "Blended learning: video lectures, live coding sessions, hands-on projects",
+      "Personalized mentorship from experienced instructors",
+      "Access to an active online practice platforms",
+    ],
+    careerPaths: [
+      "Frontend Web Developer",
+      "Full Stack Web Developer",
+      "Content Manager",
+
+    ],
+    certification: [
+    {
+      name: "Static Webpage Development using HTML and CSS certificate from Exceed",
+      awardingBody: "Exceed Advanced Training Center",
+      optional: true,
+    },
+
+    ],
+    prerequisites: {
+      programming: "Basic Computer",
+    },
+    platform: "VS Code and Git", // Link to course platform
+    price: {
+      individual: 399, // Individual enrollment price
+      corporate: 699, // Corporate training price
+    },
   },
   {
     title: "JavaScript for Web Developers",
@@ -51,9 +175,9 @@ export const programmingCourses = [
     },
     level: "Advanced",
     instructor: {
-      name: "Ms. Jane Smith, Certified Spring Professional",
-      expertise: "Java, Spring, Web development",
-      institution: "Tech Academy",
+      name: "Yared Kebede, Software Engineer",
+      expertise: "Web Development",
+      institution: "Exceed",
     },
     skillsLearned: [
       {
