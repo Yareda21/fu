@@ -1,31 +1,82 @@
 import React from "react";
 import selam from "@/public/tenor.gif";
+
 const Intro = () => {
     return (
-        <section className="flex flex-col  mb-10 my-5">
-            <header className="my-12 mb-6 text-center">
-                <p className="font-medium my-4 text-violet-500 dark:text-violet-75 text-sm tracking-widest uppercase">
-                    Hello,
-                </p>
-                <h2 className="text-3xl">I'm Yared Kebede.</h2>
-            </header>
-            <div className="flex flex-col items-center">
-                <p className="mb-10 text-center max-w-[50ch] text-lg lg:text-xl lg:leading-8">
-                    Are you feeling stuck or overwhelmed in your coding journey?
-                    Don't worry, I've got your back! Together, we'll work to
-                    level up your skills, increase your earning potential, and
-                    build a brighter future.
-                </p>
-                <div className="max-w-[725px] mx-auto w-full">
-                    <video
-                        poster="https://res.cloudinary.com/dlomcic7f/image/upload/v1708515495/full/me_x0qfek.jpg"
-                        className="max-w-[725px] mx-auto w-full"
-                        controls
-                        src="https://res.cloudinary.com/dlomcic7f/video/upload/v1708350869/full/Selam_Food_Delivery_Website_wnuvbx.mp4"
-                    ></video>
+        <div className="flex flex-col lg:flex-row">
+            <section className="flex flex-col mb-10 my-5 w-full lg:w-2/3">
+                <header className="my-12 mb-6 text-center">
+                    <p className="font-medium my-4 text-violet-500 dark:text-violet-75 text-sm tracking-widest uppercase">
+                        Hello,
+                    </p>
+                    <h2 className="text-3xl">I'm Yared Kebede.</h2>
+                </header>
+                <div className="flex flex-col items-center">
+                    <p className="mb-10 text-center max-w-[50ch] text-lg lg:text-xl lg:leading-8">
+                        Are you feeling stuck or overwhelmed in your coding
+                        journey? Don't worry, I've got your back! Together,
+                        we'll work to level up your skills, increase your
+                        earning potential, and build a brighter future.
+                    </p>
+                    <div className="w-full mb-6">
+                        <iframe
+                            className="w-full h-[500px]"
+                            src="https://www.youtube.com/embed/qARdYnp5akY"
+                            title="Intro video"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                        ></iframe>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+            <section className="flex flex-col items-center my-10 p-5 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg shadow-lg w-full lg:w-1/3">
+                <header className="mb-6 text-center">
+                    <h2 className="text-4xl font-bold">New and Hot</h2>
+                </header>
+                <div className="flex flex-col items-center">
+                    <p className="mb-10 text-center max-w-[50ch] text-lg lg:text-xl lg:leading-8">
+                        Check out the top 3 trending subjects that are making
+                        waves right now!
+                    </p>
+                    <ul className="list-disc list-inside mb-6">
+                        <li className="mb-4 text-2xl">Web Development</li>
+                        <div className="w-full mb-6">
+                            <iframe
+                                className="w-full h-48"
+                                src="https://www.youtube.com/embed/qARdYnp5akY"
+                                title="Web Development video"
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                            ></iframe>
+                        </div>
+                        <li className="mb-4 text-2xl">Data Analysis</li>
+                        <div className="w-full mb-6">
+                            <iframe
+                                className="w-full h-48"
+                                src="https://www.youtube.com/embed/qARdYnp5akY"
+                                title="Data Analysis video"
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                            ></iframe>
+                        </div>
+                        <li className="mb-4 text-2xl">AI & Machine Learning</li>
+                        <div className="w-full mb-6">
+                            <iframe
+                                className="w-full h-48"
+                                src="https://www.youtube.com/embed/qARdYnp5akY"
+                                title="AI & Machine Learning video"
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                            ></iframe>
+                        </div>
+                    </ul>
+                </div>
+            </section>
+        </div>
     );
 };
 

@@ -58,7 +58,7 @@ export default function App() {
                                                     height={300}
                                                     alt="ecommerce"
                                                     className="object-cover object-center w-full h-full block rounded-xl"
-                                                    src={tenor}
+                                                    src={ele.image}
                                                     priority
                                                 />
                                             </div>
