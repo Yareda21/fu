@@ -44,9 +44,9 @@ const Nav = () => {
                             <li>
                                 <a
                                     className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
-                                    href="/departments"
+                                    href="/testimonials"
                                 >
-                                    Departments
+                                    Testimonials
                                 </a>
                             </li>
 
@@ -70,7 +70,7 @@ const Nav = () => {
                             <li className="md:hidden">
                                 <a
                                     className="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700 dark:hover:bg-teal-500"
-                                    href="/signup"
+                                    href="/login"
                                     onClick={closeMenu}
                                 >
                                     Member Login
@@ -83,7 +83,7 @@ const Nav = () => {
                         <div className="hidden md:flex sm:gap-4">
                             <a
                                 className="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700 dark:hover:bg-teal-500"
-                                href="/signup"
+                                href="/login"
                             >
                                 Member Login
                             </a>
