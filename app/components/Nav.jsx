@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import tenor from "@/public/tenor.gif";
+import { motion } from "framer-motion";
 
 const Nav = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,6 +13,17 @@ const Nav = () => {
     const closeMenu = () => {
         setIsMenuOpen(false);
     };
+
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: { opacity: 1, transition: { staggerChildren: 0.5 } },
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0 },
+    };
+
     return (
         <header className=" sticky top-0 left-0  right-0 bg-white dark:bg-[#001d62] gray-900 z-40">
             <div className="mx-auto shadow-md flex h-16 max-w-screen-xl items-center gap-8 px-4 sm:px-6 lg:px-8">
@@ -31,43 +43,52 @@ const Nav = () => {
                             isMenuOpen ? "block" : "hidden"
                         } md:block absolute md:relative top-16 left-0 right-0 bg-white dark:bg-[#001d62] md:top-0`}
                     >
-                        <ul className="flex flex-col md:flex-row items-center gap-6 py-4 md:py-0 text-base">
-                            <li>
+                        <motion.ul
+                            initial="hidden"
+                            animate="visible"
+                            variants={containerVariants}
+                            className="flex flex-col md:flex-row items-center gap-6 py-4 md:py-0 text-base"
+                        >
+                            <motion.li variants={itemVariants}>
                                 <a
                                     className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
                                     href="/About"
                                 >
-                                    About Us
+                                    About Me
                                 </a>
-                            </li>
+                            </motion.li>
 
-                            <li>
+                            <motion.li variants={itemVariants}>
                                 <a
                                     className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
                                     href="/testimonials"
                                 >
                                     Testimonials
                                 </a>
-                            </li>
+                            </motion.li>
 
-                            <li>
+                            <motion.li variants={itemVariants}>
                                 <a
                                     className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
                                     href="/roadmap"
                                 >
                                     Road Maps
                                 </a>
-                            </li>
+                            </motion.li>
 
-                            <li>
+                            <motion.li variants={itemVariants}>
                                 <a
                                     className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
-                                    href="/project"
+                                    href="https://github.com/Yareda21"
+                                    target="_blank"
                                 >
-                                    Projects
+                                    My Github
                                 </a>
-                            </li>
-                            <li className="md:hidden">
+                            </motion.li>
+                            <motion.li
+                                variants={itemVariants}
+                                className="md:hidden"
+                            >
                                 <a
                                     className="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700 dark:hover:bg-teal-500"
                                     href="/login"
@@ -75,8 +96,8 @@ const Nav = () => {
                                 >
                                     Member Login
                                 </a>
-                            </li>
-                        </ul>
+                            </motion.li>
+                        </motion.ul>
                     </nav>
 
                     <div className="flex items-center gap-4">

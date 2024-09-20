@@ -12,7 +12,7 @@ import {
     dataAnalysis,
 } from "@/assets/newCourses";
 
-import { Navigation, Pagination } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -37,7 +37,11 @@ export default function App() {
                     clickable: true,
                 }}
                 navigation={true}
-                modules={[Pagination, Navigation]}
+                autoplay={{
+                    delay: 5000,
+                    disableOnInteraction: false,
+                }}
+                modules={[Pagination, Navigation, Autoplay]}
                 className="w-full min-h-screen"
             >
                 {/* Web Development and software engineering */}
@@ -50,7 +54,7 @@ export default function App() {
                                     return (
                                         <div
                                             key={ele.id}
-                                            className="lg:w-[22%] md:w-[45%] h-[400px] w-full border-2 hover:scale-105 border-blue-400 rounded-xl backdrop-blur-lg"
+                                            className="lg:w-[22%] md:w-[45%] h-[360px] w-full border-2 hover:scale-105 border-blue-400 rounded-xl backdrop-blur-lg"
                                         >
                                             <div className="block relative h-48 rounded mb-2 overflow-hidden">
                                                 <Image
@@ -62,8 +66,8 @@ export default function App() {
                                                     priority
                                                 />
                                             </div>
-                                            <div className="flex flex-col justify-between h-[180px] items-stretch  z-1 px-3 mt-4">
-                                                <div className="flex flex-col z-1 px-3 mt-4 flex-grow">
+                                            <div className="flex flex-col justify-between h-[135px] items-stretch  z-1 px-3 mt-4">
+                                                <div className="flex flex-col z-1 px-3 flex-grow">
                                                     <h3 className=" text-white font-bold text-xl px-2 tracking-widest mb-3">
                                                         {ele.title}
                                                     </h3>
@@ -71,7 +75,7 @@ export default function App() {
                                                         {ele.short}
                                                     </h2> */}
                                                 </div>
-                                                <button className="flex mx-auto my-3 text-white bg-indigo-500 border-0 py-2 px-8 hover:bg-indigo-600 rounded text-lg">
+                                                <button className="flex mx-auto  text-white bg-indigo-500 border-0 py-2 px-8 hover:bg-indigo-600 rounded text-lg">
                                                     <Link
                                                         href={`/courseDetail/webdev/${ele.title}`}
                                                     >
@@ -98,7 +102,7 @@ export default function App() {
                                     return (
                                         <div
                                             key={ele.id}
-                                            className="lg:w-[22%] md:w-[45%] h-[400px] w-full border-2 hover:scale-105 border-blue-400 rounded-xl backdrop-blur-lg"
+                                            className="lg:w-[22%] md:w-[45%] h-[360px] w-full border-2 hover:scale-105 border-blue-400 rounded-xl backdrop-blur-lg"
                                         >
                                             <a className="block relative h-48 rounded overflow-hidden">
                                                 <Image
@@ -110,14 +114,14 @@ export default function App() {
                                                     priority
                                                 />
                                             </a>
-                                            <div className="flex flex-col justify-between h-[180px] px-3 z-1 mt-4">
+                                            <div className="flex flex-col justify-between h-[135px] px-3 z-1">
                                                 <h3 className=" text-white  font-bold text-xl tracking-widest mb-1">
                                                     {ele.title}
                                                 </h3>
                                                 {/* <h2 className="text-white text-sm font-medium">
                                                     {ele.short}
                                                 </h2> */}
-                                                <button className="flex mx-auto my-3 text-white bg-indigo-500 border-0 py-2 px-8 hover:bg-indigo-600 rounded text-lg">
+                                                <button className="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 hover:bg-indigo-600 rounded text-lg">
                                                     <Link
                                                         href={`/courseDetail/AI&ML/${ele.title}`}
                                                     >
@@ -144,7 +148,7 @@ export default function App() {
                                     return (
                                         <div
                                             key={ele.id}
-                                            className="lg:w-[22%] md:w-[45%] w-full h-[400px] border-2 hover:scale-105 border-blue-400 rounded-xl backdrop-blur-lg"
+                                            className="lg:w-[22%] md:w-[45%] w-full h-[360px] border-2 hover:scale-105 border-blue-400 rounded-xl backdrop-blur-lg"
                                         >
                                             <a className="block relative h-48 rounded overflow-hidden">
                                                 <Image
@@ -156,14 +160,14 @@ export default function App() {
                                                     priority
                                                 />
                                             </a>
-                                            <div className="flex flex-col justify-between h-[180px] px-3 z-1 mt-4">
-                                                <h3 className=" text-white font-bold text-xl tracking-widest mb-1">
+                                            <div className="flex flex-col justify-between h-[135px] px-3 z-1">
+                                                <h3 className=" text-white font-bold text-xl tracking-widest">
                                                     {ele.title}
                                                 </h3>
                                                 {/* <h2 className="text-white text-sm font-medium">
                                                     {ele.short}
                                                 </h2> */}
-                                                <button className="flex mx-auto my-3 text-white bg-indigo-500 border-0 py-2 px-8 hover:bg-indigo-600 rounded text-lg">
+                                                <button className="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 hover:bg-indigo-600 rounded text-lg">
                                                     <Link
                                                         href={`/courseDetail/DataAnalysis/${ele.title}`}
                                                     >
