@@ -4,7 +4,7 @@ import selam from "@/public/tenor.gif";
 const Intro = () => {
     return (
         <div className="flex flex-col lg:flex-row">
-            <section className="flex flex-col mb-10 my-5 w-full lg:w-2/3">
+            <section className="flex flex-col mb-10 my-5 w-full lg:w-3/4">
                 <header className="my-12 mb-6 text-center">
                     <p className="font-medium my-4 text-violet-500 dark:text-violet-75 text-sm tracking-widest uppercase">
                         Hello,
@@ -18,7 +18,7 @@ const Intro = () => {
                         we'll work to level up your skills, increase your
                         earning potential, and build a brighter future.
                     </p>
-                    <div className="w-full mb-6">
+                    <div className="w-[90%] mb-6 mx-6">
                         <iframe
                             className="w-full h-[500px]"
                             src="https://www.youtube.com/embed/qARdYnp5akY"
@@ -30,7 +30,7 @@ const Intro = () => {
                     </div>
                 </div>
             </section>
-            <section className="flex flex-col items-center my-10 p-5 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg shadow-lg w-full lg:w-1/3">
+            <section className="flex flex-col items-center my-10 p-5 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg shadow-lg w-full lg:w-1/4">
                 <header className="mb-6 text-center">
                     <h2 className="text-4xl font-bold">New and Hot</h2>
                 </header>
@@ -42,36 +42,57 @@ const Intro = () => {
                     <ul className="list-disc list-inside mb-6">
                         <li className="mb-4 text-2xl">Web Development</li>
                         <div className="w-full mb-6">
-                            <iframe
-                                className="w-full h-48"
-                                src="https://www.youtube.com/embed/qARdYnp5akY"
-                                title="Web Development video"
-                                frameBorder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                            ></iframe>
+                            {/* course description and link */}
+                            <p>
+                                Web development is the process of creating
+                                websites and web applications. It involves
+                                designing the user interface, developing the
+                                front-end and back-end, and ensuring the website
+                                is responsive and secure.
+                            </p>
+                            <a
+                                className="inline-block px-4 py-2 mt-2 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg transition duration-300 ease-in-out"
+                                href="https://youtu.be/FeOMRdmcVXc"
+                                target="_blank"
+                            >
+                                Watch the course
+                            </a>
                         </div>
                         <li className="mb-4 text-2xl">Data Analysis</li>
                         <div className="w-full mb-6">
-                            <iframe
-                                className="w-full h-48"
-                                src="https://www.youtube.com/embed/qARdYnp5akY"
-                                title="Data Analysis video"
-                                frameBorder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                            ></iframe>
+                            {/* course description and link */}
+                            <p>
+                                Web development is the process of creating
+                                websites and web applications. It involves
+                                designing the user interface, developing the
+                                front-end and back-end, and ensuring the website
+                                is responsive and secure.
+                            </p>
+                            <a
+                                className="inline-block px-4 py-2 mt-2 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg transition duration-300 ease-in-out"
+                                href="https://youtu.be/FeOMRdmcVXc"
+                                target="_blank"
+                            >
+                                Watch the course
+                            </a>
                         </div>
                         <li className="mb-4 text-2xl">AI & Machine Learning</li>
                         <div className="w-full mb-6">
-                            <iframe
-                                className="w-full h-48"
-                                src="https://www.youtube.com/embed/qARdYnp5akY"
-                                title="AI & Machine Learning video"
-                                frameBorder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                            ></iframe>
+                            {/* course description and link */}
+                            <p>
+                                Web development is the process of creating
+                                websites and web applications. It involves
+                                designing the user interface, developing the
+                                front-end and back-end, and ensuring the website
+                                is responsive and secure.
+                            </p>
+                            <a
+                                className="inline-block px-4 py-2 mt-2 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg transition duration-300 ease-in-out"
+                                href="https://youtu.be/FeOMRdmcVXc"
+                                target="_blank"
+                            >
+                                Watch the course
+                            </a>
                         </div>
                     </ul>
                 </div>

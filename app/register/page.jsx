@@ -118,8 +118,8 @@ const page = ({ searchParams }) => {
                                     />
 
                                     <span className="text-sm text-white">
-                                        I will visit the head office for payment
-                                        processing.
+                                        Please Call and Remind Me at +251 922 76
+                                        15 94
                                     </span>
                                 </label>
                             </div>

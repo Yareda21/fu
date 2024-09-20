@@ -1,110 +1,206 @@
+"use client";
+
 import React from "react";
-import class1 from "@/public/class1.jpg";
-import tila from "@/public/tila.jpg";
-import faye from "@/public/faye.jpg";
-import yar from "@/public/me.jpg";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
-const About1 = () => {
-  return (
-    <div className="2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6 py-9 px-4">
-      <div className="flex flex-col justify-between gap-8">
-        <div className="w-full ml-4 flex flex-col justify-center">
-          <h1 className="text-3xl lg:text-4xl font-bold leading-9 text-amber-400 pb-4">
-            About Us
-          </h1>
-          <p className="font-normal text-base leading-6 text-gray-600 w-[70%]">
-            <span className="text-amber-400 ">Passion </span> <br />
-            We are truly dedicated in the business of empowering people. Our
-            trainers should be renowned for their beneficial training
-            programmers and we ensure that the quality and reputation of our
-            organization is constantly upheld.
-            <br />
-            <span className="text-amber-400">Respect </span> <br />
-            We are known to our students as courteous, modest and always willing
-            to tread the extra mile to produce a win-win liaison.
-            <br />
-            <span className="text-amber-400">Innovation </span> <br />
-            Our training programmers are constantly updated to ensure that the
-            content fits the current need of our students.
-            <br />
-            <span className="text-amber-400">Determination </span> <br />
-            We work with only the best instructors who can fill students' skill
-            gap. They are always inspire and sharpen students skill-sets and
-            broaden their horizons through new knowledge and fortitude.
-            <br />
-            <span className="text-amber-400">Enthusiasm </span> <br />
-            All our training programs encompass a successful formula; Knowledge
-            + Hands-On + Fun With highly sophisticated facilities.
-          </p>
-        </div>
-        <div className="mx-auto w-full lg:w-8/12 ">
-          <Image
-            className="w-full h-full"
-            src={class1}
-            alt="A group of People"
-          />
-        </div>
-      </div>
+export default function About() {
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: { opacity: 1, transition: { staggerChildren: 0.5 } },
+    };
 
-      <div className="flex lg:flex-row flex-col justify-between gap-8 pt-12">
-        <div className="w-full lg:w-5/12 flex flex-col justify-center">
-          <h1 className="text-3xl lg:text-4xl font-bold leading-9 text-amber-400 pb-4">
-            Our Story
-          </h1>
-          <p className="font-normal text-base leading-6 text-white ">
-            Since 2006 E.C, Our Management were busy creating multiple colleges
-            around Addis Ababa. Envisioning better work enviroment and happy
-            place for students exceed will welcome you to our special and well
-            prepared Software Engineering Programs.
-          </p>
-        </div>
-        <div className="w-full lg:w-8/12 lg:pt-8">
-          <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 lg:gap-4 shadow-lg rounded-md">
-            <div className="p-4 pb-6 flex  justify-center flex-col items-center">
-              <Image className="md:block hidden" src={tila} alt="" />
-              <Image className="md:hidden block" src={tila} alt="" />
-              <p className="font-medium text-lg leading-5 text-amber-400 mt-4">
-                Tilahun Kebede (Dr.) <br />
-                <span>General Manager</span>
-              </p>
-            </div>
-            <div className="p-4 pb-6 flex justify-center flex-col items-center">
-              <Image className="md:block hidden" src={faye} alt="" />
-              <Image className="md:hidden block" src={faye} alt="" />
-              <p className="font-medium text-lg leading-5 text-amber-400 mt-4">
-                Prof. Fantahun W/Senbet <br />
-                <span>Academy Consultant </span>
-              </p>
-            </div>
-            <div className="p-4 pb-6 flex justify-center flex-col items-center">
-              <Image className="md:block hidden" src={yar} alt="Yared Kebede" />
-              <Image className="md:hidden block" src={yar} alt="Yared Kebede" />
-              <p className="font-medium text-lg leading-5 text-amber-400 mt-4">
-                Yared Kebede <br />
-                Chief Technology Officer
-              </p>
-            </div>
-            {/* <div className="p-4 pb-6 flex justify-center flex-col items-center">
-              <Image
-                className="md:block hidden"
-                src="https://i.ibb.co/7nSJPXQ/Rectangle-121.png"
-                alt="Elijah featured Image"
-              />
-              <Image
-                className="md:hidden block"
-                src="https://i.ibb.co/ThZBWxH/Rectangle-121.png"
-                alt="Elijah featured img"
-              />
-              <p className="font-medium text-xl leading-5 text-gray-800 mt-4">
-                Elijah
-              </p>
-            </div> */}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
+    const itemVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0 },
+    };
 
-export default About1;
+    return (
+        <div className="container mx-auto px-4 py-16 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
+            <motion.div
+                className="space-y-16"
+                initial="hidden"
+                animate="visible"
+                variants={containerVariants}
+            >
+                {/* Intro and image */}
+                <motion.div
+                    className="flex flex-col lg:flex-row items-center gap-12"
+                    variants={itemVariants}
+                >
+                    <div className="lg:w-1/2 space-y-6">
+                        <h1 className="text-4xl lg:text-5xl font-bold text-amber-500 dark:text-amber-400">
+                            About Me
+                        </h1>
+                        <p className="text-lg text-gray-700 dark:text-gray-300">
+                            Hello! I'm Yared, a passionate software engineer and
+                            educator with a diverse background in both
+                            technology and teaching. Over the years, I've
+                            dedicated my career to not only building innovative
+                            solutions but also helping others learn and grow in
+                            the world of tech.
+                        </p>
+                    </div>
+                    <div className="w-full lg:w-1/2">
+                        <Image
+                            className="rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300"
+                            src="https://res.cloudinary.com/dlomcic7f/image/upload/v1726840696/me/my_image_hj8kr1.jpg"
+                            alt="Yared Kebede"
+                            width={800}
+                            height={400}
+                            layout="responsive"
+                        />
+                    </div>
+                </motion.div>
+                {/*  */}
+                <motion.div
+                    className="flex flex-col lg:flex-row gap-12"
+                    variants={itemVariants}
+                >
+                    <div className="lg:w-1/2 space-y-6">
+                        <h2 className="text-3xl font-bold text-amber-500 dark:text-amber-400">
+                            My Journey
+                        </h2>
+                        <p className="text-gray-700 dark:text-gray-300">
+                            I specialize in full-stack web development, with
+                            expertise in the MERN stack (MongoDB, Express,
+                            React, Node.js), as well as Python and JavaScript.
+                            My passion for teaching has led me to work with
+                            students of all ages, from kids learning the basics
+                            of coding to professionals mastering advanced
+                            subjects like data science and digital marketing.
+                        </p>
+                    </div>
+                    <div className="lg:w-1/2 space-y-6">
+                        <h2 className="text-3xl font-bold text-amber-500 dark:text-amber-400">
+                            Areas of Expertise
+                        </h2>
+                        <div className="flex flex-wrap gap-2">
+                            {[
+                                "Full-stack Web Development (MERN)",
+                                "Python and JavaScript Development",
+                                "Digital Marketing Strategy",
+                                "Data Science and Analytics",
+                                "Teaching & Mentorship in Coding and Tech",
+                            ].map((skill, index) => (
+                                <div
+                                    key={index}
+                                    variant="secondary"
+                                    className="text-sm py-1 px-3 bg-slate-400"
+                                >
+                                    {skill}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </motion.div>
+
+                <motion.div variants={itemVariants}>
+                    <div>
+                        <div className="p-6 space-y-4">
+                            <h2 className="text-3xl font-bold text-amber-500 dark:text-amber-400">
+                                My Teaching Approach
+                            </h2>
+                            <ul className="list-disc space-y-2 pl-5 text-gray-700 dark:text-gray-300">
+                                <li>
+                                    <span className="font-bold">
+                                        Simplified Learning:
+                                    </span>{" "}
+                                    I break down complex concepts into
+                                    easy-to-understand lessons, making sure
+                                    students grasp the fundamentals before
+                                    diving into more advanced topics.
+                                </li>
+                                <li>
+                                    <span className="font-bold">
+                                        Engagement & Fun:
+                                    </span>{" "}
+                                    I create fun and interactive learning
+                                    experiences, especially when teaching kids,
+                                    to keep them engaged and excited about
+                                    coding.
+                                </li>
+                                <li>
+                                    <span className="font-bold">
+                                        Practical Application:
+                                    </span>{" "}
+                                    I focus on hands-on projects and real-world
+                                    applications, ensuring that students can
+                                    apply what they learn in practical
+                                    scenarios.
+                                </li>
+                                <li>
+                                    <span className="font-bold">
+                                        AI Integration:
+                                    </span>{" "}
+                                    I incorporate AI tools into my lessons,
+                                    helping students learn faster and more
+                                    efficiently by utilizing modern technology.
+                                </li>
+                                <li>
+                                    <span className="font-bold">
+                                        Tailored Content:
+                                    </span>{" "}
+                                    I customize my teaching to match the
+                                    student’s skill level, whether they are
+                                    complete beginners or looking to expand
+                                    their expertise.
+                                </li>
+                                <li>
+                                    <span className="font-bold">
+                                        Short, Focused Lessons:
+                                    </span>{" "}
+                                    I prefer delivering content in short,
+                                    manageable lessons that focus on key
+                                    concepts, making learning digestible and
+                                    less overwhelming.
+                                </li>
+                                <li>
+                                    <span className="font-bold">
+                                        Supportive Mentorship:
+                                    </span>{" "}
+                                    I provide continuous support to my students,
+                                    guiding them through challenges and helping
+                                    them build confidence in their abilities.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </motion.div>
+
+                <motion.div variants={itemVariants}>
+                    <div>
+                        <div className="p-6 space-y-4">
+                            <h2 className="text-3xl font-bold text-amber-500 dark:text-amber-400">
+                                Current Projects
+                            </h2>
+                            <p className="text-gray-700 dark:text-gray-300">
+                                I'm currently working on several exciting
+                                projects, including developing an online course
+                                platform and creating unique educational content
+                                for platforms like Udemy and YouTube. My
+                                teaching methods blend traditional approaches
+                                with cutting-edge AI tools, making the learning
+                                process more efficient and enjoyable. I'm also
+                                developing a web application to simplify online
+                                learning, incorporating features like course
+                                listings, digital marketing strategies, and
+                                coding challenges.
+                            </p>
+                        </div>
+                    </div>
+                </motion.div>
+
+                <motion.div variants={itemVariants}>
+                    <p className="text-lg text-center text-gray-700 dark:text-gray-300">
+                        Whether you're looking to learn new skills or need help
+                        building a custom software solution, I'm here to help.
+                        Feel free to reach out if you want to collaborate on a
+                        project, learn more about my work, or just chat about
+                        the latest tech trends!
+                    </p>
+                </motion.div>
+            </motion.div>
+        </div>
+    );
+}

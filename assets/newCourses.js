@@ -1,6 +1,6 @@
 export const programmingCourses = [
     {
-        title: "Introduction to Software Engineering",
+        title: "Software Engineering",
         short: "You want to get Harvard University Certificate! Starting from C Programing language up to web development and AI is included!",
         image: "https://res.cloudinary.com/dlomcic7f/image/upload/v1723534999/fu%20project%20data/SE_zxqozt.jpg",
         description: "",
@@ -124,7 +124,7 @@ export const programmingCourses = [
         },
     },
     {
-        title: "JavaScript for Web Developers",
+        title: "JavaScript",
         short: " delves into the world of utilizing JavaScript to craft interactive and dynamic web applications. ",
         description:
             "Deep dive into core JavaScript principles, advanced concepts, and popular frameworks.  delves into the world of utilizing JavaScript to craft interactive and dynamic web applications. It's a vast domain encompassing both fundamental building blocks and advanced techniques, empowering you to breathe life into web pages.",
@@ -133,7 +133,7 @@ export const programmingCourses = [
     },
 
     {
-        title: "Front-End Web Development with React.js",
+        title: "Front-End with React.js",
         short: "Master modern UI/UX practices, build single-page applications",
         description:
             "Master modern UI/UX practices, build single-page applications, and optimize web performance.",
@@ -312,14 +312,6 @@ export const aiAndMachineLearning = [
 
 export const dataAnalysis = [
     {
-        title: "Hacking",
-        short: "Ethical Hacking and Penetration Testing",
-        description:
-            "Learn ethical hacking techniques and practice penetration testing.",
-        image: "https://cdn.example.com/ethical-hacking-course.jpg",
-        // ... detailed information
-    },
-    {
         title: "Python for Data Science",
         short: "Master data analysis and machine learning using Python",
         description:
@@ -329,7 +321,7 @@ export const dataAnalysis = [
     },
     // Data Science & Big Data
     {
-        title: "DW and BI",
+        title: "Microsoft PowerBI",
         short: "Data Warehousing and Business Intelligence",
         description:
             "Design data pipelines, build dashboards, and gain insights with BI tools.",
@@ -349,7 +341,11 @@ export const dataAnalysis = [
         short: "marketing efforts that utilize electronic devices and online platforms to connect with your target audience and achieve marketing objectives.",
     },
     {
-        title: "IBM SPSS Statistics",
+        title: "Java",
+        short: "IBM SPSS Statistics, is a powerful statistical software suite used for a wide range of data analysis tasks in various fields.",
+    },
+    {
+        title: "Java",
         short: "IBM SPSS Statistics, is a powerful statistical software suite used for a wide range of data analysis tasks in various fields.",
     },
     {
