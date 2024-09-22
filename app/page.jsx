@@ -1,5 +1,5 @@
 import Courses from "./components/Courses";
-
+import RoadMap from "./components/RoadMap";
 import Hero from "./components/Hero";
 import Intro from "./components/Intro";
 
@@ -8,7 +8,8 @@ export default function Home() {
         <>
             <Hero />
             <Intro />
-            <Courses />
+            {/* <Courses /> */}
+            <RoadMap />
         </>
     );
 }
