@@ -17,6 +17,7 @@ const page = ({ searchParams }) => {
                 name: name,
                 subject: searchParams.title,
                 phone: phone,
+                registrationDate: new Date(),
             });
             console.log(name, searchParams.title, phone);
             setName("");
