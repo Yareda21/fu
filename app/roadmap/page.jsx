@@ -2,9 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const RoadMap = () => {
+const page = () => {
     return (
-        <main className="flex justify-center py-4 px-12">
+        <main className="flex items-center justify-center py-4 px-12">
             <div className="container">
                 <div className="relative">
                     <Image
@@ -220,4 +220,4 @@ const RoadMap = () => {
     );
 };
 
-export default RoadMap;
+export default page;
