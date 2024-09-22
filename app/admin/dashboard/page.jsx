@@ -14,7 +14,20 @@ const fetchStudents = async () => {
         limit(ITEMS_PER_PAGE)
     );
     const snapshot = await getDocs(q);
-    return snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+    return snapshot.docs.map((doc) => {
+        const data = doc.data();
+        return {
+            id: doc.id,
+            name: data.name,
+            phone: data.phone,
+            subject: data.subject, // This is the course title
+            registrationDate: data.registrationDate
+                ? new Date(
+                      data.registrationDate.seconds * 1000
+                  ).toLocaleDateString()
+                : "N/A",
+        };
+    });
 };
 
 const useStudentsQuery = () => {
@@ -77,12 +90,9 @@ const AdminDashboard = () => {
 
     const studentColumns = [
         { key: "name", label: "Name" },
-        { key: "email", label: "Email" },
-        {
-            key: "enrolledSubjects",
-            label: "Enrolled Subjects",
-            render: (student) => student.enrolledSubjects?.join(", ") || "None",
-        },
+        { key: "phone", label: "Phone" },
+        { key: "subject", label: "Course Title" },
+        { key: "registrationDate", label: "Registration Date" },
     ];
 
     if (studentsError) {
