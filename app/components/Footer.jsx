@@ -67,11 +67,11 @@ const Footer = () => {
                     </form>
                 </div>
 
-                <div className="p-3 bg-background rounded-lg shadow-md">
+                <div className="mt-4 p-3 bg-background rounded-lg shadow-md">
                     <h2 className="text-2xl text-center font-bold mb-4 text-foreground">
-                        Connect with us
+                        Connect with me on Socail Media
                     </h2>
-                    <ul className="flex justify-around items-center space-y-3">
+                    <ul className="flex justify-around items-center">
                         {socialMediaPlatforms.map((platform) => (
                             <li key={platform.name}>
                                 <a
@@ -80,8 +80,10 @@ const Footer = () => {
                                     rel="noopener noreferrer"
                                     className={`flex items-center px-4 py-2 rounded-full text-white transition-colors duration-300 ${platform.color}`}
                                 >
-                                    <platform.icon className="mr-2 h-4 w-4" />
-                                    {platform.name}
+                                    <platform.icon className=" md:mr-2 h-4 w-4" />
+                                    <span className="hidden md:flex">
+                                        {platform.name}
+                                    </span>
                                 </a>
                             </li>
                         ))}
