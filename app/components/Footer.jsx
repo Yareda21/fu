@@ -69,7 +69,7 @@ const Footer = () => {
 
                 <div className="mt-4 p-3 bg-background rounded-lg shadow-md">
                     <h2 className="text-2xl text-center font-bold mb-4 text-foreground">
-                        Connect with me on Socail Media
+                        Connect with me on my Socail Media
                     </h2>
                     <ul className="flex justify-around items-center">
                         {socialMediaPlatforms.map((platform) => (
