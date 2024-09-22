@@ -1,5 +1,6 @@
+"use client";
 import React from "react";
-import selam from "@/public/tenor.gif";
+import { motion } from "framer-motion";
 
 const Intro = () => {
     return (
@@ -30,7 +31,12 @@ const Intro = () => {
                     </div>
                 </div>
             </section>
-            <section className="flex flex-col items-center my-10 p-5 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg shadow-lg w-full lg:w-1/4">
+            <motion.section
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 2 }}
+                className="flex flex-col items-center my-10 p-5 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg shadow-lg w-full lg:w-1/4"
+            >
                 <header className="mb-6 text-center">
                     <h2 className="text-4xl font-bold">New and Hot</h2>
                 </header>
@@ -45,13 +51,10 @@ const Intro = () => {
                             {/* course description and link */}
                             <p>
                                 Web development is the process of creating
-                                websites and web applications. It involves
-                                designing the user interface, developing the
-                                front-end and back-end, and ensuring the website
-                                is responsive and secure.
+                                websites and web applications.
                             </p>
                             <a
-                                className="inline-block px-4 py-2 mt-2 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg transition duration-300 ease-in-out"
+                                className="flex justify-center items-center px-4 py-2 mt-2 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg transition duration-300 ease-in-out"
                                 href="https://youtu.be/FeOMRdmcVXc"
                                 target="_blank"
                             >
@@ -63,13 +66,10 @@ const Intro = () => {
                             {/* course description and link */}
                             <p>
                                 Web development is the process of creating
-                                websites and web applications. It involves
-                                designing the user interface, developing the
-                                front-end and back-end, and ensuring the website
-                                is responsive and secure.
+                                websites and web applications.
                             </p>
                             <a
-                                className="inline-block px-4 py-2 mt-2 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg transition duration-300 ease-in-out"
+                                className="flex justify-center items-center px-4 py-2 mt-2 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg transition duration-300 ease-in-out"
                                 href="https://youtu.be/FeOMRdmcVXc"
                                 target="_blank"
                             >
@@ -81,13 +81,10 @@ const Intro = () => {
                             {/* course description and link */}
                             <p>
                                 Web development is the process of creating
-                                websites and web applications. It involves
-                                designing the user interface, developing the
-                                front-end and back-end, and ensuring the website
-                                is responsive and secure.
+                                websites and web applications.
                             </p>
                             <a
-                                className="inline-block px-4 py-2 mt-2 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg transition duration-300 ease-in-out"
+                                className="flex justify-center items-center px-4 py-2 mt-2 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg transition duration-300 ease-in-out"
                                 href="https://youtu.be/FeOMRdmcVXc"
                                 target="_blank"
                             >
@@ -96,7 +93,7 @@ const Intro = () => {
                         </div>
                     </ul>
                 </div>
-            </section>
+            </motion.section>
         </div>
     );
 };

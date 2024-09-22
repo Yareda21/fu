@@ -4,6 +4,9 @@ import React from "react";
 import { useQuery } from "react-query";
 import { collection, getDocs, query, limit, orderBy } from "firebase/firestore";
 import { db } from "@/firebase/firebase";
+import { signOut } from "firebase/auth";
+import { auth } from "@/firebase/firebase";
+import { useRouter } from "next/navigation";
 
 const ITEMS_PER_PAGE = 10;
 
@@ -82,11 +85,21 @@ const SearchInput = ({ value, onChange }) => (
 );
 
 const AdminDashboard = () => {
+    const router = useRouter();
     const {
         data: students,
         isLoading: studentsLoading,
         error: studentsError,
     } = useStudentsQuery();
+
+    const handleSignOut = async () => {
+        try {
+            await signOut(auth);
+            router.push("/"); // Redirect to home page after sign out
+        } catch (error) {
+            console.error("Error signing out:", error);
+        }
+    };
 
     const studentColumns = [
         { key: "name", label: "Name" },
@@ -105,7 +118,15 @@ const AdminDashboard = () => {
 
     return (
         <div className="admin-dashboard p-6">
-            <h1 className="text-3xl font-bold mb-6">Admin Dashboard</h1>
+            <div className="flex justify-between items-center mb-6">
+                <h1 className="text-3xl font-bold">Admin Dashboard</h1>
+                <button
+                    onClick={handleSignOut}
+                    className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"
+                >
+                    Sign Out
+                </button>
+            </div>
 
             <div className="bg-white text-black shadow rounded-lg p-6 mb-6">
                 <h2 className="text-xl font-semibold mb-4">Summary</h2>
