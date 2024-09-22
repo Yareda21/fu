@@ -15,6 +15,7 @@ export default function AdminLogin() {
     const handleLogin = async (e) => {
         e.preventDefault();
         setError(null);
+        console.log(email, password);
 
         try {
             // Attempt to sign in
@@ -24,19 +25,20 @@ export default function AdminLogin() {
                 password
             );
             const user = userCredential.user;
-
+            console.log(user);
             // Check if the user is an admin
             const userDoc = await getDoc(doc(db, "users", user.uid));
             const userData = userDoc.data();
+            router.push("/admin/dashboard");
 
-            if (userData && userData.role === "admin") {
-                // Redirect to admin dashboard
-                router.push("/admin/dashboard");
-            } else {
-                // If not an admin, sign out and show error
-                await auth.signOut();
-                setError("You do not have admin privileges.");
-            }
+            // if (userData && userData.role === "admin") {
+            //     // Redirect to admin dashboard
+            //     router.push("/admin/dashboard");
+            // } else {
+            //     // If not an admin, sign out and show error
+            //     await auth.signOut();
+            //     setError("You do not have admin privileges.");
+            // }
         } catch (error) {
             setError("Invalid email or password.");
         }

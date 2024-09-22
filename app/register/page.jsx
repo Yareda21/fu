@@ -2,29 +2,31 @@
 import React, { useState } from "react";
 import poster from "@/public/poster.jpg";
 import Image from "next/image";
-// import { addDoc, collection } from "firebase/firestore";
-// import { db } from "@/firebase/firebase";
+
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "@/firebase/firebase";
 
 const page = ({ searchParams }) => {
     const [name, setName] = useState("");
-    const [subject, setSubject] = useState("");
     const [phone, setPhone] = useState("");
 
-    // const addText = async (e) => {
-    //     e.preventDefault();
-    //     console.log(name, searchParams.title, phone);
-    //     try {
-    //         await addDoc(collection(db, "reg_student"), {
-    //             name: name,
-    //             subject: searchParams.title,
-    //             phone: phone,
-    //         });
-    //         setName("");
-    //         setPhone("");
-    //     } catch (e) {
-    //         console.log(e);
-    //     }
-    // };
+    const addText = async (e) => {
+        e.preventDefault();
+        try {
+            await addDoc(collection(db, "reg_student"), {
+                name: name,
+                subject: searchParams.title,
+                phone: phone,
+            });
+            console.log(name, searchParams.title, phone);
+            setName("");
+            setPhone("");
+            alert("Registration Successful");
+        } catch (e) {
+            console.log(e);
+            alert("Registration Failed");
+        }
+    };
 
     return (
         <section className="bg-white ">
@@ -46,6 +48,7 @@ const page = ({ searchParams }) => {
                         <form
                             method="post"
                             className="mt-8 grid grid-cols-6 gap-6"
+                            onSubmit={addText}
                         >
                             {/* first name */}
                             <div className="col-span-6 sm:col-span-3">
