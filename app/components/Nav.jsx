@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
-import tenor from "@/public/tenor.gif";
+import tenor from "@/public/logo.png";
 import { motion } from "framer-motion";
 
 const Nav = () => {
