@@ -509,13 +509,13 @@ export const aiAndMachineLearning = [
             },
         ],
         prerequisites: { programming: "No prior AI knowledge needed" },
-        platform: "VS Code, AI tools, Git",
+        platform: "VS Code, AI tools, Git, ChatGPT, LLM's",
         price: { individual: 399, corporate: 799 },
     },
     {
-        title: "Introduction to Computer Science and Programming using Python",
+        title: "Introduction to CS and Programming using Python",
         short: "A foundational course in computer science principles using Python as the primary programming language.",
-        image: "https://res.cloudinary.com/dlomcic7f/image/upload/v1723534999/fu%20project%20data/intro_cs_python_dvhytr.jpg",
+        image: "https://res.cloudinary.com/dlomcic7f/image/upload/v1727414941/fu%20project%20data/shutterstock_1329434768_bf9003ea47_hdzaln.jpg",
         description:
             "Explore the fundamentals of computer science and programming using Python. This course is designed for beginners and covers essential concepts like data structures, algorithms, and problem-solving.",
         duration: 6,
@@ -565,7 +565,7 @@ export const aiAndMachineLearning = [
     {
         title: "Java Programming",
         short: "Master the fundamentals of Java, one of the most popular programming languages in the world.",
-        image: "https://res.cloudinary.com/dlomcic7f/image/upload/v1723534999/fu%20project%20data/java_programming_j3wdke.jpg",
+        image: "https://res.cloudinary.com/dlomcic7f/image/upload/v1727415522/fu%20project%20data/90078629_dawjjm.jpg",
         description:
             "Learn the essential features of Java, including object-oriented programming, data structures, and building applications. This course prepares you for enterprise-level Java development.",
         duration: 5,
@@ -613,9 +613,9 @@ export const aiAndMachineLearning = [
         price: { individual: 549, corporate: 949 },
     },
     {
-        title: "Artificial Intelligence for Digital Marketing",
+        title: "Artificial Intelligence Driven Digital Marketing",
         short: "Leverage AI to revolutionize digital marketing strategies and boost business growth.",
-        image: "https://res.cloudinary.com/dlomcic7f/image/upload/v1723534999/fu%20project%20data/ai_digital_marketing_sfsn1l.jpg",
+        image: "https://res.cloudinary.com/dlomcic7f/image/upload/v1727415793/fu%20project%20data/1713284047649_x4e1du.png",
         description:
             "This course introduces AI tools and techniques that are transforming digital marketing. Learn how to implement AI-driven strategies for SEO, customer targeting, content creation, and more.",
         duration: 4,
@@ -667,7 +667,7 @@ export const aiAndMachineLearning = [
     {
         title: "JavaScript for Web Developers",
         short: "Gain a strong understanding of JavaScript to enhance your web development skills.",
-        image: "https://res.cloudinary.com/dlomcic7f/image/upload/v1723534999/fu%20project%20data/js_web_dev_kjsd9i.jpg",
+        image: "https://res.cloudinary.com/dlomcic7f/image/upload/v1727415895/fu%20project%20data/javascript_loy1an.jpg",
         description:
             "This course covers JavaScript programming essentials, focusing on both front-end and back-end web development. Learn to build interactive web applications and integrate JavaScript into real-world projects.",
         duration: 5,
@@ -714,7 +714,7 @@ export const aiAndMachineLearning = [
     {
         title: "Automation using Artificial Intelligence",
         short: "Learn to use AI to automate tasks and optimize processes for maximum efficiency.",
-        image: "https://res.cloudinary.com/dlomcic7f/image/upload/v1723534999/fu%20project%20data/ai_automation_s9ukgl.jpg",
+        image: "https://res.cloudinary.com/dlomcic7f/image/upload/v1727416002/fu%20project%20data/1683031350192_bbbzhn.jpg",
         description:
             "This course teaches how to harness AI for automating repetitive tasks, streamlining workflows, and improving operational efficiency. Explore AI-driven automation tools across industries.",
         duration: 4,
@@ -771,45 +771,297 @@ export const dataAnalysis = [
         short: "Master data analysis and machine learning using Python",
         description:
             "Master data analysis and machine learning using Python, equipping yourself with in-demand skills for various industries.",
-        image: "https://cdn.example.com/python-course.jpg", // Replace with your image URL
-        // ... detailed information from the previous example
+        image: "https://res.cloudinary.com/dlomcic7f/image/upload/v1727416149/fu%20project%20data/lead_custom_image_ela271_zhsksz.jpg",
+        duration: 4,
+        level: "Intermediate",
+        instructor: {
+            name: "Yared Kebede, Data Science Expert",
+            expertise: "Python, Data Science",
+            institution: "Exceed",
+        },
+        skillsLearned: [
+            {
+                skill: "Data Analysis",
+                projects: [
+                    "Analyzing datasets",
+                    "Creating data visualizations",
+                ],
+            },
+            {
+                skill: "Machine Learning",
+                projects: [
+                    "Building ML models",
+                    "Using Python for predictions",
+                ],
+            },
+        ],
+        learningFormat: [
+            "Video tutorials, coding labs",
+            "Real-world projects",
+            "Mentorship",
+        ],
+        careerPaths: [
+            "Data Scientist",
+            "Machine Learning Engineer",
+            "Data Analyst",
+        ],
+        certification: [
+            {
+                name: "Python for Data Science",
+                awardingBody: "Exceed Advanced Training Center",
+                optional: true,
+            },
+        ],
+        prerequisites: { programming: "Basic knowledge of Python" },
+        platform: "VS Code, Python, Jupyter Notebooks",
+        price: { individual: 100, group: 400 },
     },
-    // Data Science & Big Data
     {
-        title: "Microsoft PowerBI",
+        title: "Microsoft Power BI",
         short: "Data Warehousing and Business Intelligence",
         description:
             "Design data pipelines, build dashboards, and gain insights with BI tools.",
-        image: "https://cdn.example.com/data-warehousing-course.jpg",
-        // ... detailed information
-    },
-    {
-        title: "DA - SQL and Python",
-        short: "Data Analysis with SQL and Python",
-        description:
-            "Master data querying, manipulation, and analysis with SQL and Python.",
-        image: "https://cdn.example.com/sql-python-course.jpg",
-        // ... detailed information
+        image: "https://res.cloudinary.com/dlomcic7f/image/upload/v1727416114/fu%20project%20data/power-bi_ssbwqf.jpg",
+        duration: 3,
+        level: "Beginner",
+        instructor: {
+            name: "Yared Kebede, Business Intelligence Specialist",
+            expertise: "Power BI, Business Analytics",
+            institution: "Exceed",
+        },
+        skillsLearned: [
+            {
+                skill: "Data Visualization",
+                projects: ["Designing dashboards", "Creating business reports"],
+            },
+            {
+                skill: "Data Warehousing",
+                projects: ["Building data pipelines", "ETL processes"],
+            },
+        ],
+        learningFormat: [
+            "Hands-on labs",
+            "Interactive workshops",
+            "Case studies",
+        ],
+        careerPaths: ["Business Analyst", "Data Engineer", "BI Developer"],
+        certification: [
+            {
+                name: "Power BI Certification",
+                awardingBody: "Microsoft",
+                optional: true,
+            },
+        ],
+        prerequisites: {
+            programming: "None",
+            dataSkills: "Basic understanding of data concepts",
+        },
+        platform: "Power BI, SQL Server",
+        price: { individual: 120, group: 450 },
     },
     {
         title: "Digital Marketing",
-        short: "marketing efforts that utilize electronic devices and online platforms to connect with your target audience and achieve marketing objectives.",
+        short: "Learn how to create impactful marketing strategies using digital tools",
+        description:
+            "Master digital marketing techniques, including SEO, SEM, social media marketing, and content creation.",
+        image: "https://res.cloudinary.com/dlomcic7f/image/upload/v1727417476/fu%20project%20data/7_digital_skills600x387_ycuugx.png",
+        duration: 5,
+        level: "Intermediate",
+        instructor: {
+            name: "Yared Kebede, Marketing Specialist",
+            expertise: "SEO, SEM, Social Media",
+            institution: "Exceed",
+        },
+        skillsLearned: [
+            {
+                skill: "SEO and SEM",
+                projects: [
+                    "Optimizing websites",
+                    "Running Google Ads campaigns",
+                ],
+            },
+            {
+                skill: "Social Media Marketing",
+                projects: [
+                    "Managing Facebook and Instagram ads",
+                    "Content creation",
+                ],
+            },
+        ],
+        learningFormat: [
+            "Live webinars",
+            "Workshops",
+            "Project-based assignments",
+        ],
+        careerPaths: [
+            "Digital Marketer",
+            "Content Creator",
+            "Social Media Manager",
+        ],
+        certification: [
+            {
+                name: "Digital Marketing Certification",
+                awardingBody: "Google",
+                optional: true,
+            },
+        ],
+        prerequisites: {
+            marketing: "Basic understanding of marketing principles",
+        },
+        platform: "Google Ads, Facebook Ads Manager, Canva",
+        price: { individual: 150, group: 550 },
     },
     {
-        title: "Java",
-        short: "IBM SPSS Statistics, is a powerful statistical software suite used for a wide range of data analysis tasks in various fields.",
+        title: "Dropshipping",
+        short: "Start your own e-commerce business without holding inventory",
+        description:
+            "Learn how to set up and manage a dropshipping business, including supplier management, marketing, and customer service.",
+        image: "https://res.cloudinary.com/dlomcic7f/image/upload/v1727417551/fu%20project%20data/What-is-Drop-Shipping_ls9vxj.png",
+        duration: 3,
+        level: "Beginner",
+        instructor: {
+            name: "Yared Kebede, E-commerce Expert",
+            expertise: "E-commerce, Dropshipping",
+            institution: "Exceed",
+        },
+        skillsLearned: [
+            {
+                skill: "E-commerce Setup",
+                projects: [
+                    "Building a dropshipping store",
+                    "Finding suppliers",
+                ],
+            },
+            {
+                skill: "Digital Marketing",
+                projects: [
+                    "Running Facebook and Instagram ads",
+                    "Driving traffic to your store",
+                ],
+            },
+        ],
+        learningFormat: [
+            "Video tutorials",
+            "Live Q&A sessions",
+            "Business case studies",
+        ],
+        careerPaths: [
+            "E-commerce Entrepreneur",
+            "Dropshipping Specialist",
+            "Online Store Owner",
+        ],
+        certification: [
+            {
+                name: "Dropshipping Certification",
+                awardingBody: "Shopify",
+                optional: false,
+            },
+        ],
+        prerequisites: { business: "None" },
+        platform: "Shopify, Oberlo, Facebook Ads",
+        price: { individual: 90, group: 350 },
     },
     {
-        title: "Java",
-        short: "IBM SPSS Statistics, is a powerful statistical software suite used for a wide range of data analysis tasks in various fields.",
+        title: "Database Management System Using MySQL",
+        short: "Master SQL queries and database management with MySQL",
+        description:
+            "Learn to manage databases, write efficient queries, and optimize performance using MySQL.",
+        image: "https://res.cloudinary.com/dlomcic7f/image/upload/v1727417771/fu%20project%20data/Database_20Management_20System_20_28DBMS_29-1_qgtqji.png",
+        duration: 3,
+        level: "Beginner",
+        instructor: {
+            name: "Yared Kebede, Database Administrator",
+            expertise: "SQL, Database Management",
+            institution: "Exceed",
+        },
+        skillsLearned: [
+            {
+                skill: "SQL Queries",
+                projects: [
+                    "Creating and optimizing SQL queries",
+                    "Managing relational databases",
+                ],
+            },
+            {
+                skill: "Database Design",
+                projects: [
+                    "Designing normalized databases",
+                    "Managing MySQL databases",
+                ],
+            },
+        ],
+        learningFormat: [
+            "Hands-on labs",
+            "Practical projects",
+            "Live coding sessions",
+        ],
+        careerPaths: [
+            "Database Administrator",
+            "Data Analyst",
+            "Backend Developer",
+        ],
+        certification: [
+            {
+                name: "MySQL Certification",
+                awardingBody: "Oracle",
+                optional: true,
+            },
+        ],
+        prerequisites: {
+            programming: "Basic knowledge of any programming language",
+        },
+        platform: "MySQL, Workbench",
+        price: { individual: 110, group: 420 },
     },
     {
-        title: "Project Management Professional - PMP",
-        short: "The Project Management Professional (PMP)® certification is a globally recognized credential that validates your ability to manage projects effectively. ",
-    },
-    {
-        title: "Monitoring and Evaluation",
-        short: "Monitoring and evaluation (M&E) are two vital processes used in various fields to assess progress, ensure accountability, and improve performance.",
+        title: "Data Analysis using SQL and Python",
+        short: "Analyze and manage data using SQL and Python",
+        description:
+            "Master data querying, manipulation, and analysis with SQL and Python for real-world applications.",
+        image: "https://res.cloudinary.com/dlomcic7f/image/upload/v1727418039/fu%20project%20data/22c3b048689e6b8cd048157c7eb3c01cce769a41-1456x816_onagkl.png",
+        duration: 4,
+        level: "Intermediate",
+        instructor: {
+            name: "Yared Kebede, Data Analyst",
+            expertise: "SQL, Python",
+            institution: "Exceed",
+        },
+        skillsLearned: [
+            {
+                skill: "SQL Queries",
+                projects: [
+                    "Writing efficient SQL queries",
+                    "Manipulating datasets",
+                ],
+            },
+            {
+                skill: "Python for Data Analysis",
+                projects: [
+                    "Using pandas for data manipulation",
+                    "Building data analysis scripts",
+                ],
+            },
+        ],
+        learningFormat: [
+            "Hands-on coding sessions",
+            "Real-world data projects",
+            "Interactive workshops",
+        ],
+        careerPaths: [
+            "Data Analyst",
+            "SQL Developer",
+            "Business Intelligence Analyst",
+        ],
+        certification: [
+            {
+                name: "Data Analysis Certification",
+                awardingBody: "Exceed",
+                optional: true,
+            },
+        ],
+        prerequisites: { programming: "Basic knowledge of Python and SQL" },
+        platform: "VS Code, Python, MySQL",
+        price: { individual: 140, group: 500 },
     },
 ];
 

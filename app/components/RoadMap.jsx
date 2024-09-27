@@ -78,7 +78,7 @@ const page = () => {
                                         <div className="h-[196px] relative">
                                             <Link
                                                 className="relative w-full h-full inline-block"
-                                                href={`/courseDetail/AI&ML/${subject.title}`}
+                                                href={`/courseDetail/webdev/${subject.title}`}
                                             >
                                                 <Image
                                                     alt="Fundamentals"
@@ -93,7 +93,7 @@ const page = () => {
                                         <div className="p-6">
                                             <Link
                                                 className="font-semibold no-underline hover:underline"
-                                                href={`/courseDetail/AI&ML/${subject.title}`}
+                                                href={`/courseDetail/webdev/${subject.title}`}
                                             >
                                                 <h2 className="text-xl mb-0 text-yellow-200">
                                                     {subject.title}
@@ -166,7 +166,7 @@ const page = () => {
                                         <div className="h-[196px] relative">
                                             <Link
                                                 className="relative w-full h-full inline-block"
-                                                href={`/courseDetail/AI&ML/${subject.title}`}
+                                                href={`/courseDetail/DataAnalysis/${subject.title}`}
                                             >
                                                 <Image
                                                     alt="Fundamentals"
@@ -181,7 +181,7 @@ const page = () => {
                                         <div className="p-6">
                                             <Link
                                                 className="font-semibold no-underline hover:underline"
-                                                href={`/courseDetail/AI&ML/${subject.title}`}
+                                                href={`/courseDetail/DataAnalysis/${subject.title}`}
                                             >
                                                 <h2 className="text-xl mb-0 text-yellow-200 ">
                                                     {subject.title}

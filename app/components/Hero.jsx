@@ -51,7 +51,7 @@ const Hero = () => {
                 </div>
 
                 {/* New Social Media Links Section */}
-                <div class="flex gap-5 justify-center md:bg-slate-300 md:bg-opacity-50 md:p-4 md:rounded-md md:backdrop-filter md:backdrop-blur-lg md:block mt-8 lg:mt-0 lg:absolute lg:right-20 lg:top-1/2 lg:transform lg:-translate-y-1/2">
+                <div class="flex gap-5 justify-center md:bg-slate-300 md:bg-opacity-50 md:p-4 md:rounded-md md:backdrop-filter md:backdrop-blur-lg md:block mt-8 md:mt-0 md:absolute md:right-20 md:top-1/2 md:transform md:-translate-y-1/2">
                     <a
                         href=""
                         className="text-white md:text-4xl text-4xl md:mx-5  hover:text-red-400"

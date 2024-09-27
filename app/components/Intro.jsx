@@ -19,11 +19,9 @@ const Intro = () => {
                         we'll work to level up your skills, increase your
                         earning potential, and build a brighter future.
                     </p>
-                    <div className="w-[90%] mb-6 mx-6">
+                    <div className="w-[90%] mb-6 mx-6 aspect-w-16 aspect-h-9">
                         <iframe
-                            className="w-full h-auto"
-                            width="868"
-                            height="488"
+                            className="w-full h-full"
                             src="https://www.youtube.com/embed/VoRz7xfF9m0"
                             title="Final Intro"
                             frameborder="0"

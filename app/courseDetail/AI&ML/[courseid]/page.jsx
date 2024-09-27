@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from "react";
 import { aiAndMachineLearning } from "@/assets/newCourses";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import Image from "next/image";
 
 const CourseDetailsPage = ({ params }) => {
     const [selectedCourse, setSelectedCourse] = useState(null);
@@ -21,14 +23,24 @@ const CourseDetailsPage = ({ params }) => {
     }, [params.courseid]);
 
     if (!selectedCourse) {
-        return <div>Loading course...</div>;
+        return (
+            <div className=" w-full h-full flex flex-col justify-center  items-center">
+                <h1>Loading...</h1>
+                <Image src={"/logo.png"} width={400} height={400} />
+            </div>
+        );
     }
 
     return (
         <section className="bg-gray-900 text-white">
             <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
                 {/* Course title and description */}
-                <div className="mx-auto text-center">
+                <motion.div
+                    initial={{ opacity: 0, y: 100 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 2 }}
+                    className="mx-auto text-center"
+                >
                     <h2 className="text-3xl font-bold sm:text-4xl">
                         {selectedCourse.title}
                     </h2>
@@ -36,11 +48,17 @@ const CourseDetailsPage = ({ params }) => {
                     <p className="mt-4  text-gray-300">
                         {selectedCourse.description}
                     </p>
-                </div>
+                </motion.div>
 
                 {/* Course details */}
-                <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-                    <div className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10">
+                <motion.div
+                    initial={{ opacity: 0, y: 100 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 4 }}
+                    className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
+                >
+                    {/* core skills covered */}
+                    <div className="block rounded-xl border border-gray-800 bg-gray-700 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="size-10 text-pink-500"
@@ -62,14 +80,19 @@ const CourseDetailsPage = ({ params }) => {
                             Core Skills Covered:
                         </h2>
 
-                        <p className="mt-1 text-sm text-gray-300">
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Ex ut quo possimus adipisci distinctio alias
-                            voluptatum blanditiis laudantium.
-                        </p>
+                        <ul className="mt-1 text-sm text-gray-300">
+                            {selectedCourse.skillsLearned.map((ele) => {
+                                return (
+                                    <li className=" list-disc">
+                                        <span>{ele && ele.skill}</span>
+                                    </li>
+                                );
+                            })}
+                        </ul>
                     </div>
 
-                    <div className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10">
+                    {/* Practical Application */}
+                    <div className="block rounded-xl border border-gray-800 bg-gray-700 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="size-10 text-pink-500"
@@ -91,14 +114,15 @@ const CourseDetailsPage = ({ params }) => {
                             Practical Applications:
                         </h2>
 
-                        <p className="mt-1 text-sm text-gray-300">
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Ex ut quo possimus adipisci distinctio alias
-                            voluptatum blanditiis laudantium.
-                        </p>
+                        <ul className="mt-1 text-sm text-gray-300">
+                            {selectedCourse.learningFormat.map((ele) => {
+                                return <li className=" list-disc">{ele}</li>;
+                            })}
+                        </ul>
                     </div>
 
-                    <div className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10">
+                    {/* Tools and tech */}
+                    <div className="block rounded-xl border border-gray-800 bg-gray-700 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="size-10 text-pink-500"
@@ -120,14 +144,18 @@ const CourseDetailsPage = ({ params }) => {
                             Popular Tools & Technologies:
                         </h2>
 
-                        <p className="mt-1 text-sm text-gray-300">
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Ex ut quo possimus adipisci distinctio alias
-                            voluptatum blanditiis laudantium.
-                        </p>
+                        <ul className="mt-1 text-sm text-gray-300">
+                            <li>Platforms: {selectedCourse.platform}</li>
+                            <li>Level: {selectedCourse.level}</li>
+                            <li>
+                                Pre-requisite:{" "}
+                                {selectedCourse.prerequisites.programming}
+                            </li>
+                        </ul>
                     </div>
 
-                    <div className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10">
+                    {/* Carrier opportunity */}
+                    <div className="block rounded-xl border border-gray-800 bg-gray-700 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="size-10 text-pink-500"
@@ -149,14 +177,15 @@ const CourseDetailsPage = ({ params }) => {
                             Career Opportunities:
                         </h2>
 
-                        <p className="mt-1 text-sm text-gray-300">
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Ex ut quo possimus adipisci distinctio alias
-                            voluptatum blanditiis laudantium.
-                        </p>
+                        <ul className="mt-1 text-sm text-gray-300">
+                            {selectedCourse.careerPaths.map((ele) => {
+                                return <li className=" list-disc">{ele}</li>;
+                            })}
+                        </ul>
                     </div>
 
-                    <div className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10">
+                    {/* Projects */}
+                    <div className="block rounded-xl border border-gray-800 p-8 bg-gray-700 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="size-10 text-pink-500"
@@ -178,14 +207,14 @@ const CourseDetailsPage = ({ params }) => {
                             Notable Projects:
                         </h2>
 
-                        <p className="mt-1 text-sm text-gray-300">
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Ex ut quo possimus adipisci distinctio alias
-                            voluptatum blanditiis laudantium.
-                        </p>
+                        <ul className="mt-1 text-sm text-gray-300">
+                            {selectedCourse.skillsLearned.map((ele) => {
+                                return <li>{ele.projects}</li>;
+                            })}
+                        </ul>
                     </div>
 
-                    <div className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10">
+                    <div className="block rounded-xl border border-gray-800 bg-gray-700 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="size-10 text-pink-500"
@@ -208,15 +237,13 @@ const CourseDetailsPage = ({ params }) => {
                         </h2>
 
                         <p className="mt-1 text-sm text-gray-300">
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Ex ut quo possimus adipisci distinctio alias
-                            voluptatum blanditiis laudantium.
+                            {selectedCourse.price}
                         </p>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Link to register page */}
-                <div className="mt-12 text-center">
+                <motion.div className="mt-12 text-center">
                     <Link
                         href={{
                             pathname: "/register",
@@ -228,7 +255,7 @@ const CourseDetailsPage = ({ params }) => {
                     >
                         Get Started Today
                     </Link>
-                </div>
+                </motion.div>
             </div>
         </section>
     );
