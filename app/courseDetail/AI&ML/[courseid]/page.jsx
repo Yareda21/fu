@@ -209,11 +209,16 @@ const CourseDetailsPage = ({ params }) => {
 
                         <ul className="mt-1 text-sm text-gray-300">
                             {selectedCourse.skillsLearned.map((ele) => {
-                                return <li>{ele.projects}</li>;
+                                return (
+                                    <li>
+                                        {ele.projects}
+                                        <br />
+                                    </li>
+                                );
                             })}
                         </ul>
                     </div>
-
+                    {/* other infos  */}
                     <div className="block rounded-xl border border-gray-800 bg-gray-700 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -233,11 +238,13 @@ const CourseDetailsPage = ({ params }) => {
                         </svg>
 
                         <h2 className="mt-4 text-xl font-bold text-white">
-                            AI & Future Trends:
+                            Other Info:
                         </h2>
 
                         <p className="mt-1 text-sm text-gray-300">
-                            {selectedCourse.price}
+                            Individual Price: {selectedCourse.price.corporate}{" "}
+                            {<br />}
+                            Group Price: {selectedCourse.price.individual}
                         </p>
                     </div>
                 </motion.div>
