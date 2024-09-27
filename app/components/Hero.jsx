@@ -46,6 +46,31 @@ const Hero = () => {
                         </a>
                     </div>
                 </div>
+
+                {/* New Social Media Links Section */}
+                <div className="mt-8 lg:mt-0 lg:absolute lg:right-0 lg:top-1/2 lg:transform lg:-translate-y-1/2">
+                    <a
+                        href="https://facebook.com"
+                        className="text-rose-600 hover:text-rose-700"
+                    >
+                        <i className="fab fa-facebook-f"></i>{" "}
+                        {/* Facebook Icon */}
+                    </a>
+                    <a
+                        href="https://twitter.com"
+                        className="text-rose-600 hover:text-rose-700"
+                    >
+                        <i className="fab fa-twitter"></i> {/* Twitter Icon */}
+                    </a>
+                    <a
+                        href="https://instagram.com"
+                        className="text-rose-600 hover:text-rose-700"
+                    >
+                        <i className="fab fa-instagram"></i>{" "}
+                        {/* Instagram Icon */}
+                    </a>
+                </div>
+                {/* End of Social Media Links Section */}
             </div>
         </section>
     );
