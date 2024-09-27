@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const Intro = () => {
     return (
-        <div className="flex flex-col lg:flex-row">
+        <div className="flex flex-col py-[100px] lg:flex-row">
             <section className="flex flex-col mb-10 my-5 w-full lg:w-3/4">
                 <header className="my-12 mb-6 text-center">
                     <p className="font-medium my-4 text-violet-500 dark:text-violet-75 text-sm tracking-widest uppercase">
@@ -21,12 +21,14 @@ const Intro = () => {
                     </p>
                     <div className="w-[90%] mb-6 mx-6">
                         <iframe
-                            className="w-full h-[500px]"
-                            src="https://www.youtube.com/embed/qARdYnp5akY"
-                            title="Intro video"
-                            frameBorder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
+                            width="868"
+                            height="488"
+                            src="https://www.youtube.com/embed/VoRz7xfF9m0"
+                            title="Final Intro"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen
                         ></iframe>
                     </div>
                 </div>

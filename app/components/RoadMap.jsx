@@ -1,13 +1,29 @@
+"use client";
+
+import React from "react";
+import { roadMap } from "@/assets/newCourses";
+
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import {
+    programmingCourses,
+    aiAndMachineLearning,
+    dataAnalysis,
+} from "@/assets/newCourses";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
+
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
-const RoadMap = () => {
+import { SwiperSlide, Swiper } from "swiper/react";
+
+const page = () => {
     return (
-        <main className="flex justify-center py-4 px-12">
+        <main className="flex items-center justify-center py-[100px]">
             <div className="container">
                 <div className="relative">
-                    <Image
+                    {/* <Image
                         alt="background"
                         fetchPriority="high"
                         width="1572"
@@ -16,7 +32,7 @@ const RoadMap = () => {
                         className="absolute -top-32 -z-10"
                         style={{ color: "transparent" }}
                         src="/_next/static/media/bg-grid.8abf9bc6.svg"
-                    />
+                    /> */}
                     <div className="container text-center flex flex-col items-center mb-6 md:my-6 lg:my-10">
                         <h1 className="lg:text-5xl mb-8">Learning Paths</h1>
                         <p className="text-lg lg:text-2xl max-w-prose">
@@ -25,199 +41,165 @@ const RoadMap = () => {
                         </p>
                     </div>
                 </div>
-                <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-4 undefined">
-                    <div className="border border-gray-100 transition-colors duration-200 ease-in-out overflow-hidden rounded-lg bg-blue-700/20 relative ">
-                        <div className="h-[196px] relative">
-                            <Link
-                                className="relative w-full h-full inline-block"
-                                href="/p/fundamentals"
-                            >
-                                <Image
-                                    alt="Fundamentals"
-                                    layout="fill"
-                                    fetchPriority="high"
-                                    decoding="async"
-                                    className="object-cover absolute inset-0 h-full w-full bg-transparent text-transparent"
-                                    src="http://res.cloudinary.com/codewithmosh/image/upload/v1685118742/images/fundamentals.svg"
-                                />
-                            </Link>
+
+                {/* Custom navigation buttons outside the Swiper */}
+                {/* <div className="flex justify-between z-50 relative top-[100%] w-full transform -translate-y-1/2">
+                    <div className="swiper-button-prev">Previous</div>
+                    <div className="swiper-button-next">Next</div>
+                </div> */}
+
+                <Swiper
+                    slidesPerView={1}
+                    spaceBetween={0}
+                    loop={true}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    navigation={{
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev",
+                    }}
+                    autoplay={{
+                        delay: 5000,
+                        disableOnInteraction: true,
+                    }}
+                    modules={[Pagination, Navigation, Autoplay]}
+                    className="w-full min-h-screen relative"
+                >
+                    <SwiperSlide>
+                        <h1 className=" text-xl mb-4">Web Development</h1>
+                        <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-4 undefined">
+                            {programmingCourses.map((subject) => {
+                                return (
+                                    <div
+                                        key={subject.title}
+                                        className="border border-gray-100 transition-colors duration-200 ease-in-out overflow-hidden rounded-lg bg-blue-700/20 relative "
+                                    >
+                                        <div className="h-[196px] relative">
+                                            <Link
+                                                className="relative w-full h-full inline-block"
+                                                href={`/courseDetail/AI&ML/${subject.title}`}
+                                            >
+                                                <Image
+                                                    alt="Fundamentals"
+                                                    layout="fill"
+                                                    fetchPriority="high"
+                                                    decoding="async"
+                                                    className="object-cover absolute inset-0 h-full w-full bg-transparent text-transparent"
+                                                    src={subject.image}
+                                                />
+                                            </Link>
+                                        </div>
+                                        <div className="p-6">
+                                            <Link
+                                                className="font-semibold no-underline hover:underline"
+                                                href={`/courseDetail/AI&ML/${subject.title}`}
+                                            >
+                                                <h2 className="text-xl mb-0 text-yellow-200">
+                                                    {subject.title}
+                                                </h2>
+                                            </Link>
+                                            <p className=" text-justify">
+                                                {subject.short}
+                                            </p>
+                                        </div>
+                                    </div>
+                                );
+                            })}
                         </div>
-                        <div className="p-6">
-                            <Link
-                                className="font-semibold no-underline hover:underline"
-                                href="/p/fundamentals"
-                            >
-                                <h2 className="text-xl mb-0">Fundamentals</h2>
-                            </Link>
-                            <p>
-                                Essential courses that anyone pursuing Link
-                                career as Link professional software engineer
-                                should take. Data structures, algorithms, design
-                                patterns, and more!
-                            </p>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <h1 className=" text-xl mb-4">
+                            AI and Programming Languages
+                        </h1>
+                        <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-4 undefined">
+                            {aiAndMachineLearning.map((subject) => {
+                                return (
+                                    <div
+                                        key={subject.title}
+                                        className="border border-gray-100 transition-colors duration-200 ease-in-out overflow-hidden rounded-lg bg-blue-700/20 relative "
+                                    >
+                                        <div className="h-[196px] text-yellow-400 relative">
+                                            <Link
+                                                className="relative w-full h-full inline-block"
+                                                href={`/courseDetail/AI&ML/${subject.title}`}
+                                            >
+                                                <Image
+                                                    alt="Fundamentals"
+                                                    layout="fill"
+                                                    fetchPriority="high"
+                                                    decoding="async"
+                                                    className="object-cover absolute inset-0 h-full w-full bg-transparent text-transparent"
+                                                    src={subject.image}
+                                                />
+                                            </Link>
+                                        </div>
+                                        <div className="p-6">
+                                            <Link
+                                                className="font-semibold no-underline hover:underline"
+                                                href={`/courseDetail/AI&ML/${subject.title}`}
+                                            >
+                                                <h2 className="text-xl mb-0 text-yellow-200">
+                                                    {subject.title}
+                                                </h2>
+                                            </Link>
+                                            <p className=" text-justify">
+                                                {subject.short}
+                                            </p>
+                                        </div>
+                                    </div>
+                                );
+                            })}
                         </div>
-                    </div>
-                    <div className="border border-gray-100 transition-colors duration-200 ease-in-out overflow-hidden rounded-lg bg-blue-700/20 relative ">
-                        <div className="h-[196px] relative">
-                            <Link
-                                className="relative w-full h-full inline-block"
-                                href="/p/front-end"
-                            >
-                                <Image
-                                    layout="fill"
-                                    alt="Front-end Development"
-                                    fetchPriority="high"
-                                    decoding="async"
-                                    className="object-cover absolute h-full w-full inset-0 bg-transparent text-transparent"
-                                    src="http://res.cloudinary.com/codewithmosh/image/upload/v1685118742/images/front-end.svg"
-                                />
-                            </Link>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <h1 className=" text-3xl text mb-4">
+                            Data Analysis and Digital Marketing
+                        </h1>
+                        <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-4 undefined">
+                            {dataAnalysis.map((subject) => {
+                                return (
+                                    <div
+                                        key={subject.title}
+                                        className="border border-gray-100 transition-colors duration-200 ease-in-out overflow-hidden rounded-lg bg-blue-700/20 relative "
+                                    >
+                                        <div className="h-[196px] relative">
+                                            <Link
+                                                className="relative w-full h-full inline-block"
+                                                href={`/courseDetail/AI&ML/${subject.title}`}
+                                            >
+                                                <Image
+                                                    alt="Fundamentals"
+                                                    layout="fill"
+                                                    fetchPriority="high"
+                                                    decoding="async"
+                                                    className="object-cover absolute inset-0 h-full w-full bg-transparent text-transparent"
+                                                    src={subject.image}
+                                                />
+                                            </Link>
+                                        </div>
+                                        <div className="p-6">
+                                            <Link
+                                                className="font-semibold no-underline hover:underline"
+                                                href={`/courseDetail/AI&ML/${subject.title}`}
+                                            >
+                                                <h2 className="text-xl mb-0 text-yellow-200 ">
+                                                    {subject.title}
+                                                </h2>
+                                            </Link>
+                                            <p className=" text-justify">
+                                                {subject.description}
+                                            </p>
+                                        </div>
+                                    </div>
+                                );
+                            })}
                         </div>
-                        <div className="p-6">
-                            <Link
-                                className="font-semibold no-underline hover:underline"
-                                href="/p/front-end"
-                            >
-                                <h2 className="text-xl mb-0">
-                                    Front-end Development
-                                </h2>
-                            </Link>
-                            <p>
-                                All the courses you need to build beautiful
-                                websites. HTML, CSS, JavaScript, React, and
-                                more!
-                            </p>
-                        </div>
-                    </div>
-                    <div className="border border-gray-100 transition-colors duration-200 ease-in-out overflow-hidden rounded-lg bg-blue-700/20 relative ">
-                        <div className="h-[196px] relative">
-                            <Link
-                                className="relative w-full h-full inline-block"
-                                href="/p/back-end"
-                            >
-                                <Image
-                                    layout="fill"
-                                    alt="Back-end Development"
-                                    fetchPriority="high"
-                                    decoding="async"
-                                    className="object-cover absolute h-full w-full inset-0 bg-transparent text-transparent"
-                                    src="http://res.cloudinary.com/codewithmosh/image/upload/v1685118742/images/back-end.svg"
-                                />
-                            </Link>
-                        </div>
-                        <div className="p-6">
-                            <Link
-                                className="font-semibold no-underline hover:underline"
-                                href="/p/back-end"
-                            >
-                                <h2 className="text-xl mb-0">
-                                    Back-end Development
-                                </h2>
-                            </Link>
-                            <p>
-                                All the courses you need to build powerful APIs
-                                for web and mobile apps. Node, Django, ASP.NET
-                                MVC, MySQL, and more!
-                            </p>
-                        </div>
-                    </div>
-                    <div className="border border-gray-100 transition-colors duration-200 ease-in-out overflow-hidden rounded-lg bg-blue-700/20 relative ">
-                        <div className="h-[196px] relative">
-                            <Link
-                                className="relative w-full h-full inline-block"
-                                href="/p/mobile-development"
-                            >
-                                <Image
-                                    layout="fill"
-                                    alt="Mobile Development"
-                                    fetchPriority="high"
-                                    decoding="async"
-                                    className="object-cover absolute h-full w-full inset-0 bg-transparent text-transparent"
-                                    src="http://res.cloudinary.com/codewithmosh/image/upload/v1685118742/images/mobile.svg"
-                                />
-                            </Link>
-                        </div>
-                        <div className="p-6">
-                            <Link
-                                className="font-semibold no-underline hover:underline"
-                                href="/p/mobile-development"
-                            >
-                                <h2 className="text-xl mb-0">
-                                    Mobile Development
-                                </h2>
-                            </Link>
-                            <p>
-                                All the courses you need to build professional,
-                                cross-platform mobile apps using React Native.
-                            </p>
-                        </div>
-                    </div>
-                    <div className="border border-gray-100 transition-colors duration-200 ease-in-out overflow-hidden rounded-lg bg-blue-700/20 relative ">
-                        <div className="h-[196px] relative">
-                            <Link
-                                className="relative w-full h-full inline-block"
-                                href="/p/game-development"
-                            >
-                                <Image
-                                    alt="Game Development"
-                                    layout="fill"
-                                    fetchPriority="high"
-                                    decoding="async"
-                                    className="object-cover absolute h-full w-full inset-0 bg-transparent text-transparent"
-                                    src="http://res.cloudinary.com/codewithmosh/image/upload/v1685118742/images/game.svg"
-                                />
-                            </Link>
-                        </div>
-                        <div className="p-6">
-                            <Link
-                                className="font-semibold no-underline hover:underline"
-                                href="/p/game-development"
-                            >
-                                <h2 className="text-xl mb-0">
-                                    Game Development
-                                </h2>
-                            </Link>
-                            <p>
-                                The fundamental courses you need to build games.
-                            </p>
-                        </div>
-                    </div>
-                    <div className="border border-gray-100 transition-colors duration-200 ease-in-out overflow-hidden rounded-lg bg-blue-700/20 relative ">
-                        <div className="h-[196px] relative">
-                            <Link
-                                className="relative w-full h-full inline-block"
-                                href="/p/front-end"
-                            >
-                                <Image
-                                    layout="fill"
-                                    alt="Front-end Development"
-                                    fetchPriority="high"
-                                    decoding="async"
-                                    className="object-cover absolute h-full w-full inset-0 bg-transparent text-transparent"
-                                    src="http://res.cloudinary.com/codewithmosh/image/upload/v1685118742/images/front-end.svg"
-                                />
-                            </Link>
-                        </div>
-                        <div className="p-6">
-                            <Link
-                                className="font-semibold no-underline hover:underline"
-                                href="/p/front-end"
-                            >
-                                <h2 className="text-xl mb-0">
-                                    Data Analysis and AI
-                                </h2>
-                            </Link>
-                            <p>
-                                The intersection of data analysis and AI is
-                                where the real magic happens. using AI to
-                                analyze large and complex datasets.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                    </SwiperSlide>
+                </Swiper>
             </div>
         </main>
     );
 };
 
-export default RoadMap;
+export default page;

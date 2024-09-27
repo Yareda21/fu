@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { programmingCourses } from "@/assets/newCourses";
 
 const page = () => {
     return (
@@ -25,195 +26,43 @@ const page = () => {
                         </p>
                     </div>
                 </div>
+
                 <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-4 undefined">
-                    <div className="border border-gray-100 transition-colors duration-200 ease-in-out overflow-hidden rounded-lg bg-blue-700/20 relative ">
-                        <div className="h-[196px] relative">
-                            <Link
-                                className="relative w-full h-full inline-block"
-                                href="/p/fundamentals"
+                    {programmingCourses.map((subject) => {
+                        return (
+                            <div
+                                key={subject.title}
+                                className="border border-gray-100 transition-colors duration-200 ease-in-out overflow-hidden rounded-lg bg-blue-700/20 relative "
                             >
-                                <Image
-                                    alt="Fundamentals"
-                                    layout="fill"
-                                    fetchPriority="high"
-                                    decoding="async"
-                                    className="object-cover absolute inset-0 h-full w-full bg-transparent text-transparent"
-                                    src="http://res.cloudinary.com/codewithmosh/image/upload/v1685118742/images/fundamentals.svg"
-                                />
-                            </Link>
-                        </div>
-                        <div className="p-6">
-                            <Link
-                                className="font-semibold no-underline hover:underline"
-                                href="/p/fundamentals"
-                            >
-                                <h2 className="text-xl mb-0">Fundamentals</h2>
-                            </Link>
-                            <p>
-                                Essential courses that anyone pursuing Link
-                                career as Link professional software engineer
-                                should take. Data structures, algorithms, design
-                                patterns, and more!
-                            </p>
-                        </div>
-                    </div>
-                    <div className="border border-gray-100 transition-colors duration-200 ease-in-out overflow-hidden rounded-lg bg-blue-700/20 relative ">
-                        <div className="h-[196px] relative">
-                            <Link
-                                className="relative w-full h-full inline-block"
-                                href="/p/front-end"
-                            >
-                                <Image
-                                    layout="fill"
-                                    alt="Front-end Development"
-                                    fetchPriority="high"
-                                    decoding="async"
-                                    className="object-cover absolute h-full w-full inset-0 bg-transparent text-transparent"
-                                    src="http://res.cloudinary.com/codewithmosh/image/upload/v1685118742/images/front-end.svg"
-                                />
-                            </Link>
-                        </div>
-                        <div className="p-6">
-                            <Link
-                                className="font-semibold no-underline hover:underline"
-                                href="/p/front-end"
-                            >
-                                <h2 className="text-xl mb-0">
-                                    Front-end Development
-                                </h2>
-                            </Link>
-                            <p>
-                                All the courses you need to build beautiful
-                                websites. HTML, CSS, JavaScript, React, and
-                                more!
-                            </p>
-                        </div>
-                    </div>
-                    <div className="border border-gray-100 transition-colors duration-200 ease-in-out overflow-hidden rounded-lg bg-blue-700/20 relative ">
-                        <div className="h-[196px] relative">
-                            <Link
-                                className="relative w-full h-full inline-block"
-                                href="/p/back-end"
-                            >
-                                <Image
-                                    layout="fill"
-                                    alt="Back-end Development"
-                                    fetchPriority="high"
-                                    decoding="async"
-                                    className="object-cover absolute h-full w-full inset-0 bg-transparent text-transparent"
-                                    src="http://res.cloudinary.com/codewithmosh/image/upload/v1685118742/images/back-end.svg"
-                                />
-                            </Link>
-                        </div>
-                        <div className="p-6">
-                            <Link
-                                className="font-semibold no-underline hover:underline"
-                                href="/p/back-end"
-                            >
-                                <h2 className="text-xl mb-0">
-                                    Back-end Development
-                                </h2>
-                            </Link>
-                            <p>
-                                All the courses you need to build powerful APIs
-                                for web and mobile apps. Node, Django, ASP.NET
-                                MVC, MySQL, and more!
-                            </p>
-                        </div>
-                    </div>
-                    <div className="border border-gray-100 transition-colors duration-200 ease-in-out overflow-hidden rounded-lg bg-blue-700/20 relative ">
-                        <div className="h-[196px] relative">
-                            <Link
-                                className="relative w-full h-full inline-block"
-                                href="/p/mobile-development"
-                            >
-                                <Image
-                                    layout="fill"
-                                    alt="Mobile Development"
-                                    fetchPriority="high"
-                                    decoding="async"
-                                    className="object-cover absolute h-full w-full inset-0 bg-transparent text-transparent"
-                                    src="http://res.cloudinary.com/codewithmosh/image/upload/v1685118742/images/mobile.svg"
-                                />
-                            </Link>
-                        </div>
-                        <div className="p-6">
-                            <Link
-                                className="font-semibold no-underline hover:underline"
-                                href="/p/mobile-development"
-                            >
-                                <h2 className="text-xl mb-0">
-                                    Mobile Development
-                                </h2>
-                            </Link>
-                            <p>
-                                All the courses you need to build professional,
-                                cross-platform mobile apps using React Native.
-                            </p>
-                        </div>
-                    </div>
-                    <div className="border border-gray-100 transition-colors duration-200 ease-in-out overflow-hidden rounded-lg bg-blue-700/20 relative ">
-                        <div className="h-[196px] relative">
-                            <Link
-                                className="relative w-full h-full inline-block"
-                                href="/p/game-development"
-                            >
-                                <Image
-                                    alt="Game Development"
-                                    layout="fill"
-                                    fetchPriority="high"
-                                    decoding="async"
-                                    className="object-cover absolute h-full w-full inset-0 bg-transparent text-transparent"
-                                    src="http://res.cloudinary.com/codewithmosh/image/upload/v1685118742/images/game.svg"
-                                />
-                            </Link>
-                        </div>
-                        <div className="p-6">
-                            <Link
-                                className="font-semibold no-underline hover:underline"
-                                href="/p/game-development"
-                            >
-                                <h2 className="text-xl mb-0">
-                                    Game Development
-                                </h2>
-                            </Link>
-                            <p>
-                                The fundamental courses you need to build games.
-                            </p>
-                        </div>
-                    </div>
-                    <div className="border border-gray-100 transition-colors duration-200 ease-in-out overflow-hidden rounded-lg bg-blue-700/20 relative ">
-                        <div className="h-[196px] relative">
-                            <Link
-                                className="relative w-full h-full inline-block"
-                                href="/p/front-end"
-                            >
-                                <Image
-                                    layout="fill"
-                                    alt="Front-end Development"
-                                    fetchPriority="high"
-                                    decoding="async"
-                                    className="object-cover absolute h-full w-full inset-0 bg-transparent text-transparent"
-                                    src="http://res.cloudinary.com/codewithmosh/image/upload/v1685118742/images/front-end.svg"
-                                />
-                            </Link>
-                        </div>
-                        <div className="p-6">
-                            <Link
-                                className="font-semibold no-underline hover:underline"
-                                href="/p/front-end"
-                            >
-                                <h2 className="text-xl mb-0">
-                                    Data Analysis and AI
-                                </h2>
-                            </Link>
-                            <p>
-                                The intersection of data analysis and AI is
-                                where the real magic happens. using AI to
-                                analyze large and complex datasets.
-                            </p>
-                        </div>
-                    </div>
+                                <div className="h-[196px] relative">
+                                    <Link
+                                        className="relative w-full h-full inline-block"
+                                        href={""}
+                                    >
+                                        <Image
+                                            alt={subject.title}
+                                            layout="fill"
+                                            fetchPriority="high"
+                                            decoding="async"
+                                            className="object-cover absolute inset-0 h-full w-full bg-transparent text-transparent"
+                                            src={subject.image}
+                                        />
+                                    </Link>
+                                </div>
+                                <div className="p-6">
+                                    <Link
+                                        className="font-semibold no-underline hover:underline"
+                                        href={"subject.link"}
+                                    >
+                                        <h2 className="text-xl mb-0">
+                                            {subject.title}
+                                        </h2>
+                                    </Link>
+                                    <p>{subject.short}</p>
+                                </div>
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
         </main>
