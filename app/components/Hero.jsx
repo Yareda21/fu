@@ -35,51 +35,52 @@ const Hero = () => {
                     </p>
 
                     <div className="mt-8 flex flex-wrap gap-4 text-center">
-                        <button
+                        <a
                             href="/roadmap"
                             className="block w-full rounded bg-rose-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
                         >
                             Get Started
-                        </button>
-                        <a href="tel:+251922761594">
-                            <button className="block md:hidden w-full rounded bg-white px-12 py-3 text-sm font-medium text-blue-700 text-5xl shadow hoveblue-text-blue-400ose-700 focus:outline-none focus:ring active:text-rose-500 sm:w-auto">
-                                Call
-                            </button>
+                        </a>
+                        <a
+                            className="block md:hidden w-full rounded bg-white px-12 py-3 text-sm font-medium text-blue-700 shadow hover:text-blue-400 focus:outline-none focus:ring active:text-rose-500 sm:w-auto"
+                            href="tel:+251922761594"
+                        >
+                            Call Me
                         </a>
                     </div>
                 </div>
 
                 {/* New Social Media Links Section */}
-                <div className=" flex gap-5 justify-center md:block mt-8 lg:mt-0 lg:absolute lg:right-20 lg:top-1/2 lg:transform lg:-translate-y-1/2">
+                <div class="flex gap-5 justify-center md:bg-slate-300 md:bg-opacity-50 md:p-4 md:rounded-md md:backdrop-filter md:backdrop-blur-lg md:block mt-8 lg:mt-0 lg:absolute lg:right-20 lg:top-1/2 lg:transform lg:-translate-y-1/2">
                     <a
                         href=""
-                        className="text-white md:text-5xl text-4xl md:mx-5  hover:text-red-400"
+                        className="text-white md:text-4xl text-4xl md:mx-5  hover:text-red-400"
                     >
                         <FaFacebookSquare /> {/* Facebook Icon */}
                     </a>
                     <a
                         href=""
-                        className="text-white md:text-5xl text-4xl md:mx-5  hover:text-red-400"
+                        className="text-white md:text-4xl text-4xl md:mx-5  hover:text-red-400"
                     >
                         <FaYoutube /> {/* Twitter Icon */}
                     </a>
                     <a
                         href=""
-                        className="text-white md:text-5xl text-4xl md:mx-5  hover:text-red-400"
+                        className="text-white md:text-4xl text-4xl md:mx-5  hover:text-red-400"
                     >
                         <FaTiktok />
                         {/* Instagram Icon */}
                     </a>
                     <a
                         href=""
-                        className="text-white md:text-5xl text-4xl md:mx-5  hover:text-red-400"
+                        className="text-white md:text-4xl text-4xl md:mx-5  hover:text-red-400"
                     >
                         <FaLinkedin />
                         {/* Instagram Icon */}
                     </a>
                     <a
                         href=""
-                        className="text-white md:text-5xl text-4xl md:mx-5  hover:text-red-400"
+                        className="text-white md:text-4xl text-4xl md:mx-5  hover:text-red-400"
                     >
                         <FaGithub />
                         {/* Instagram Icon */}
