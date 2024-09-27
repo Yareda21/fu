@@ -1,7 +1,11 @@
 import React from "react";
 import animal from "@/public/fu_images/animal.jpeg";
 import Image from "next/image";
-
+import { FaFacebookSquare } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
+import { FaTiktok } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 const Hero = () => {
     return (
         <section className="relative">
@@ -31,42 +35,53 @@ const Hero = () => {
                     </p>
 
                     <div className="mt-8 flex flex-wrap gap-4 text-center">
-                        <a
+                        <button
                             href="/roadmap"
                             className="block w-full rounded bg-rose-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
                         >
                             Get Started
-                        </a>
-
-                        <a
-                            href="#"
-                            className="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-rose-600 shadow hover:text-rose-700 focus:outline-none focus:ring active:text-rose-500 sm:w-auto"
-                        >
-                            Register
+                        </button>
+                        <a href="tel:+251922761594">
+                            <button className="block md:hidden w-full rounded bg-white px-12 py-3 text-sm font-medium text-blue-700 text-5xl shadow hoveblue-text-blue-400ose-700 focus:outline-none focus:ring active:text-rose-500 sm:w-auto">
+                                Call
+                            </button>
                         </a>
                     </div>
                 </div>
 
                 {/* New Social Media Links Section */}
-                <div className="mt-8 lg:mt-0 lg:absolute lg:right-0 lg:top-1/2 lg:transform lg:-translate-y-1/2">
+                <div className=" flex gap-5 justify-center md:block mt-8 lg:mt-0 lg:absolute lg:right-20 lg:top-1/2 lg:transform lg:-translate-y-1/2">
                     <a
-                        href="https://facebook.com"
-                        className="text-rose-600 hover:text-rose-700"
+                        href=""
+                        className="text-white md:text-5xl text-4xl md:mx-5  hover:text-red-400"
                     >
-                        <i className="fab fa-facebook-f"></i>{" "}
-                        {/* Facebook Icon */}
+                        <FaFacebookSquare /> {/* Facebook Icon */}
                     </a>
                     <a
-                        href="https://twitter.com"
-                        className="text-rose-600 hover:text-rose-700"
+                        href=""
+                        className="text-white md:text-5xl text-4xl md:mx-5  hover:text-red-400"
                     >
-                        <i className="fab fa-twitter"></i> {/* Twitter Icon */}
+                        <FaYoutube /> {/* Twitter Icon */}
                     </a>
                     <a
-                        href="https://instagram.com"
-                        className="text-rose-600 hover:text-rose-700"
+                        href=""
+                        className="text-white md:text-5xl text-4xl md:mx-5  hover:text-red-400"
                     >
-                        <i className="fab fa-instagram"></i>{" "}
+                        <FaTiktok />
+                        {/* Instagram Icon */}
+                    </a>
+                    <a
+                        href=""
+                        className="text-white md:text-5xl text-4xl md:mx-5  hover:text-red-400"
+                    >
+                        <FaLinkedin />
+                        {/* Instagram Icon */}
+                    </a>
+                    <a
+                        href=""
+                        className="text-white md:text-5xl text-4xl md:mx-5  hover:text-red-400"
+                    >
+                        <FaGithub />
                         {/* Instagram Icon */}
                     </a>
                 </div>
