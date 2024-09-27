@@ -33,11 +33,20 @@ const page = ({ searchParams }) => {
         <section className="bg-white ">
             <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
                 <section className="hidden lg:relative lg:flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6">
-                    <Image
+                    {/* <Image
                         alt="Night"
                         src={poster}
                         className="absolute inset-0 h-full w-full opacity-100"
-                    />
+                    /> */}
+                    <iframe
+                        className="w-full h-full"
+                        src="https://www.youtube.com/embed/VoRz7xfF9m0"
+                        title="Final Intro"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen
+                    ></iframe>
                 </section>
 
                 <main className="flex items-center bg-slate-800 text-white justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6">

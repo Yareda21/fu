@@ -12,7 +12,7 @@ export const metadata = {
     description:
         "Join our coding bootcamp and gain the skills you need to excel in software development. Learn HTML, CSS, JavaScript, React, and more with hands-on projects and expert mentorship.",
     keywords:
-        "coding bootcamp, Ethiopia, Digital Marketing, Data Analysis and Analytics, learn to code, web development, JavaScript, React, HTML, CSS, software development",
+        "infinity, infinity coding bootcamp, Ethiopia, Digital Marketing, Data Analysis and Analytics, learn to code, web development, JavaScript, React, HTML, CSS, software development",
     url: "https://infinity-codecamp.vercel.app/", // Add your website's URL
     image: "/logo.png", // Open Graph image for better social media previews
 };
