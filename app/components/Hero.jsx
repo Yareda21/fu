@@ -35,16 +35,17 @@ const Hero = () => {
                     </p>
 
                     <div className="mt-8 flex flex-wrap gap-4 text-center">
-                        <button
+                        <a
                             href="/roadmap"
                             className="block w-full rounded bg-rose-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
                         >
                             Get Started
-                        </button>
-                        <a href="tel:+251922761594">
-                            <button className="block md:hidden w-full rounded bg-white px-12 py-3 text-sm font-medium text-blue-700 text-5xl shadow hoveblue-text-blue-400ose-700 focus:outline-none focus:ring active:text-rose-500 sm:w-auto">
-                                Call
-                            </button>
+                        </a>
+                        <a
+                            className="block md:hidden w-full rounded bg-white px-12 py-3 text-sm font-medium text-blue-700 shadow hoveblue-text-blue-400ose-700 focus:outline-none focus:ring active:text-rose-500 sm:w-auto"
+                            href="tel:+251922761594"
+                        >
+                            Call
                         </a>
                     </div>
                 </div>

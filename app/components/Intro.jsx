@@ -21,6 +21,7 @@ const Intro = () => {
                     </p>
                     <div className="w-[90%] mb-6 mx-6">
                         <iframe
+                            className="w-full h-auto"
                             width="868"
                             height="488"
                             src="https://www.youtube.com/embed/VoRz7xfF9m0"
