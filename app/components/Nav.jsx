@@ -40,7 +40,7 @@ const Nav = () => {
                     <nav
                         aria-label="Global"
                         className={`${
-                            isMenuOpen ? "block" : "hidden"
+                            isMenuOpen ? "block h-screen" : "hidden"
                         } md:block absolute md:relative top-16 left-0 right-0 bg-white dark:bg-[#001d62] md:top-0`}
                     >
                         <motion.ul
@@ -108,13 +108,6 @@ const Nav = () => {
                             >
                                 Member Login
                             </a>
-
-                            {/* <a
-                className="hidden rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600 transition hover:text-teal-600/75 dark:bg-gray-800 dark:text-white dark:hover:text-white/75 sm:block"
-                href="/register"
-              >
-                Register
-              </a> */}
                         </div>
 
                         <div>
