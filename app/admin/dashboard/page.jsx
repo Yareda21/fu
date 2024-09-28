@@ -7,6 +7,45 @@ import { db } from "@/firebase/firebase";
 import { signOut } from "firebase/auth";
 import { auth } from "@/firebase/firebase";
 import { useRouter } from "next/navigation";
+import { Bar } from "react-chartjs-2";
+import { Line } from "react-chartjs-2";
+import { Chart, registerables } from "chart.js"; // Import Chart.js and registerables
+
+// Register all necessary components
+Chart.register(...registerables);
+const ChartComponent = ({ data }) => {
+    // Group students by registration date
+    const groupedData = data.reduce((acc, student) => {
+        const date = new Date(student.registrationDate).toLocaleDateString();
+        acc[date] = (acc[date] || 0) + 1; // Count students per date
+        return acc;
+    }, {});
+
+    // Prepare data for the chart
+    const sortedEntries = Object.entries(groupedData).sort(
+        ([dateA], [dateB]) => new Date(dateA) - new Date(dateB)
+    );
+    const labels = sortedEntries.map(([date]) => date); // Dates sorted
+    const studentCounts = sortedEntries.map(([, count]) => count); // Number of students sorted
+
+    const chartData = {
+        labels: labels,
+        datasets: [
+            {
+                label: "Number of Students",
+                data: studentCounts,
+                fill: false,
+                backgroundColor: "rgba(75, 192, 192, 0.6)",
+                borderColor: "rgba(75, 192, 192, 1)",
+                tension: 0.1, // Smooth the line
+            },
+        ],
+    };
+
+    return <Line data={chartData} />; // Use Line chart
+};
+
+// ... existing code ...
 
 const ITEMS_PER_PAGE = 10;
 
@@ -74,15 +113,15 @@ const DataTable = ({ data, columns }) => (
     </div>
 );
 
-const SearchInput = ({ value, onChange }) => (
-    <input
-        type="text"
-        placeholder="Search..."
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        className="w-full px-3 py-2 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-    />
-);
+// const SearchInput = ({ value, onChange }) => (
+//     <input
+//         type="text"
+//         placeholder="Search..."
+//         value={value}
+//         onChange={(e) => onChange(e.target.value)}
+//         className="w-full px-3 py-2 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+//     />
+// );
 
 const AdminDashboard = () => {
     const router = useRouter();
@@ -143,6 +182,14 @@ const AdminDashboard = () => {
                 ) : (
                     <DataTable data={students || []} columns={studentColumns} />
                 )}
+            </div>
+
+            <div className="bg-white shadow rounded-lg p-6 mb-6">
+                <h2 className="text-xl font-semibold mb-4">
+                    Student Registration Chart
+                </h2>
+                <ChartComponent data={students || []} />{" "}
+                {/* Add the chart component here */}
             </div>
         </div>
     );

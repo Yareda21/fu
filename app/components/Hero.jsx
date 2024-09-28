@@ -1,7 +1,7 @@
 import React from "react";
 import animal from "@/public/fu_images/animal.jpeg";
 import Image from "next/image";
-import { FaFacebookSquare } from "react-icons/fa";
+import { TbWorld } from "react-icons/tb";
 import { FaYoutube } from "react-icons/fa";
 import { FaTiktok } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
@@ -53,36 +53,37 @@ const Hero = () => {
                 {/* New Social Media Links Section */}
                 <div class="flex gap-5 justify-center md:bg-slate-300 md:bg-opacity-50 md:p-4 md:rounded-md md:backdrop-filter md:backdrop-blur-lg md:block mt-8 md:mt-0 md:absolute md:right-20 md:top-1/2 md:transform md:-translate-y-1/2">
                     <a
-                        href=""
+                        href="https://yared21.netlify.app/"
                         className="text-white md:text-4xl text-4xl md:mx-5  hover:text-red-400"
                     >
-                        <FaFacebookSquare /> {/* Facebook Icon */}
+                        <TbWorld title="My Website" /> {/* Facebook Icon */}
                     </a>
                     <a
-                        href=""
+                        href="https://www.youtube.com/@infinityCode-21"
                         className="text-white md:text-4xl text-4xl md:mx-5  hover:text-red-400"
                     >
-                        <FaYoutube /> {/* Twitter Icon */}
+                        <FaYoutube title="My YouTube channel" />{" "}
+                        {/* Twitter Icon */}
                     </a>
                     <a
-                        href=""
+                        href="https://www.tiktok.com/@yared.kebede"
                         className="text-white md:text-4xl text-4xl md:mx-5  hover:text-red-400"
                     >
-                        <FaTiktok />
+                        <FaTiktok title="My TikTok Channel" />
                         {/* Instagram Icon */}
                     </a>
                     <a
-                        href=""
+                        href="https://www.linkedin.com/in/yared-kebede/"
                         className="text-white md:text-4xl text-4xl md:mx-5  hover:text-red-400"
                     >
-                        <FaLinkedin />
+                        <FaLinkedin title="My LinkedIn" />
                         {/* Instagram Icon */}
                     </a>
                     <a
-                        href=""
+                        href="https://github.com/Yareda21"
                         className="text-white md:text-4xl text-4xl md:mx-5  hover:text-red-400"
                     >
-                        <FaGithub />
+                        <FaGithub title="My Github Address" />
                         {/* Instagram Icon */}
                     </a>
                 </div>

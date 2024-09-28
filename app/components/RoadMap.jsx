@@ -67,7 +67,7 @@ const page = () => {
                     className="w-full min-h-screen relative"
                 >
                     <SwiperSlide>
-                        <h1 className=" text-xl mb-4">Web Development</h1>
+                        <h1 className=" text-3xl mb-4">Web Development</h1>
                         <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-4 undefined">
                             {programmingCourses.map((subject) => {
                                 return (
@@ -109,7 +109,7 @@ const page = () => {
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <h1 className=" text-xl mb-4">
+                        <h1 className=" text-3xl mb-4">
                             AI and Programming Languages
                         </h1>
                         <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-4 undefined">
@@ -153,7 +153,7 @@ const page = () => {
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <h1 className=" text-3xl text mb-4">
+                        <h1 className=" text-3xl mb-4">
                             Data Analysis and Digital Marketing
                         </h1>
                         <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-4 undefined">

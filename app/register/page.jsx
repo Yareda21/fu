@@ -1,14 +1,30 @@
 "use client";
 import React, { useState } from "react";
-import poster from "@/public/poster.jpg";
-import Image from "next/image";
 
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "@/firebase/firebase";
 
+const CustomAlert = ({ message, onClose }) => {
+    return (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+            <div className="bg-white text-black p-6 rounded-lg shadow-lg">
+                <p className="text-lg">{message}</p>
+                <button
+                    onClick={onClose}
+                    className="mt-4 px-4 py-2 bg-blue-600 text-white rounded"
+                >
+                    Close
+                </button>
+            </div>
+        </div>
+    );
+};
+
 const page = ({ searchParams }) => {
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
+    const [showAlert, setShowAlert] = useState(false);
+    const [alertMessage, setAlertMessage] = useState("");
 
     const addText = async (e) => {
         e.preventDefault();
@@ -19,13 +35,19 @@ const page = ({ searchParams }) => {
                 phone: phone,
                 registrationDate: new Date(),
             });
-            console.log(name, searchParams.title, phone);
+
             setName("");
             setPhone("");
-            alert("Registration Successful");
+            setAlertMessage("Registration Successful");
+            setShowAlert(true);
+
+            setTimeout(() => {
+                window.location.href = "/";
+            }, 4000);
         } catch (e) {
             console.log(e);
-            alert("Registration Failed");
+            setAlertMessage("Registration Failed");
+            setShowAlert(true);
         }
     };
 
@@ -50,6 +72,12 @@ const page = ({ searchParams }) => {
                 </section>
 
                 <main className="flex items-center bg-slate-800 text-white justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6">
+                    {showAlert && (
+                        <CustomAlert
+                            message={alertMessage}
+                            onClose={() => setShowAlert(false)}
+                        />
+                    )}
                     <div className="max-w-xl lg:max-w-3xl">
                         <h1 className="text-center text-amber-500 text-2xl">
                             Registeration <br />{" "}
