@@ -13,6 +13,7 @@ import { Chart, registerables } from "chart.js"; // Import Chart.js and register
 
 // Register all necessary components
 Chart.register(...registerables);
+
 const ChartComponent = ({ data }) => {
     // Group students by registration date
     const groupedData = data.reduce((acc, student) => {
@@ -22,11 +23,24 @@ const ChartComponent = ({ data }) => {
     }, {});
 
     // Prepare data for the chart
-    const sortedEntries = Object.entries(groupedData).sort(
-        ([dateA], [dateB]) => new Date(dateA) - new Date(dateB)
+    const startDate = new Date(
+        new Date().getFullYear(),
+        new Date().getMonth(),
+        1
     );
-    const labels = sortedEntries.map(([date]) => date); // Dates sorted
-    const studentCounts = sortedEntries.map(([, count]) => count); // Number of students sorted
+    const endDate = new Date(
+        new Date().getFullYear(),
+        new Date().getMonth() + 1,
+        0
+    );
+    const labels = [];
+    const studentCounts = [];
+
+    for (let d = startDate; d <= endDate; d.setDate(d.getDate() + 1)) {
+        const dateStr = d.toLocaleDateString();
+        labels.push(dateStr);
+        studentCounts.push(groupedData[dateStr] || 0); // Include zero counts
+    }
 
     const chartData = {
         labels: labels,
