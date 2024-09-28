@@ -61,7 +61,7 @@ const page = ({ searchParams }) => {
                         className="absolute inset-0 h-full w-full opacity-100"
                     /> */}
                     <iframe
-                        className="w-full h-full"
+                        className="w-full h-full rounded-lg shadow-lg"
                         src="https://www.youtube.com/embed/VoRz7xfF9m0"
                         title="Final Intro"
                         frameborder="0"
