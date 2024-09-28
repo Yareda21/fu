@@ -1,39 +1,53 @@
 import React from "react";
-import FacebookIcon from "@mui/icons-material/Facebook";
+import LanguageIcon from "@mui/icons-material/Language";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import YouTubeIcon from "@mui/icons-material/YouTube";
+
+const TikTokIcon = ({ color = "#000000" }) => {
+    return (
+        <svg
+            fill={color}
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 50 50"
+            width="10%"
+            height="10%"
+        >
+            <path d="M41,4H9C6.243,4,4,6.243,4,9v32c0,2.757,2.243,5,5,5h32c2.757,0,5-2.243,5-5V9C46,6.243,43.757,4,41,4z M37.006,22.323 c-0.227,0.021-0.457,0.035-0.69,0.035c-2.623,0-4.928-1.349-6.269-3.388c0,5.349,0,11.435,0,11.537c0,4.709-3.818,8.527-8.527,8.527 s-8.527-3.818-8.527-8.527s3.818-8.527,8.527-8.527c0.178,0,0.352,0.016,0.527,0.027v4.202c-0.175-0.021-0.347-0.053-0.527-0.053 c-2.404,0-4.352,1.948-4.352,4.352s1.948,4.352,4.352,4.352s4.527-1.894,4.527-4.298c0-0.095,0.042-19.594,0.042-19.594h4.016 c0.378,3.591,3.277,6.425,6.901,6.685V22.323z" />
+        </svg>
+    );
+};
+
 const Footer = () => {
     const socialMediaPlatforms = [
         {
-            name: "Facebook",
-            icon: FacebookIcon,
-            url: "https://facebook.com",
+            name: "Website",
+            icon: LanguageIcon,
+            url: "https://yared21.netlify.app/",
             color: "bg-blue-600 hover:bg-blue-700",
         },
         {
-            name: "Twitter",
+            name: "GitHub",
             icon: GitHubIcon,
-            url: "https://twitter.com",
+            url: "https://github.com/Yareda21",
             color: "bg-sky-500 hover:bg-sky-600",
         },
         {
-            name: "Instagram",
-            icon: InstagramIcon,
-            url: "https://instagram.com",
+            name: "TikTok",
+            icon: TikTokIcon,
+            url: "https://www.tiktok.com/@yared.kebede",
             color: "bg-pink-600 hover:bg-pink-700",
         },
         {
             name: "LinkedIn",
             icon: LinkedInIcon,
-            url: "https://linkedin.com",
+            url: "https://www.linkedin.com/in/yared-kebede/",
             color: "bg-blue-700 hover:bg-blue-800",
         },
         {
             name: "YouTube",
             icon: YouTubeIcon,
-            url: "https://youtube.com",
+            url: "https://www.youtube.com/@infinityCode-21",
             color: "bg-red-600 hover:bg-red-700",
         },
     ];
