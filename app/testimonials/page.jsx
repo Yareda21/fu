@@ -50,10 +50,10 @@ export default function TestimonialPage() {
                     What People Say About My Work
                 </h1>
 
-                {/* Video Section */}
+                {/* Header */}
                 <div className="mb-16">
-                    <h2 className="text-2xl font-bold mb-4">
-                        See My Work in Action
+                    <h2 className="text-2xl text-center font-bold mb-4">
+                        See My Work in Action on different schools
                     </h2>
                 </div>
 
@@ -88,54 +88,111 @@ export default function TestimonialPage() {
                     <h2 className="text-2xl font-bold mb-8">
                         Client Testimonials
                     </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {testimonials.map((testimonial, index) => (
-                            <Card
-                                key={index}
-                                className="bg-gray-800 text-white shadow-xl transition-transform duration-300 hover:scale-105"
-                            >
-                                <CardContent className="flex flex-col items-center text-center">
-                                    <Avatar
-                                        src={testimonial.photo}
-                                        alt={testimonial.name}
-                                        className="w-24 h-24 mb-4"
-                                    />
-                                    <Typography
-                                        variant="h6"
-                                        component="div"
-                                        className="mb-2"
-                                    >
-                                        {testimonial.name}
-                                    </Typography>
-                                    <Typography
-                                        variant="subtitle1"
-                                        className="mb-2 text-gray-400"
-                                    >
-                                        {testimonial.role}
-                                    </Typography>
-                                    <Rating
-                                        value={testimonial.rating}
-                                        readOnly
-                                        className="mb-4"
-                                    />
-                                    <Typography
-                                        variant="body2"
-                                        className="mb-4 italic"
-                                    >
-                                        "{testimonial.content}"
-                                    </Typography>
-                                    <Typography
-                                        variant="caption"
-                                        className="text-gray-400"
-                                    >
-                                        {testimonial.email}
-                                    </Typography>
-                                </CardContent>
-                            </Card>
-                        ))}
-                    </div>
+                    <Carousel
+                        showArrows={true}
+                        showStatus={false}
+                        showThumbs={false}
+                        infiniteLoop={true}
+                        autoPlay={true}
+                        interval={5000}
+                        className="rounded-lg shadow-lg overflow-hidden"
+                    >
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {testimonials.map((testimonial, index) => (
+                                <Card
+                                    key={index}
+                                    className="bg-gray-800 text-white shadow-xl transition-transform duration-300 hover:scale-105"
+                                >
+                                    <CardContent className="flex flex-col items-center text-center">
+                                        <Avatar
+                                            src={testimonial.photo}
+                                            alt={testimonial.name}
+                                            className="w-24 h-24 mb-4"
+                                        />
+                                        <Typography
+                                            variant="h6"
+                                            component="div"
+                                            className="mb-2"
+                                        >
+                                            {testimonial.name}
+                                        </Typography>
+                                        <Typography
+                                            variant="subtitle1"
+                                            className="mb-2 text-gray-400"
+                                        >
+                                            {testimonial.role}
+                                        </Typography>
+                                        <Rating
+                                            value={testimonial.rating}
+                                            readOnly
+                                            className="mb-4"
+                                        />
+                                        <Typography
+                                            variant="body2"
+                                            className="mb-4 italic"
+                                        >
+                                            "{testimonial.content}"
+                                        </Typography>
+                                        <Typography
+                                            variant="caption"
+                                            className="text-gray-400"
+                                        >
+                                            {testimonial.email}
+                                        </Typography>
+                                    </CardContent>
+                                </Card>
+                            ))}
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {testimonials.map((testimonial, index) => (
+                                <Card
+                                    key={index}
+                                    className="bg-gray-800 text-white shadow-xl transition-transform duration-300 hover:scale-105"
+                                >
+                                    <CardContent className="flex flex-col items-center text-center">
+                                        <Avatar
+                                            src={testimonial.photo}
+                                            alt={testimonial.name}
+                                            className="w-24 h-24 mb-4"
+                                        />
+                                        <Typography
+                                            variant="h6"
+                                            component="div"
+                                            className="mb-2"
+                                        >
+                                            {testimonial.name}
+                                        </Typography>
+                                        <Typography
+                                            variant="subtitle1"
+                                            className="mb-2 text-gray-400"
+                                        >
+                                            {testimonial.role}
+                                        </Typography>
+                                        <Rating
+                                            value={testimonial.rating}
+                                            readOnly
+                                            className="mb-4"
+                                        />
+                                        <Typography
+                                            variant="body2"
+                                            className="mb-4 italic"
+                                        >
+                                            "{testimonial.content}"
+                                        </Typography>
+                                        <Typography
+                                            variant="caption"
+                                            className="text-gray-400"
+                                        >
+                                            {testimonial.email}
+                                        </Typography>
+                                    </CardContent>
+                                </Card>
+                            ))}
+                        </div>
+                    </Carousel>
                 </div>
-                {/* Photo Carousel */}
+
+                {/* Photo Carousel - certificate */}
                 <div className="mb-16">
                     <h2 className="text-2xl font-bold mb-4">
                         Project Highlights
