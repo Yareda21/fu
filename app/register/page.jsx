@@ -23,6 +23,8 @@ const CustomAlert = ({ message, onClose }) => {
 const page = ({ searchParams }) => {
     const [name, setName] = useState("");
     const [phone, setPhone] = useState("");
+    const [email, setEmail] = useState(""); // Add state for email
+    const [password, setPassword] = useState(""); // Add state for password
     const [showAlert, setShowAlert] = useState(false);
     const [alertMessage, setAlertMessage] = useState("");
 
@@ -38,6 +40,8 @@ const page = ({ searchParams }) => {
 
             setName("");
             setPhone("");
+            setEmail(""); // Reset email state
+            setPassword(""); // Reset password state
             setAlertMessage("Registration Successful");
             setShowAlert(true);
 
@@ -127,6 +131,44 @@ const page = ({ searchParams }) => {
                                 />
                             </div>
                             {/* email */}
+                            <div className="col-span-6">
+                                <label
+                                    htmlFor="email"
+                                    className="block text-sm font-medium text-white"
+                                >
+                                    Email
+                                </label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    value={email} // Add state for email
+                                    onChange={(e) => setEmail(e.target.value)} // Update state on change
+                                    required
+                                    className="mt-1 px-3 py-2 w-full rounded-md border-gray bg-white text-sm text-gray-700 shadow-sm"
+                                />
+                            </div>
+                            {/* password */}
+                            <div className="col-span-6">
+                                <label
+                                    htmlFor="password"
+                                    className="block text-sm font-medium text-white"
+                                >
+                                    Password
+                                </label>
+                                <input
+                                    type="password"
+                                    id="password"
+                                    name="password"
+                                    value={password} // Add state for password
+                                    onChange={(e) =>
+                                        setPassword(e.target.value)
+                                    } // Update state on change
+                                    required
+                                    className="mt-1 px-3 py-2 w-full rounded-md border-gray bg-white text-sm text-gray-700 shadow-sm"
+                                />
+                            </div>
+                            {/* phone */}
                             <div className="col-span-6">
                                 <label
                                     htmlFor="phone"

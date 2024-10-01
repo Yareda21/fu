@@ -1,0 +1,168 @@
+import { useState } from "react";
+import {
+    ChevronDown,
+    ChevronUp,
+    Download,
+    User,
+    Code,
+    Terminal,
+    Database,
+} from "lucide-react";
+
+import { modules } from "@/assets/resources";
+
+export default function Component() {
+    const [openModule, setOpenModule] = (useState < string) | (null > null);
+    const [completedResources, setCompletedResources] =
+        useState < Set < string >> new Set();
+
+    const handleModuleClick = (moduleName) => {
+        setOpenModule(openModule === moduleName ? null : moduleName);
+    };
+
+    const handleResourceComplete = (resourceTitle) => {
+        setCompletedResources((prev) => {
+            const newSet = new Set(prev);
+            if (newSet.has(resourceTitle)) {
+                newSet.delete(resourceTitle);
+            } else {
+                newSet.add(resourceTitle);
+            }
+            return newSet;
+        });
+    };
+
+    return (
+        <div className="container mx-auto p-4 max-w-4xl">
+            <div className="bg-gray-800 text-white shadow-lg rounded-lg overflow-hidden mb-8">
+                <div className="p-4 flex items-center justify-between">
+                    <h1 className="text-2xl font-bold">
+                        Coding Bootcamp Resources
+                    </h1>
+                    <div className="flex items-center">
+                        <User className="mr-2" />
+                        <span className="font-semibold">Jane Smith</span>
+                    </div>
+                </div>
+                <div className="bg-gray-700 p-4">
+                    <p className="text-gray-300">
+                        Track: Full-Stack Development
+                    </p>
+                    <p className="text-gray-300">
+                        Progress: {completedResources.size} /{" "}
+                        {modules.reduce(
+                            (acc, module) => acc + module.resources.length,
+                            0
+                        )}{" "}
+                        resources completed
+                    </p>
+                </div>
+            </div>
+
+            <div className="space-y-4">
+                {modules.map((module) => (
+                    <div
+                        key={module.name}
+                        className="bg-white shadow-md rounded-lg overflow-hidden"
+                    >
+                        <button
+                            className="w-full p-4 text-left font-semibold flex justify-between items-center focus:outline-none hover:bg-gray-50"
+                            onClick={() => handleModuleClick(module.name)}
+                        >
+                            <div className="flex items-center">
+                                {module.icon}
+                                <span className="ml-2">{module.name}</span>
+                            </div>
+                            {openModule === module.name ? (
+                                <ChevronUp />
+                            ) : (
+                                <ChevronDown />
+                            )}
+                        </button>
+                        {openModule === module.name && (
+                            <div className="p-4">
+                                <table className="w-full">
+                                    <thead>
+                                        <tr className="bg-gray-100">
+                                            <th className="text-left p-2">
+                                                Title
+                                            </th>
+                                            <th className="text-left p-2">
+                                                Type
+                                            </th>
+                                            <th className="text-left p-2">
+                                                Description
+                                            </th>
+                                            <th className="p-2">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {module.resources.map(
+                                            (resource, index) => (
+                                                <tr
+                                                    key={index}
+                                                    className="border-t"
+                                                >
+                                                    <td className="p-2">
+                                                        {resource.title}
+                                                    </td>
+                                                    <td className="p-2">
+                                                        {resource.type}
+                                                    </td>
+                                                    <td className="p-2">
+                                                        {resource.description}
+                                                    </td>
+                                                    <td className="p-2">
+                                                        <button
+                                                            className={`py-1 px-2 rounded flex items-center justify-center w-full ${
+                                                                completedResources.has(
+                                                                    resource.title
+                                                                )
+                                                                    ? "bg-green-500 hover:bg-green-600 text-white"
+                                                                    : "bg-blue-500 hover:bg-blue-600 text-white"
+                                                            }`}
+                                                            onClick={() =>
+                                                                handleResourceComplete(
+                                                                    resource.title
+                                                                )
+                                                            }
+                                                        >
+                                                            <Download className="w-4 h-4 mr-1" />
+                                                            {completedResources.has(
+                                                                resource.title
+                                                            )
+                                                                ? "Completed"
+                                                                : "Start"}
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            )
+                                        )}
+                                    </tbody>
+                                </table>
+                            </div>
+                        )}
+                    </div>
+                ))}
+            </div>
+
+            <div className="mt-8 p-4 bg-gray-100 rounded-lg">
+                <h2 className="text-lg font-semibold text-gray-800 mb-2">
+                    Learning Insight
+                </h2>
+                <p className="text-gray-700">
+                    You've completed {completedResources.size} out of{" "}
+                    {modules.reduce(
+                        (acc, module) => acc + module.resources.length,
+                        0
+                    )}{" "}
+                    resources. Remember, consistent practice and application of
+                    these concepts in real-world projects will solidify your
+                    skills. Keep pushing yourself and don't hesitate to
+                    collaborate with your peers for a richer learning
+                    experience.
+                </p>
+            </div>
+        </div>
+    );
+}
