@@ -1,24 +1,27 @@
-import { useState } from "react";
-import {
-    ChevronDown,
-    ChevronUp,
-    Download,
-    User,
-    Code,
-    Terminal,
-    Database,
-} from "lucide-react";
+"use client";
+
+import { useEffect, useState } from "react";
+import { ChevronDown, ChevronUp, Download, User } from "lucide-react";
 
 import { modules } from "@/assets/resources";
 
 export default function Component() {
-    const [openModule, setOpenModule] = (useState < string) | (null > null);
-    const [completedResources, setCompletedResources] =
-        useState < Set < string >> new Set();
+    const [openModule, setOpenModule] = useState(null);
+    const [completedResources, setCompletedResources] = useState(new Set());
+    const [user, setUser] = useState({});
 
     const handleModuleClick = (moduleName) => {
         setOpenModule(openModule === moduleName ? null : moduleName);
     };
+    useEffect(() => {
+        // Get the URL search params
+        const searchParams = new URLSearchParams(window.location.search);
+        const userParam = searchParams.get("user");
+
+        if (userParam) {
+            setUser(JSON.parse(userParam));
+        }
+    }, []);
 
     const handleResourceComplete = (resourceTitle) => {
         setCompletedResources((prev) => {
@@ -41,7 +44,7 @@ export default function Component() {
                     </h1>
                     <div className="flex items-center">
                         <User className="mr-2" />
-                        <span className="font-semibold">Jane Smith</span>
+                        <span className="font-semibold">{user.name}</span>
                     </div>
                 </div>
                 <div className="bg-gray-700 p-4">

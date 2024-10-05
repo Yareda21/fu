@@ -76,6 +76,7 @@ const fetchStudents = async () => {
             id: doc.id,
             name: data.name,
             phone: data.phone,
+            password: data.password,
             subject: data.subject, // This is the course title
             registrationDate: data.registrationDate
                 ? new Date(
@@ -158,6 +159,7 @@ const AdminDashboard = () => {
         { key: "name", label: "Name" },
         { key: "phone", label: "Phone" },
         { key: "subject", label: "Course Title" },
+        { key: "password", label: "Password" },
         { key: "registrationDate", label: "Registration Date" },
     ];
 

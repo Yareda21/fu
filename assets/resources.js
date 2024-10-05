@@ -1,3 +1,5 @@
+import { Code, Terminal, Database } from "lucide-react";
+
 export const modules = [
     {
         name: "Front-End Development",
