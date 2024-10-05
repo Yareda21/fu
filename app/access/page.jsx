@@ -66,10 +66,10 @@ export default function Component() {
                 {modules.map((module) => (
                     <div
                         key={module.name}
-                        className="bg-white shadow-md rounded-lg overflow-hidden"
+                        className="bg-gray-500 shadow-md rounded-lg overflow-hidden"
                     >
                         <button
-                            className="w-full p-4 text-left font-semibold flex justify-between items-center focus:outline-none hover:bg-gray-50"
+                            className="w-full p-4 text-left font-semibold flex justify-between items-center focus:outline-none hover:bg-blue-700"
                             onClick={() => handleModuleClick(module.name)}
                         >
                             <div className="flex items-center">
@@ -86,7 +86,7 @@ export default function Component() {
                             <div className="p-4">
                                 <table className="w-full">
                                     <thead>
-                                        <tr className="bg-gray-100">
+                                        <tr className="bg-gray-800">
                                             <th className="text-left p-2">
                                                 Title
                                             </th>
@@ -116,27 +116,37 @@ export default function Component() {
                                                         {resource.description}
                                                     </td>
                                                     <td className="p-2">
-                                                        <button
-                                                            className={`py-1 px-2 rounded flex items-center justify-center w-full ${
-                                                                completedResources.has(
-                                                                    resource.title
-                                                                )
-                                                                    ? "bg-green-500 hover:bg-green-600 text-white"
-                                                                    : "bg-blue-500 hover:bg-blue-600 text-white"
-                                                            }`}
-                                                            onClick={() =>
-                                                                handleResourceComplete(
-                                                                    resource.title
-                                                                )
+                                                        <a
+                                                            href={
+                                                                resource.url ||
+                                                                "#"
+                                                            }
+                                                            download={
+                                                                resource.title
                                                             }
                                                         >
-                                                            <Download className="w-4 h-4 mr-1" />
-                                                            {completedResources.has(
-                                                                resource.title
-                                                            )
-                                                                ? "Completed"
-                                                                : "Start"}
-                                                        </button>
+                                                            <button
+                                                                className={`py-1 px-2 rounded flex items-center justify-center w-full ${
+                                                                    completedResources.has(
+                                                                        resource.title
+                                                                    )
+                                                                        ? "bg-green-500 hover:bg-green-600 text-black"
+                                                                        : "bg-blue-500 hover:bg-blue-600 text-black"
+                                                                }`}
+                                                                onClick={() =>
+                                                                    handleResourceComplete(
+                                                                        resource.title
+                                                                    )
+                                                                }
+                                                            >
+                                                                <Download className="w-4 h-4 mr-1" />
+                                                                {completedResources.has(
+                                                                    resource.title
+                                                                )
+                                                                    ? "Completed"
+                                                                    : "Start"}
+                                                            </button>
+                                                        </a>
                                                     </td>
                                                 </tr>
                                             )

@@ -3,10 +3,12 @@ import { Code, Terminal, Database } from "lucide-react";
 export const modules = [
     {
         name: "Front-End Development",
+
         icon: <Code className="w-6 h-6" />,
         resources: [
             {
                 title: "HTML5 and CSS3 Fundamentals",
+                url: "https://www.mediafire.com/file/k68vtkdecdt71iu/Content_Marketing.docx/file",
                 type: "PDF",
                 description: "Comprehensive guide to modern HTML and CSS",
             },
