@@ -117,10 +117,8 @@ export default function Component() {
                                                     </td>
                                                     <td className="p-2">
                                                         <a
-                                                            href={
-                                                                resource.url ||
-                                                                "#"
-                                                            }
+                                                            href={resource.url}
+                                                            target="_blank"
                                                             download={
                                                                 resource.title
                                                             }
