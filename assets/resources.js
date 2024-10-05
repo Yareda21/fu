@@ -1,4 +1,4 @@
-import { Code, Terminal, Database } from "lucide-react";
+import { Code, Terminal, BadgeDollarSign, Database } from "lucide-react";
 
 export const modules = [
     {
@@ -18,7 +18,7 @@ export const modules = [
                 description: "Deep dive into ES6+ features and best practices",
             },
             {
-                title: "React Hooks Workshop",
+                title: "React - Component Based Architecture",
                 type: "Code",
                 description: "Hands-on workshop for mastering React Hooks",
             },
@@ -45,23 +45,106 @@ export const modules = [
             },
         ],
     },
+
     {
-        name: "Database Management",
+        name: "Data Analysis and Visualization",
         icon: <Database className="w-6 h-6" />,
         resources: [
             {
-                title: "SQL Mastery Course",
+                title: "MySQL Course Outline",
                 type: "PDF",
+                description: "Overview of topics covered in the MySQL course",
+            },
+            {
+                title: "MySQL Notes",
+                type: "PDF",
+                description: "Detailed notes on MySQL concepts and commands",
+            },
+            {
+                title: "MySQL Commands Short Notes",
+                type: "PDF",
+                description: "Quick reference for commonly used MySQL commands",
+            },
+            {
+                title: "MySQL Sample Codes",
+                type: "PDF",
+                description:
+                    "Examples of MySQL queries and database operations",
+            },
+            {
+                title: "Basic Python Course Outline",
+                type: "PDF",
+                description:
+                    "Overview of topics covered in the basic Python course",
+            },
+            {
+                title: "Python Notes",
+                type: "PDF",
+                description: "Detailed notes on Python programming concepts",
+            },
+            {
+                title: "Python Commands Short Notes",
+                type: "PDF",
+                description:
+                    "Quick reference for commonly used Python commands",
+            },
+            {
+                title: "Python Sample Codes",
+                type: "URL",
+                description:
+                    "Examples of Python code for various programming tasks",
+            },
+        ],
+    },
+
+    {
+        name: "Digital Marketing",
+        icon: <BadgeDollarSign className="w-6 h-6" />,
+        resources: [
+            {
+                title: "Digital Marketing Course Outline",
+                type: "PDF",
+                url: "https://www.mediafire.com/file/7p446jkqfh350jo/DM_course_Outline.pdf/file",
                 description: "Advanced SQL techniques for efficient querying",
             },
             {
-                title: "MongoDB for Node.js Developers",
-                type: "Video",
+                title: "Digital Marketing Notes",
+                type: "PDF",
+                url: "https://www.mediafire.com/file/hugxm1id3c8iw1x/Module_Doc.pdf/file",
                 description: "Integrating MongoDB with Node.js applications",
             },
             {
-                title: "Database Design Patterns",
-                type: "Code",
+                title: "Content Marketing Docs",
+                type: "PDF",
+                url: "",
+                description: "Implementing common database design patterns",
+            },
+            {
+                title: "MySQL Sample Codes",
+                type: "PDF",
+                url: "",
+                description: "Implementing common database design patterns",
+            },
+            {
+                title: "Basic Python Course Outline",
+                type: "PDF",
+                url: "",
+                description: "Advanced SQL techniques for efficient querying",
+            },
+            {
+                title: "Python Notes",
+                type: "PDF",
+                url: "",
+                description: "Integrating MongoDB with Node.js applications",
+            },
+            {
+                title: "Python Commands Short Notes",
+                type: "PDF",
+                description: "Implementing common database design patterns",
+            },
+            {
+                title: "Python Sample Codes",
+                type: "URL",
                 description: "Implementing common database design patterns",
             },
         ],
