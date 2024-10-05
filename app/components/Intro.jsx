@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const Intro = () => {
     return (
@@ -47,6 +48,32 @@ const Intro = () => {
                         waves right now!
                     </p>
                     <ul className="list-disc list-inside mb-6">
+                        <li className="mb-4 text-2xl">Digital Marketing</li>
+                        <div className="w-full mb-6">
+                            {/* course description and link */}
+                            <p>
+                                Learn how to create impactful marketing
+                                strategies using digital tools
+                            </p>
+                            <a
+                                className="flex justify-center items-center px-4 py-2 mt-2 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg transition duration-300 ease-in-out"
+                                href="https://youtu.be/FeOMRdmcVXc"
+                                target="_blank"
+                            >
+                                Watch the course
+                            </a>
+                            <Link
+                                href={{
+                                    pathname: "/register",
+                                    query: {
+                                        title: "Digital Marketing",
+                                    },
+                                }}
+                                className="inline-block my-1 rounded bg-pink-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-pink-700 focus:outline-none focus:ring focus:ring-yellow-400"
+                            >
+                                Register
+                            </Link>
+                        </div>
                         <li className="mb-4 text-2xl">Web Development</li>
                         <div className="w-full mb-6">
                             {/* course description and link */}
@@ -61,13 +88,24 @@ const Intro = () => {
                             >
                                 Watch the course
                             </a>
+                            <Link
+                                href={{
+                                    pathname: "/register",
+                                    query: {
+                                        title: "Web development using AI",
+                                    },
+                                }}
+                                className="inline-block my-1 rounded bg-pink-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-pink-700 focus:outline-none focus:ring focus:ring-yellow-400"
+                            >
+                                Register
+                            </Link>
                         </div>
                         <li className="mb-4 text-2xl">Data Analysis</li>
                         <div className="w-full mb-6">
                             {/* course description and link */}
                             <p>
-                                Web development is the process of creating
-                                websites and web applications.
+                                Master data analysis using Python, MySQL, and
+                                Microsoft Power BI
                             </p>
                             <a
                                 className="flex justify-center items-center px-4 py-2 mt-2 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg transition duration-300 ease-in-out"
@@ -76,21 +114,17 @@ const Intro = () => {
                             >
                                 Watch the course
                             </a>
-                        </div>
-                        <li className="mb-4 text-2xl">AI & Machine Learning</li>
-                        <div className="w-full mb-6">
-                            {/* course description and link */}
-                            <p>
-                                Web development is the process of creating
-                                websites and web applications.
-                            </p>
-                            <a
-                                className="flex justify-center items-center px-4 py-2 mt-2 bg-red-600 hover:bg-red-700 text-white font-bold rounded-lg transition duration-300 ease-in-out"
-                                href="https://youtu.be/FeOMRdmcVXc"
-                                target="_blank"
+                            <Link
+                                href={{
+                                    pathname: "/register",
+                                    query: {
+                                        title: "Data Analysis",
+                                    },
+                                }}
+                                className="inline-block my-1 rounded bg-pink-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-pink-700 focus:outline-none focus:ring focus:ring-yellow-400"
                             >
-                                Watch the course
-                            </a>
+                                Register
+                            </Link>
                         </div>
                     </ul>
                 </div>
