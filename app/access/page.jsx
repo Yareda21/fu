@@ -90,10 +90,10 @@ export default function Component() {
                                             <th className="text-left p-2">
                                                 Title
                                             </th>
-                                            <th className="text-left p-2">
+                                            <th className="text-left p-2 hidden md:table-cell">
                                                 Type
                                             </th>
-                                            <th className="text-left p-2">
+                                            <th className="text-left p-2 hidden md:table-cell">
                                                 Description
                                             </th>
                                             <th className="p-2">Action</th>
@@ -106,13 +106,13 @@ export default function Component() {
                                                     key={index}
                                                     className="border-t"
                                                 >
-                                                    <td className="p-2">
+                                                    <td className="p-2 ">
                                                         {resource.title}
                                                     </td>
-                                                    <td className="p-2">
+                                                    <td className="p-2 hidden md:table-cell">
                                                         {resource.type}
                                                     </td>
-                                                    <td className="p-2">
+                                                    <td className="p-2 hidden md:table-cell">
                                                         {resource.description}
                                                     </td>
                                                     <td className="p-2">
