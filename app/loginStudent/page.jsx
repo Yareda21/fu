@@ -1,7 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import {
+    signInWithEmailAndPassword,
+    sendPasswordResetEmail,
+} from "firebase/auth";
 import { auth, db } from "@/firebase/firebase";
 import { doc, getDoc } from "firebase/firestore";
 import { useRouter } from "next/navigation";
@@ -10,6 +13,9 @@ export default function AdminLogin() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState(null);
+    const [resetEmail, setResetEmail] = useState("");
+    const [showResetForm, setShowResetForm] = useState(false);
+    const [resetMessage, setResetMessage] = useState(null);
     const router = useRouter();
 
     const handleLogin = async (e) => {
@@ -27,12 +33,25 @@ export default function AdminLogin() {
             // Fetch user data from Firestore
             const userDoc = await getDoc(doc(db, "reg_student", user.uid));
             const userData = userDoc.data();
-            console.log(userDoc);
             const userQuery = encodeURIComponent(JSON.stringify(userData));
             router.push(`/access?user=${userQuery}`);
         } catch (error) {
             console.error(error);
             setError("Invalid email or password.");
+        }
+    };
+
+    const handlePasswordReset = async (e) => {
+        e.preventDefault();
+        setResetMessage(null);
+        setError(null);
+
+        try {
+            await sendPasswordResetEmail(auth, resetEmail);
+            setResetMessage("Password reset email sent successfully.");
+        } catch (error) {
+            console.error(error);
+            setError("Failed to send password reset email. Please try again.");
         }
     };
 
@@ -44,56 +63,132 @@ export default function AdminLogin() {
                         Student Login
                     </h2>
                 </div>
-                <form className="mt-8 space-y-6" onSubmit={handleLogin}>
-                    <input type="hidden" name="remember" defaultValue="true" />
-                    <div className="rounded-md shadow-sm -space-y-px">
+
+                {!showResetForm ? (
+                    <form className="mt-8 space-y-6" onSubmit={handleLogin}>
+                        <input
+                            type="hidden"
+                            name="remember"
+                            defaultValue="true"
+                        />
+                        <div className="rounded-md shadow-sm -space-y-px">
+                            <div>
+                                <label
+                                    htmlFor="email-address"
+                                    className="sr-only"
+                                >
+                                    Email address
+                                </label>
+                                <input
+                                    id="email-address"
+                                    name="email"
+                                    type="email"
+                                    autoComplete="email"
+                                    required
+                                    className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                                    placeholder="Email address"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                />
+                            </div>
+                            <div>
+                                <label htmlFor="password" className="sr-only">
+                                    Password
+                                </label>
+                                <input
+                                    id="password"
+                                    name="password"
+                                    type="password"
+                                    autoComplete="current-password"
+                                    required
+                                    className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                                    placeholder="Password"
+                                    value={password}
+                                    onChange={(e) =>
+                                        setPassword(e.target.value)
+                                    }
+                                />
+                            </div>
+                        </div>
+
+                        {error && (
+                            <div className="text-red-500 text-sm mt-2">
+                                {error}
+                            </div>
+                        )}
+
                         <div>
-                            <label htmlFor="email-address" className="sr-only">
+                            <button
+                                type="submit"
+                                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            >
+                                Sign in
+                            </button>
+                        </div>
+
+                        <div className="text-center mt-4">
+                            <button
+                                type="button"
+                                onClick={() => setShowResetForm(true)}
+                                className="text-sm text-indigo-600 hover:text-indigo-500"
+                            >
+                                Forgot Password?
+                            </button>
+                        </div>
+                    </form>
+                ) : (
+                    <form
+                        className="mt-8 space-y-6"
+                        onSubmit={handlePasswordReset}
+                    >
+                        <div>
+                            <label htmlFor="reset-email" className="sr-only">
                                 Email address
                             </label>
                             <input
-                                id="email-address"
-                                name="email"
+                                id="reset-email"
+                                name="reset-email"
                                 type="email"
                                 autoComplete="email"
                                 required
-                                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                                placeholder="Email address"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
+                                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                                placeholder="Enter your email address"
+                                value={resetEmail}
+                                onChange={(e) => setResetEmail(e.target.value)}
                             />
                         </div>
+
+                        {error && (
+                            <div className="text-red-500 text-sm mt-2">
+                                {error}
+                            </div>
+                        )}
+                        {resetMessage && (
+                            <div className="text-green-500 text-sm mt-2">
+                                {resetMessage}
+                            </div>
+                        )}
+
                         <div>
-                            <label htmlFor="password" className="sr-only">
-                                Password
-                            </label>
-                            <input
-                                id="password"
-                                name="password"
-                                type="password"
-                                autoComplete="current-password"
-                                required
-                                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
-                                placeholder="Password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                            />
+                            <button
+                                type="submit"
+                                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            >
+                                Send Password Reset Email
+                            </button>
                         </div>
-                    </div>
 
-                    {error && (
-                        <div className="text-red-500 text-sm mt-2">{error}</div>
-                    )}
-
-                    <div>
-                        <button
-                            type="submit"
-                            className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-                        >
-                            Sign in
-                        </button>
-                    </div>
-                </form>
+                        <div className="text-center mt-4">
+                            <button
+                                type="button"
+                                onClick={() => setShowResetForm(false)}
+                                className="text-sm text-indigo-600 hover:text-indigo-500"
+                            >
+                                Back to Login
+                            </button>
+                        </div>
+                    </form>
+                )}
             </div>
         </div>
     );
