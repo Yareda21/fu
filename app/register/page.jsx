@@ -3,7 +3,10 @@ import React, { useState } from "react";
 import { addDoc, collection, doc, setDoc } from "firebase/firestore";
 
 import { db, auth } from "@/firebase/firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import {
+    createUserWithEmailAndPassword,
+    sendEmailVerification,
+} from "firebase/auth";
 
 const CustomAlert = ({ message, onClose }) => {
     return (
@@ -40,6 +43,9 @@ const Page = ({ searchParams }) => {
             );
             const user = userCredential.user;
 
+            // Send verification email
+            await sendEmailVerification(user);
+
             // Store user data in Firestore using their uid
             await setDoc(doc(db, "reg_student", user.uid), {
                 name: name,
@@ -55,9 +61,12 @@ const Page = ({ searchParams }) => {
             setPhone("");
             setEmail("");
             setPassword("");
-            setAlertMessage("Registration Successful");
+            setAlertMessage(
+                "Registration Successful! A verification email has been sent to your email address. Please verify your email to complete the registration."
+            );
             setShowAlert(true);
 
+            // Redirect to the homepage after 4 seconds (optional)
             setTimeout(() => {
                 window.location.href = "/";
             }, 4000);
