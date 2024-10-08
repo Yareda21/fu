@@ -70,15 +70,6 @@ const Nav = () => {
                             <motion.li variants={itemVariants}>
                                 <a
                                     className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
-                                    href="/roadmap"
-                                >
-                                    Road Maps
-                                </a>
-                            </motion.li>
-
-                            <motion.li variants={itemVariants}>
-                                <a
-                                    className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
                                     href="https://github.com/Yareda21"
                                     target="_blank"
                                 >
