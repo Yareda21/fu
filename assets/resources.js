@@ -154,6 +154,32 @@ export const modules = [
         ],
     },
     {
+        name: "Microsoft Power BI",
+        icon: <ChartBar className="w-6 h-6" />,
+        resources: [
+            {
+                title: "Power BI Course Outline",
+                type: "PDF",
+                url: "https://www.mediafire.com/file/apna5quoek8xaw0/BI_Course_Outline.pdf/file",
+                description: "Overview of topics covered in Microsoft Power BI",
+            },
+            {
+                title: "Introduction Files and Exercises",
+                type: "ZIP",
+                url: "https://www.mediafire.com/file/i0y5sl9az35ehjq/Intro.zip/file",
+                description:
+                    "Power Point File, Exercise files and Input data for Power BI",
+            },
+            {
+                title: "Data Transform and Columns",
+                type: "PDF",
+                url: "https://www.mediafire.com/file/bk8izyrhxkxcg5z/2_Conditional_and_Unconditional_Col.zip/file",
+                description:
+                    "Quick reference for commonly used Transform Methods and deep dive to columns",
+            },
+        ],
+    },
+    {
         name: "Data Analysis and Visualization using Python",
         icon: <ChartBar className="w-6 h-6" />,
         resources: [
