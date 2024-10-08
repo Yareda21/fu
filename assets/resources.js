@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 
 export const modules = [
+    // DM
     {
         name: "Digital Marketing",
         icon: <BadgeDollarSign className="w-6 h-6" />,
@@ -42,6 +43,7 @@ export const modules = [
             },
         ],
     },
+    // Front End
     {
         name: "Front-End Development",
 
@@ -65,6 +67,7 @@ export const modules = [
             },
         ],
     },
+    // Bsckend
     {
         name: "Back-End Development",
         icon: <Terminal className="w-6 h-6" />,
@@ -86,7 +89,7 @@ export const modules = [
             },
         ],
     },
-
+    // MySQL
     {
         name: "DBMS using MySQL ",
         icon: <Database className="w-6 h-6" />,
@@ -124,6 +127,7 @@ export const modules = [
             },
         ],
     },
+    // Introduction to Python
     {
         name: "Introduction to Python",
         icon: <Section className="w-6 h-6" />,
@@ -131,6 +135,7 @@ export const modules = [
             {
                 title: "Basic Python Course Outline",
                 type: "PDF",
+                url: "https://www.mediafire.com/file/zdbechxcfpaip3o/Introduction_To_Python_Course_outline.pdf/file",
                 description:
                     "Overview of topics covered in the basic Python course",
             },
@@ -148,11 +153,14 @@ export const modules = [
             {
                 title: "Python Sample Codes",
                 type: "URL",
+                url: "",
                 description:
                     "Examples of Python code for various programming tasks",
             },
         ],
     },
+
+    // Microsoft BI
     {
         name: "Microsoft Power BI",
         icon: <ChartBar className="w-6 h-6" />,
@@ -179,6 +187,8 @@ export const modules = [
             },
         ],
     },
+
+    // DA using Python
     {
         name: "Data Analysis and Visualization using Python",
         icon: <ChartBar className="w-6 h-6" />,
