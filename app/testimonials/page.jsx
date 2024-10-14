@@ -4,43 +4,11 @@ import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Rating, Card, CardContent, Typography, Avatar } from "@mui/material";
-
-const testimonials = [
-    {
-        name: "John Doe",
-        role: "CTO, TechCorp",
-        content:
-            "Working with this software engineer was a game-changer for our project. Their expertise in React and Node.js helped us deliver a high-performance application ahead of schedule.",
-        rating: 5,
-        email: "john.doe@techcorp.com",
-        photo: "/placeholder.svg?height=100&width=100",
-    },
-    {
-        name: "Jane Smith",
-        role: "Product Manager, InnovateTech",
-        content:
-            "I was impressed by the clean, efficient code and the ability to solve complex problems. This engineer's contributions were invaluable to our team.",
-        rating: 5,
-        email: "jane.smith@innovatetech.com",
-        photo: "/placeholder.svg?height=100&width=100",
-    },
-    {
-        name: "Mike Johnson",
-        role: "Lead Developer, StartupX",
-        content:
-            "The attention to detail and commitment to best practices set this engineer apart. They consistently delivered high-quality work that exceeded our expectations.",
-        rating: 5,
-        email: "mike.johnson@startupx.com",
-        photo: "/placeholder.svg?height=100&width=100",
-    },
-];
-
-const projectImages = [
-    "https://res.cloudinary.com/dlomcic7f/image/upload/v1727543352/fu%20project%20data/exceed1_qkacwz.jpg",
-    "/placeholder.svg?height=400&width=600",
-    "/placeholder.svg?height=400&width=600",
-    "/placeholder.svg?height=400&width=600",
-];
+import {
+    workImages,
+    certificateImages,
+    testimonials,
+} from "@/assets/testimonyResource";
 
 export default function TestimonialPage() {
     return (
@@ -59,9 +27,7 @@ export default function TestimonialPage() {
 
                 {/* Photo Carousel */}
                 <div className="mb-16">
-                    <h2 className="text-2xl font-bold mb-4">
-                        Project Highlights
-                    </h2>
+                    <h2 className="text-2xl font-bold mb-4">My Classes</h2>
                     <Carousel
                         showArrows={true}
                         showStatus={false}
@@ -71,7 +37,7 @@ export default function TestimonialPage() {
                         interval={5000}
                         className="rounded-lg shadow-lg overflow-hidden"
                     >
-                        {projectImages.map((image, index) => (
+                        {workImages.map((image, index) => (
                             <div key={index}>
                                 <img
                                     src={image}
@@ -206,7 +172,7 @@ export default function TestimonialPage() {
                         interval={5000}
                         className="rounded-lg shadow-lg overflow-hidden"
                     >
-                        {projectImages.map((image, index) => (
+                        {certificateImages.map((image, index) => (
                             <div key={index}>
                                 <img
                                     src={image}
