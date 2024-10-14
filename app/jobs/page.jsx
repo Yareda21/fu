@@ -30,11 +30,11 @@ export default function JobResourcePage() {
                 <h1 className="text-4xl font-bold mb-4">
                     Find Your Perfect Online Job
                 </h1>
-                <div className="aspect-video mb-6">
+                <div className="aspect-w-16 aspect-h-6 mb-6">
                     <iframe
-                        className="w-full h-[400px] rounded-lg shadow-lg"
-                        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                        title="Introduction to Online Jobs for Students"
+                        className="w-full h-full rounded-lg shadow-lg"
+                        src="https://www.youtube.com/embed/VoRz7xfF9m0"
+                        title="Introduction to Online Jobs by Ethio Infinity"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
                     ></iframe>
@@ -43,13 +43,13 @@ export default function JobResourcePage() {
 
             <section className="mb-12">
                 <div className="flex items-center mb-6">
-                    <Search className="mr-2 h-4 w-4 text-gray-400" />
+                    <Search className="mr-2 h-4 w-4 text-black" />
                     <input
                         type="text"
                         placeholder="Search for jobs, skills, or platforms..."
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
-                        className="max-w-sm border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="max-w-sm border text-black border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                 </div>
 
@@ -68,7 +68,7 @@ export default function JobResourcePage() {
                                         <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
                                             <div className="p-4">
                                                 <div className="flex items-center justify-between mb-2">
-                                                    <h3 className="text-xl font-semibold">
+                                                    <h3 className="text-xl text-black font-semibold">
                                                         {platform.name}
                                                     </h3>
                                                     <img
@@ -117,7 +117,7 @@ export default function JobResourcePage() {
                             <div className="aspect-video">
                                 <iframe
                                     className="w-full h-full rounded-lg"
-                                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                                    src="https://www.youtube.com/embed/VoRz7xfF9m0"
                                     title="How to Create a Strong Online Profile"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowFullScreen
@@ -133,7 +133,7 @@ export default function JobResourcePage() {
                             <div className="aspect-video">
                                 <iframe
                                     className="w-full h-full rounded-lg"
-                                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                                    src="https://www.youtube.com/embed/VoRz7xfF9m0"
                                     title="Tips for Successful Job Applications"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowFullScreen
