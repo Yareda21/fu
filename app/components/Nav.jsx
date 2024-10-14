@@ -70,23 +70,15 @@ const Nav = () => {
                             <motion.li variants={itemVariants}>
                                 <a
                                     className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
-                                    href="/roadmap"
-                                    target="_blank"
+                                    href="/jobs"
                                 >
-                                    Class
+                                    Online Jobs
                                 </a>
                             </motion.li>
                             <motion.li
                                 variants={itemVariants}
                                 className="md:hidden"
                             >
-                                {/* <a
-                                    className="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700 dark:hover:bg-teal-500"
-                                    href="/login"
-                                    onClick={closeMenu}
-                                >
-                                    Admin Login
-                                </a> */}
                                 <a
                                     className="block my-1 rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700 dark:hover:bg-teal-500"
                                     href="/loginStudent"
