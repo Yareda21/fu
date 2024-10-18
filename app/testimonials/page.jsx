@@ -159,29 +159,48 @@ export default function TestimonialPage() {
                 </div>
 
                 {/* Photo Carousel - certificate */}
-                <div className="mb-16">
-                    <h2 className="text-2xl font-bold mb-4">
-                        Project Highlights
-                    </h2>
-                    <Carousel
-                        showArrows={true}
-                        showStatus={false}
-                        showThumbs={false}
-                        infiniteLoop={true}
-                        autoPlay={true}
-                        interval={5000}
-                        className="rounded-lg shadow-lg overflow-hidden"
-                    >
-                        {certificateImages.map((image, index) => (
-                            <div key={index}>
-                                <img
-                                    src={image}
-                                    alt={`Project ${index + 1}`}
-                                    className="object-cover h-96 w-full"
-                                />
-                            </div>
-                        ))}
-                    </Carousel>
+                <div className="mb-16 mt-10">
+                    <h2 className="text-2xl font-bold mb-4">My Credentials</h2>
+                    <div className="flex gap-4 justify-center">
+                        <Carousel
+                            showArrows={true}
+                            showStatus={false}
+                            showThumbs={false}
+                            infiniteLoop={true}
+                            autoPlay={true}
+                            interval={5000}
+                            className="rounded-lg lg:w-[45%] shadow-lg overflow-hidden"
+                        >
+                            {certificateImages.map((image, index) => (
+                                <div key={index}>
+                                    <img
+                                        src={image}
+                                        alt={`Project ${index + 1}`}
+                                        className="object-cover p-6 h-96 w-full"
+                                    />
+                                </div>
+                            ))}
+                        </Carousel>
+                        <Carousel
+                            showArrows={true}
+                            showStatus={false}
+                            showThumbs={false}
+                            infiniteLoop={true}
+                            autoPlay={true}
+                            interval={5000}
+                            className="rounded-lg lg:w-[45%] shadow-lg overflow-hidden"
+                        >
+                            {certificateImages.map((image, index) => (
+                                <div key={index}>
+                                    <img
+                                        src={image}
+                                        alt={`Project ${index + 1}`}
+                                        className="object-cover p-6 h-96 w-full"
+                                    />
+                                </div>
+                            ))}
+                        </Carousel>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,15 +1,15 @@
 export const workImages = [
     "https://res.cloudinary.com/dlomcic7f/image/upload/v1727543352/fu%20project%20data/exceed1_qkacwz.jpg",
-    "/placeholder.svg?height=400&width=600",
-    "/placeholder.svg?height=400&width=600",
-    "/placeholder.svg?height=400&width=600",
+    "https://res.cloudinary.com/dlomcic7f/image/upload/v1729168726/fu%20project%20data/459162548_122203543706027223_3131811754534631937_n_crtm7t.jpg",
+    "https://res.cloudinary.com/dlomcic7f/image/upload/v1729168726/fu%20project%20data/448405826_7864782363561023_3659804103625772327_n_p9mqpa.jpg",
+    "https://res.cloudinary.com/dlomcic7f/image/upload/v1729168725/fu%20project%20data/448397791_7864782443561015_2766040696146420487_n_rouxjl.jpg",
+    "https://res.cloudinary.com/dlomcic7f/image/upload/v1729168726/fu%20project%20data/448404190_7864782583561001_948590885327137517_n_glgt3x.jpg",
 ];
 
 export const certificateImages = [
-    "https://res.cloudinary.com/dlomcic7f/image/upload/v1727543352/fu%20project%20data/exceed1_qkacwz.jpg",
-    "/placeholder.svg?height=400&width=600",
-    "/placeholder.svg?height=400&width=600",
-    "/placeholder.svg?height=400&width=600",
+    "https://res.cloudinary.com/dlomcic7f/image/upload/v1729169513/fu%20project%20data/Prog_klnuxf.png",
+    "https://res.cloudinary.com/dlomcic7f/image/upload/v1729169513/fu%20project%20data/harvard_g4auuj.png",
+    "https://res.cloudinary.com/dlomcic7f/image/upload/v1729169512/fu%20project%20data/DA_bpsvme.png",
 ];
 
 export const testimonials = [
