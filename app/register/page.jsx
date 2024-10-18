@@ -32,6 +32,12 @@ const Page = ({ searchParams }) => {
     const [showAlert, setShowAlert] = useState(false);
     const [alertMessage, setAlertMessage] = useState("");
 
+    const title = "Register for Online Courses | Ethio Infinity";
+    const description =
+        "Sign up for any course at Ethio Infinity Coding School and learn web development, digital marketing, and more.";
+    const image = "/logo.png";
+    const url = "https://ethioinfinity.vercel.app/register";
+
     const addText = async (e) => {
         e.preventDefault();
         try {

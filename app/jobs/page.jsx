@@ -91,7 +91,7 @@ export default function JobResourcePage() {
                                                 </a>
                                             </div>
                                         </div>
-                                        <div className="absolute inset-0 bg-black bg-opacity-75 text-white p-4 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                        <div className="absolute inset-0 h-[70%] bg-black bg-opacity-75 text-white p-4 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                             <p>
                                                 Great for students interested in{" "}
                                                 {category.category.toLowerCase()}{" "}
