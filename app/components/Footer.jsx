@@ -94,7 +94,7 @@ const Footer = () => {
                                     rel="noopener noreferrer"
                                     className={`flex items-center px-4 py-2 rounded-full text-white transition-colors duration-300 ${platform.color}`}
                                 >
-                                    <platform.icon className=" md:mr-2 h-4 w-4" />
+                                    <platform.icon className="md:mr-2 h-4 w-4" />
                                     <span className="hidden md:flex">
                                         {platform.name}
                                     </span>

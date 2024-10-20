@@ -17,6 +17,7 @@ const Hero = () => {
                 objectFit="cover"
                 quality={100}
                 priority
+                alt="Yared Coding School"
                 // className=" opacity-60"
             />
             <div className="relative z-20 mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">
@@ -36,7 +37,7 @@ const Hero = () => {
 
                     <div className="mt-8 flex flex-wrap gap-4 text-center">
                         <a
-                            href="/roadmap"
+                            href="/loginStudent"
                             className="block w-full rounded bg-rose-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
                         >
                             Get Started
@@ -51,7 +52,7 @@ const Hero = () => {
                 </div>
 
                 {/* New Social Media Links Section */}
-                <div class="flex gap-5 justify-center md:bg-slate-300 md:bg-opacity-50 md:p-4 md:rounded-md md:backdrop-filter md:backdrop-blur-lg md:block mt-8 md:mt-0 md:absolute md:right-20 md:top-1/2 md:transform md:-translate-y-1/2">
+                <div className="flex gap-5 justify-center md:bg-slate-300 md:bg-opacity-50 md:p-4 md:rounded-md md:backdrop-filter md:backdrop-blur-lg md:block mt-8 md:mt-0 md:absolute md:right-20 md:top-1/2 md:transform md:-translate-y-1/2">
                     <a
                         href="https://yared21.netlify.app/"
                         className="text-white md:text-4xl text-4xl md:mx-5  hover:text-red-400"

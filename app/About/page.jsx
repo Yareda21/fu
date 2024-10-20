@@ -1,15 +1,17 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Head from "next/head";
+import { Carousel } from "react-responsive-carousel";
+import { certificateImages } from "@/assets/testimonyResource";
 
 export default function About() {
-    const title = "About Us | Infinity Coding School";
+    const title = "About Me | Yared Coding School";
     const description =
-        "Learn about Infinity Coding School, our mission, vision, and the team behind our courses.";
-    const url = "https://infinity-codecamp.vercel.app/about";
+        "Learn about Yared Coding School, our mission, vision, and the team behind our courses.";
+    const url = "https://yaredcoding.vercel.app/about";
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -21,36 +23,35 @@ export default function About() {
         visible: { opacity: 1, y: 0 },
     };
 
+    useEffect(() => {
+        // Updating document head elements
+        document.title = title;
+
+        const metaDescription = document.querySelector(
+            'meta[name="description"]'
+        );
+        if (metaDescription) {
+            metaDescription.setAttribute("content", description);
+        } else {
+            const newMetaDescription = document.createElement("meta");
+            newMetaDescription.name = "description";
+            newMetaDescription.content = description;
+            document.head.appendChild(newMetaDescription);
+        }
+
+        const canonicalLink = document.querySelector('link[rel="canonical"]');
+        if (canonicalLink) {
+            canonicalLink.setAttribute("href", url);
+        } else {
+            const newCanonicalLink = document.createElement("link");
+            newCanonicalLink.rel = "canonical";
+            newCanonicalLink.href = url;
+            document.head.appendChild(newCanonicalLink);
+        }
+    }, [title, description, url]);
+
     return (
         <>
-            <Head>
-                {/* Favicon */}
-                <link rel="icon" type="image/png" href="/logo.png" />
-
-                {/* Basic SEO Meta Tags */}
-                <title>{title}</title>
-                <meta name="description" content={description} />
-
-                <meta
-                    name="viewport"
-                    content="width=device-width, initial-scale=1"
-                />
-
-                {/* Open Graph (OG) Meta Tags for Social Sharing */}
-                <meta property="og:title" content={title} />
-                <meta property="og:description" content={description} />
-                <meta property="og:type" content="website" />
-
-                {/* Additional Meta Tags for Social Media */}
-                <meta
-                    property="og:site_name"
-                    content="Infinity Coding School"
-                />
-                <meta property="og:locale" content="en_US" />
-
-                {/* Links to Social Media Profiles */}
-                <link rel="canonical" href={url} />
-            </Head>
             <div className="container mx-auto px-4 py-16 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
                 <motion.div
                     className="space-y-16"
@@ -80,7 +81,7 @@ export default function About() {
                             <Image
                                 className="rounded-lg shadow-xl hover:shadow-2xl transition-shadow duration-300"
                                 src="https://res.cloudinary.com/dlomcic7f/image/upload/v1726840696/me/my_image_hj8kr1.jpg"
-                                alt="Yared Kebede"
+                                alt="Yared Coding School"
                                 width={800}
                                 height={400}
                                 layout="responsive"
@@ -203,6 +204,52 @@ export default function About() {
                                     </li>
                                 </ul>
                             </div>
+                        </div>
+                    </motion.div>
+
+                    <motion.div className="mb-16 mt-10" variants={itemVariants}>
+                        <h2 className="text-2xl font-bold mb-4">
+                            My Credentials
+                        </h2>
+                        <div className="flex flex-col md:flex-row gap-4 justify-center">
+                            <Carousel
+                                showArrows={true}
+                                showStatus={false}
+                                showThumbs={false}
+                                infiniteLoop={true}
+                                autoPlay={true}
+                                interval={5000}
+                                className="rounded-lg lg:w-[45%] shadow-lg overflow-hidden"
+                            >
+                                {certificateImages.map((image, index) => (
+                                    <div key={index}>
+                                        <img
+                                            src={image}
+                                            alt={`Project ${index + 1}`}
+                                            className="object-cover p-6 h-96 w-full"
+                                        />
+                                    </div>
+                                ))}
+                            </Carousel>
+                            <Carousel
+                                showArrows={true}
+                                showStatus={false}
+                                showThumbs={false}
+                                infiniteLoop={true}
+                                autoPlay={true}
+                                interval={5000}
+                                className="rounded-lg lg:w-[45%] shadow-lg overflow-hidden"
+                            >
+                                {certificateImages.map((image, index) => (
+                                    <div key={index}>
+                                        <img
+                                            src={image}
+                                            alt={`Project ${index + 1}`}
+                                            className="object-cover p-6 h-96 w-full"
+                                        />
+                                    </div>
+                                ))}
+                            </Carousel>
                         </div>
                     </motion.div>
 

@@ -18,6 +18,38 @@ export default function AdminLogin() {
     const [resetMessage, setResetMessage] = useState(null);
     const router = useRouter();
 
+    const title = "Join Us | Yared";
+    const description =
+        "To access all of our resource, Sign up for free and just study! ";
+    const url = "https://yared-coding.vercel.app/courseDetail";
+
+    useEffect(() => {
+        // Updating document head elements
+        document.title = title;
+
+        const metaDescription = document.querySelector(
+            'meta[name="description"]'
+        );
+        if (metaDescription) {
+            metaDescription.setAttribute("content", description);
+        } else {
+            const newMetaDescription = document.createElement("meta");
+            newMetaDescription.name = "description";
+            newMetaDescription.content = description;
+            document.head.appendChild(newMetaDescription);
+        }
+
+        const canonicalLink = document.querySelector('link[rel="canonical"]');
+        if (canonicalLink) {
+            canonicalLink.setAttribute("href", url);
+        } else {
+            const newCanonicalLink = document.createElement("link");
+            newCanonicalLink.rel = "canonical";
+            newCanonicalLink.href = url;
+            document.head.appendChild(newCanonicalLink);
+        }
+    }, [title, description, url]);
+
     const handleLogin = async (e) => {
         e.preventDefault();
         setError(null);
@@ -125,6 +157,12 @@ export default function AdminLogin() {
                                 Sign in
                             </button>
                         </div>
+                        <a
+                            href="/"
+                            className="block w-full rounded bg-rose-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-rose-700 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto"
+                        >
+                            If you havent registered yet, go registration page
+                        </a>
 
                         <div className="text-center mt-4">
                             <button
@@ -151,7 +189,7 @@ export default function AdminLogin() {
                                 type="email"
                                 autoComplete="email"
                                 required
-                                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                                className="appearance-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
                                 placeholder="Enter your email address"
                                 value={resetEmail}
                                 onChange={(e) => setResetEmail(e.target.value)}

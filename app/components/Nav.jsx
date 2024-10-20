@@ -30,7 +30,7 @@ const Nav = () => {
                 <a className="block text-teal-600 dark:text-teal-300" href="/">
                     <Image
                         src={tenor}
-                        alt="Yared Kebede"
+                        alt="Yared Coding School"
                         width={100}
                         height={100}
                     />

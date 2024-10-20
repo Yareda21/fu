@@ -21,6 +21,7 @@ export default function App() {
         <div className="relative">
             <Image
                 src={b}
+                alt="Yared Coding School"
                 fill
                 quality={100}
                 priority
@@ -60,7 +61,7 @@ export default function App() {
                                                 <Image
                                                     width={300}
                                                     height={300}
-                                                    alt="ecommerce"
+                                                    alt="Yared Coding School"
                                                     className="object-cover object-center w-full h-full block rounded-xl"
                                                     src={ele.image}
                                                     priority
@@ -108,7 +109,7 @@ export default function App() {
                                                 <Image
                                                     width={300}
                                                     height={300}
-                                                    alt="ecommerce"
+                                                    alt="Yared Coding School"
                                                     className="object-cover object-center w-full h-full block rounded-xl"
                                                     src={tenor}
                                                     priority
@@ -154,7 +155,7 @@ export default function App() {
                                                 <Image
                                                     width={300}
                                                     height={300}
-                                                    alt="ecommerce"
+                                                    alt="Yared Coding School"
                                                     className="object-cover object-center w-full block rounded-xl"
                                                     src={tenor}
                                                     priority

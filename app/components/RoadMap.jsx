@@ -81,7 +81,7 @@ const page = () => {
                                                 href={`/courseDetail/webdev/${subject.title}`}
                                             >
                                                 <Image
-                                                    alt="Fundamentals"
+                                                    alt="Yared Coding School"
                                                     layout="fill"
                                                     fetchPriority="high"
                                                     decoding="async"
@@ -169,7 +169,7 @@ const page = () => {
                                                 href={`/courseDetail/DataAnalysis/${subject.title}`}
                                             >
                                                 <Image
-                                                    alt="Fundamentals"
+                                                    alt="Yared Coding School"
                                                     layout="fill"
                                                     fetchPriority="high"
                                                     decoding="async"
