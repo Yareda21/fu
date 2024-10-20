@@ -1,10 +1,41 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Search, ExternalLink } from "lucide-react";
 import { jobSources } from "@/assets/jobResource";
 
 export default function JobResourcePage() {
     const [searchTerm, setSearchTerm] = useState("");
+    const title = "Online Jobs - Opportunities for Developers and Students";
+    const description =
+        "Explore job opportunities at Yared Coding School! We connect developers and students with top companies looking for talent in programming, software development, and more.";
+    const url = "https://www.yared-coding.vercel.app/jobs";
+
+    useEffect(() => {
+        // Updating document head elements
+        document.title = title;
+
+        const metaDescription = document.querySelector(
+            'meta[name="description"]'
+        );
+        if (metaDescription) {
+            metaDescription.setAttribute("content", description);
+        } else {
+            const newMetaDescription = document.createElement("meta");
+            newMetaDescription.name = "description";
+            newMetaDescription.content = description;
+            document.head.appendChild(newMetaDescription);
+        }
+
+        const canonicalLink = document.querySelector('link[rel="canonical"]');
+        if (canonicalLink) {
+            canonicalLink.setAttribute("href", url);
+        } else {
+            const newCanonicalLink = document.createElement("link");
+            newCanonicalLink.rel = "canonical";
+            newCanonicalLink.href = url;
+            document.head.appendChild(newCanonicalLink);
+        }
+    }, [title, description, url]);
 
     const filteredJobSources = jobSources
         .map((category) => ({

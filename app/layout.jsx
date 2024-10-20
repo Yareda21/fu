@@ -10,7 +10,7 @@ const inter = Outfit({ subsets: ["latin"] });
 
 export const metadata = {
     keywords:
-        "infinity, Amharic, infinity coding bootcamp, Ethiopia, Digital Marketing, Data Analysis and Analytics, learn to code, web development, JavaScript, React, HTML, CSS, software development",
+        "Amharic, yared kebede,Yared coding school, Ethiopia, Digital Marketing, Data Analysis and Analytics, learn to code, web development, JavaScript, React, HTML, CSS, software development",
 
     image: "/logo.png",
     youtubeChannel: "https://www.youtube.com/@infinityCode-21",

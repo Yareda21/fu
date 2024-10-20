@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { doc, setDoc } from "firebase/firestore";
 
 import { db, auth } from "@/firebase/firebase";
@@ -31,12 +31,6 @@ const Page = ({ searchParams }) => {
     const [password, setPassword] = useState("");
     const [showAlert, setShowAlert] = useState(false);
     const [alertMessage, setAlertMessage] = useState("");
-
-    const title = "Register for Online Courses | Ethio Infinity";
-    const description =
-        "Sign up for any course at Ethio Infinity Coding School and learn web development, digital marketing, and more.";
-    const image = "/logo.png";
-    const url = "https://ethioinfinity.vercel.app/register";
 
     const addText = async (e) => {
         e.preventDefault();
@@ -82,6 +76,38 @@ const Page = ({ searchParams }) => {
             setShowAlert(true);
         }
     };
+
+    const title = "Register for Online Courses | Yared";
+    const description =
+        "Sign up for any course at Yared Coding School and learn web development, digital marketing, and more.";
+    const url = "https://yared-coding.vercel.app/register";
+
+    useEffect(() => {
+        // Updating document head elements
+        document.title = title;
+
+        const metaDescription = document.querySelector(
+            'meta[name="description"]'
+        );
+        if (metaDescription) {
+            metaDescription.setAttribute("content", description);
+        } else {
+            const newMetaDescription = document.createElement("meta");
+            newMetaDescription.name = "description";
+            newMetaDescription.content = description;
+            document.head.appendChild(newMetaDescription);
+        }
+
+        const canonicalLink = document.querySelector('link[rel="canonical"]');
+        if (canonicalLink) {
+            canonicalLink.setAttribute("href", url);
+        } else {
+            const newCanonicalLink = document.createElement("link");
+            newCanonicalLink.rel = "canonical";
+            newCanonicalLink.href = url;
+            document.head.appendChild(newCanonicalLink);
+        }
+    }, [title, description, url]);
 
     return (
         <section className="bg-white">
