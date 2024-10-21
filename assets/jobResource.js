@@ -63,8 +63,21 @@ export const jobSources = [
         ],
     },
     {
-        category: "Part-time",
+        category: "Part-time and Having Fun",
         platforms: [
+            {
+                name: "Binance",
+                image: "/logo.png",
+                link: "https://www.flexjobs.com",
+                description: "This is the best platform to do crypto currency.",
+            },
+            {
+                name: "Roobet",
+                image: "/logo.png",
+                link: "https://roobet.com/",
+                description:
+                    "This is the best platform to betting on different sports and play games.",
+            },
             {
                 name: "FlexJobs",
                 image: "/logo.png",
