@@ -25,7 +25,7 @@ const Nav = () => {
     };
 
     return (
-        <header className=" sticky top-0 left-0  right-0 bg-white dark:bg-[#001d62] gray-900 z-40">
+        <header className=" sticky top-0 left-0  right-0 bg-[#001d62] gray-900 z-40">
             <div className="mx-auto shadow-md flex h-16 max-w-screen-xl items-center gap-8 px-4 sm:px-6 lg:px-8">
                 <a className="block text-teal-600 dark:text-teal-300" href="/">
                     <Image
@@ -41,7 +41,7 @@ const Nav = () => {
                         aria-label="Global"
                         className={`${
                             isMenuOpen ? "block h-screen" : "hidden"
-                        } md:block absolute md:relative top-16 left-0 right-0 bg-white dark:bg-[#001d62] md:top-0`}
+                        } md:block absolute md:relative top-16 left-0 right-0 bg-[#001d62] md:top-0`}
                     >
                         <motion.ul
                             initial="hidden"
@@ -109,7 +109,7 @@ const Nav = () => {
                         <div>
                             <button
                                 onClick={toggleMenu}
-                                className="block rounded bg-gray-100 p-2.5 text-gray-600 transition hover:text-gray-600/75 dark:bg-gray-800 dark:text-white dark:hover:text-white/75 md:hidden"
+                                className="block rounded p-2.5 text-gray-600 transition hover:text-gray-600/75 bg-gray-800 dark:text-white dark:hover:text-white/75 md:hidden"
                             >
                                 <span className="sr-only">Toggle menu</span>
                                 {isMenuOpen ? (

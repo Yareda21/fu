@@ -207,11 +207,14 @@ export default function About() {
                         </div>
                     </motion.div>
 
-                    <motion.div className="mb-16 mt-10" variants={itemVariants}>
+                    <motion.div
+                        className="mb-16 h-[500px] mt-10"
+                        variants={itemVariants}
+                    >
                         <h2 className="text-2xl font-bold mb-4">
                             My Credentials
                         </h2>
-                        <div className="flex flex-col md:flex-row gap-4 justify-center">
+                        <div className="flex h-[500px] flex-col md:flex-row gap-4 justify-center">
                             <Carousel
                                 showArrows={true}
                                 showStatus={false}
@@ -219,7 +222,7 @@ export default function About() {
                                 infiniteLoop={true}
                                 autoPlay={true}
                                 interval={5000}
-                                className="rounded-lg lg:w-[45%] shadow-lg overflow-hidden"
+                                className="rounded-lg lg:w-[45%] shadow-lg flex  overflow-hidden"
                             >
                                 {certificateImages.map((image, index) => (
                                     <div key={index}>

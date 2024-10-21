@@ -53,7 +53,7 @@ const Footer = () => {
     ];
     return (
         //
-        <footer className="bg-white dark:bg-gray-900 ">
+        <footer className=" bg-gray-900 ">
             <div className="mx-auto max-w-screen-xl px-4 pb-4 pt-8 sm:px-6 lg:px-8">
                 <div className="mx-auto max-w-md">
                     <strong className="block text-center text-lg font-bold text-gray-900 dark:text-white sm:text-3xl">
@@ -68,7 +68,7 @@ const Footer = () => {
                             </label>
 
                             <input
-                                className="w-full rounded-full border-gray-200 bg-gray-100 p-4 pe-32 text-sm font-medium dark:border-gray-700 dark:bg-gray-800 dark:text-white"
+                                className="w-full rounded-full p-4 pe-32 text-sm font-medium border-gray-700  bg-gray-800 text-white"
                                 id="phone"
                                 type="tel"
                                 placeholder="+251922761594"
