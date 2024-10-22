@@ -223,4 +223,39 @@ export const modules = [
             },
         ],
     },
+    // DA using Python
+    {
+        name: "Data Analysis and Visualization using Python",
+        icon: <ChartBar className="w-6 h-6" />,
+        resources: [
+            {
+                title: "Data Analysis Course Outline",
+                type: "PDF",
+                url: "https://www.mediafire.com/file/example1/Data_Analysis_Course_Outline.pdf/file",
+                description:
+                    "Overview of topics covered in the data analysis course",
+            },
+            {
+                title: "Data Analysis Notes",
+                type: "PDF",
+                url: "https://www.mediafire.com/file/example2/Data_Analysis_Notes.pdf/file",
+                description:
+                    "Detailed notes on data analysis concepts and techniques",
+            },
+            {
+                title: "Pandas and NumPy Short Notes",
+                type: "PDF",
+                url: "https://www.mediafire.com/file/example3/Pandas_NumPy_Short_Notes.pdf/file",
+                description:
+                    "Quick reference for commonly used Pandas and NumPy commands",
+            },
+            {
+                title: "Matplotlib and Seaborn Sample Codes",
+                type: "URL",
+                url: "https://www.mediafire.com/file/example4/Matplotlib_Seaborn_Sample_Codes.pdf/file",
+                description:
+                    "Examples of Python code for creating visualizations using Matplotlib and Seaborn",
+            },
+        ],
+    },
 ];
