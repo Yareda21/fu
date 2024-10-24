@@ -62,6 +62,20 @@ export const modules = [
                 description: "Comprehensive guide to modern HTML and CSS",
             },
             {
+                title: "CSS Cheatsheet",
+                url: "https://www.mediafire.com/file/9f5xxhw7nlr1b39/csscheatsheet.pdf/file",
+                type: "PDF",
+                description:
+                    "Cheat codes for CSS, use this and memorize a lot of them",
+            },
+            {
+                title: "HTML Cheatsheet",
+                url: "https://www.mediafire.com/file/pl4ec4ozjtdpu58/HTML-Cheat-Sheet_2.pdf/file",
+                type: "PDF",
+                description:
+                    "Cheat codes for HTML, use this and memorize a lot of them",
+            },
+            {
                 title: "JavaScript ES6+ Features",
                 type: "Video",
                 description: "Deep dive into ES6+ features and best practices",
