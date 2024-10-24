@@ -35,6 +35,12 @@ export const modules = [
                     "Documentation on content marketing strategies and techniques",
             },
             {
+                title: "Social media marketing Notes",
+                type: "rar",
+                url: "https://www.mediafire.com/file/qfs2cgt7nz4vn86/Social_Media_Strategy.zip/file",
+                description: "Documentation on social media platforms strategy",
+            },
+            {
                 title: "Final Project",
                 type: "PDF",
                 url: "https://www.mediafire.com/file/bb4nasjgatt5wz9/Final_Project_2.pdf/file",
@@ -182,6 +188,27 @@ export const modules = [
                 title: "Data Transform and Columns",
                 type: "PDF",
                 url: "https://www.mediafire.com/file/bk8izyrhxkxcg5z/2_Conditional_and_Unconditional_Col.zip/file",
+                description:
+                    "Quick reference for commonly used Transform Methods and deep dive to columns",
+            },
+            {
+                title: "Data Modeling",
+                type: "rar",
+                url: "https://www.mediafire.com/file/y32m1lp4we4qo72/3_Modeling.zip/file",
+                description:
+                    "Quick reference for how tables are connected and models are created",
+            },
+            {
+                title: "Intro to DAX",
+                type: "zip",
+                url: "https://www.mediafire.com/file/nrywqsuuw6dole4/4_Intro_To_DAX.zip/file",
+                description:
+                    "All files for data analysis expressions with exercises packed",
+            },
+            {
+                title: "Intro to Visualization",
+                type: "zip",
+                url: "https://www.mediafire.com/file/1a6t6kmom9qdpuz/5_Visualization.zip/file",
                 description:
                     "Quick reference for commonly used Transform Methods and deep dive to columns",
             },
