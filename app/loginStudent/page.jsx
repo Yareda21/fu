@@ -10,6 +10,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { useRouter } from "next/navigation";
 
 export default function AdminLogin() {
+    const [buttonColor, setButtonColor] = useState("bg-indigo-600");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState(null);
@@ -98,11 +99,11 @@ export default function AdminLogin() {
 
                 {!showResetForm ? (
                     <form className="mt-8 space-y-6" onSubmit={handleLogin}>
-                        <input
+                        {/* <input
                             type="hidden"
                             name="remember"
                             defaultValue="true"
-                        />
+                        /> */}
                         <div className="rounded-md shadow-sm -space-y-px">
                             <div>
                                 <label
@@ -152,7 +153,8 @@ export default function AdminLogin() {
                         <div>
                             <button
                                 type="submit"
-                                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                className={`group ${buttonColor} relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500`}
+                                onClick={() => setButtonColor("bg-red-600")}
                             >
                                 Sign in
                             </button>

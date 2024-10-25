@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { ChevronDown, ChevronUp, Download, User } from "lucide-react";
-
 import { modules } from "@/assets/resources";
 
 export default function Component() {
@@ -47,18 +46,26 @@ export default function Component() {
                         <span className="font-semibold">{user.name}</span>
                     </div>
                 </div>
-                <div className="bg-gray-700 p-4">
-                    <p className="text-gray-300">
-                        Track: Full-Stack Development
-                    </p>
-                    <p className="text-gray-300">
-                        Progress: {completedResources.size} /{" "}
-                        {modules.reduce(
-                            (acc, module) => acc + module.resources.length,
-                            0
-                        )}{" "}
-                        resources completed
-                    </p>
+                <div className="bg-gray-700 flex justify-between items-center p-4">
+                    <div>
+                        <p className="text-gray-300">
+                            Track: Full-Stack Development
+                        </p>
+                        <p className="text-gray-300">
+                            Progress: {completedResources.size} /{" "}
+                            {modules.reduce(
+                                (acc, module) => acc + module.resources.length,
+                                0
+                            )}{" "}
+                        </p>
+                    </div>
+                    <div>
+                        <button className="bg-blue-500 text-white py-2 px-4 rounded">
+                            <a href="/feedback" target="_black">
+                                Give Feedback
+                            </a>
+                        </button>
+                    </div>
                 </div>
             </div>
 
