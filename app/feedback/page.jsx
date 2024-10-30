@@ -56,14 +56,14 @@ const FeedbackForm = () => {
             <form onSubmit={handleSubmit} className="space-y-4">
                 <input
                     type="text"
-                    placeholder="Name (optional)"
+                    placeholder="Name"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     className="w-full p-3 border rounded-lg border-gray-300 focus:outline-none focus:ring focus:ring-green-300"
                 />
                 <input
                     type="email"
-                    placeholder="Email (optional)"
+                    placeholder="Email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     className="w-full p-3 border rounded-lg border-gray-300 focus:outline-none focus:ring focus:ring-green-300"
