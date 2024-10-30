@@ -1,6 +1,9 @@
 "use client";
 
 import React, { useEffect } from "react";
+
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Rating, Card, CardContent, Typography, Avatar } from "@mui/material";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Head from "next/head";
@@ -207,14 +210,11 @@ export default function About() {
                         </div>
                     </motion.div>
 
-                    <motion.div
-                        className="mb-16 h-[500px] mt-10"
-                        variants={itemVariants}
-                    >
+                    <div className="mb-16 mt-10">
                         <h2 className="text-2xl font-bold mb-4">
                             My Credentials
                         </h2>
-                        <div className="flex h-[500px] flex-col md:flex-row gap-4 justify-center">
+                        <div className="flex gap-4 justify-center">
                             <Carousel
                                 showArrows={true}
                                 showStatus={false}
@@ -222,7 +222,7 @@ export default function About() {
                                 infiniteLoop={true}
                                 autoPlay={true}
                                 interval={5000}
-                                className="rounded-lg lg:w-[45%] shadow-lg flex  overflow-hidden"
+                                className="rounded-lg lg:w-[45%] shadow-lg overflow-hidden"
                             >
                                 {certificateImages.map((image, index) => (
                                     <div key={index}>
@@ -254,7 +254,7 @@ export default function About() {
                                 ))}
                             </Carousel>
                         </div>
-                    </motion.div>
+                    </div>
 
                     <motion.div variants={itemVariants}>
                         <div>
