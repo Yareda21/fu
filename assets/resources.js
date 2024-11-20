@@ -76,18 +76,20 @@ export const modules = [
                     "Cheat codes for HTML, use this and memorize a lot of them",
             },
             {
-                title: "JavaScript ES6+ Features",
-                type: "Video",
+                title: "JavaScript Handout",
+                type: "PDF",
+                url: "https://www.mediafire.com/file/gq5xkrfgkns3i0j/JS_Notes.pdf/file",
                 description: "Deep dive into ES6+ features and best practices",
             },
             {
                 title: "React - Component Based Architecture",
                 type: "Code",
+                url: "#",
                 description: "Hands-on workshop for mastering React Hooks",
             },
         ],
     },
-    // Bsckend
+    // Backend
     {
         name: "Back-End Development",
         icon: <Terminal className="w-6 h-6" />,
@@ -235,32 +237,11 @@ export const modules = [
         icon: <ChartBar className="w-6 h-6" />,
         resources: [
             {
-                title: "Data Analysis Course Outline",
-                type: "PDF",
-                url: "https://www.mediafire.com/file/example1/Data_Analysis_Course_Outline.pdf/file",
+                title: "Data Analysis and Visualization using Python",
+                type: "Folder",
+                url: "https://www.mediafire.com/folder/coostlesg36tf/Data+Analysis+and+Visualization+using+Python",
                 description:
                     "Overview of topics covered in the data analysis course",
-            },
-            {
-                title: "Data Analysis Notes",
-                type: "PDF",
-                url: "https://www.mediafire.com/file/example2/Data_Analysis_Notes.pdf/file",
-                description:
-                    "Detailed notes on data analysis concepts and techniques",
-            },
-            {
-                title: "Pandas and NumPy Short Notes",
-                type: "PDF",
-                url: "https://www.mediafire.com/file/example3/Pandas_NumPy_Short_Notes.pdf/file",
-                description:
-                    "Quick reference for commonly used Pandas and NumPy commands",
-            },
-            {
-                title: "Matplotlib and Seaborn Sample Codes",
-                type: "URL",
-                url: "https://www.mediafire.com/file/example4/Matplotlib_Seaborn_Sample_Codes.pdf/file",
-                description:
-                    "Examples of Python code for creating visualizations using Matplotlib and Seaborn",
             },
         ],
     },
