@@ -92,12 +92,12 @@ const Nav = () => {
 
                     <div className="flex items-center gap-4">
                         <div className="hidden md:flex sm:gap-4">
-                            {/* <a
+                            <a
                                 className="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700 dark:hover:bg-teal-500"
-                                href="/login"
+                                href="/dm"
                             >
-                                Admin Login
-                            </a> */}
+                                DM Exercise
+                            </a>
                             <a
                                 className="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700 dark:hover:bg-teal-500"
                                 href="/loginStudent"

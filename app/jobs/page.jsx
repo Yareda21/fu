@@ -10,6 +10,7 @@ export default function JobResourcePage() {
         "Explore job opportunities at Yared Coding School! We connect developers and students with top companies looking for talent in programming, software development, and more.";
     const url = "https://www.yared-coding.vercel.app/jobs";
 
+    // Meta data
     useEffect(() => {
         // Updating document head elements
         document.title = title;
@@ -37,6 +38,7 @@ export default function JobResourcePage() {
         }
     }, [title, description, url]);
 
+    // Filtering
     const filteredJobSources = jobSources
         .map((category) => ({
             ...category,
