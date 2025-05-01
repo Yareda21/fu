@@ -6,11 +6,7 @@ export const workImages = [
     "https://res.cloudinary.com/dlomcic7f/image/upload/v1729168726/fu%20project%20data/448404190_7864782583561001_948590885327137517_n_glgt3x.jpg",
 ];
 
-export const certificateImages = [
-    "https://res.cloudinary.com/dlomcic7f/image/upload/v1729169513/fu%20project%20data/Prog_klnuxf.png",
-    "https://res.cloudinary.com/dlomcic7f/image/upload/v1729169513/fu%20project%20data/harvard_g4auuj.png",
-    "https://res.cloudinary.com/dlomcic7f/image/upload/v1729169512/fu%20project%20data/DA_bpsvme.png",
-];
+
 
 export const testimonials = [
     {

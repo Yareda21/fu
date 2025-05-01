@@ -3,11 +3,10 @@
 import React from "react";
 import { useQuery } from "react-query";
 import { collection, getDocs, query, limit, orderBy } from "firebase/firestore";
-import { db } from "@/firebase/firebase";
+import { firebase } from "../../../firebase/firebase.js";
 import { signOut } from "firebase/auth";
 import { auth } from "@/firebase/firebase";
 import { useRouter } from "next/navigation";
-import { Bar } from "react-chartjs-2";
 import { Line } from "react-chartjs-2";
 import { Chart, registerables } from "chart.js"; // Import Chart.js and registerables
 

@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
-import tenor from "@/public/logo.png";
+import logo from "/logo.png";
 import { motion } from "framer-motion";
 
 const Nav = () => {
@@ -29,7 +29,7 @@ const Nav = () => {
             <div className="mx-auto shadow-md flex h-16 max-w-screen-xl items-center gap-8 px-4 sm:px-6 lg:px-8">
                 <a className="block text-teal-600 dark:text-teal-300" href="/">
                     <Image
-                        src={tenor}
+                        src={logo}
                         alt="Yared Coding School"
                         width={100}
                         height={100}
