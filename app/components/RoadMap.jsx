@@ -8,7 +8,7 @@ import {
     programmingCourses,
     aiAndMachineLearning,
     dataAnalysis,
-} from "@/assets/newCourses.js";
+} from "../../assets/newCourses.js";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
 import Image from "next/image";

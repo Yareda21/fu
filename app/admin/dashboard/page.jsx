@@ -5,7 +5,7 @@ import { useQuery } from "react-query";
 import { collection, getDocs, query, limit, orderBy } from "firebase/firestore";
 import { firebase } from "../../../firebase/firebase.js";
 import { signOut } from "firebase/auth";
-import { auth } from "@/firebase/firebase";
+import { auth } from "../../../firebase/firebase.js";
 import { useRouter } from "next/navigation";
 import { Line } from "react-chartjs-2";
 import { Chart, registerables } from "chart.js"; // Import Chart.js and registerables

@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
-import logo from "/logo.png";
+import logo from "../../public/logo.png";
 import { motion } from "framer-motion";
 
 const Nav = () => {

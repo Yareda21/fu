@@ -1,7 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { Search, ExternalLink } from "lucide-react";
-import { jobSources } from "@/assets/jobResource";
+
+import { jobSources } from "../../assets/jobResource.js";
 
 export default function JobResourcePage() {
     const [searchTerm, setSearchTerm] = useState("");

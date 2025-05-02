@@ -7,7 +7,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 import { Carousel } from "react-responsive-carousel";
-import { certificateImages } from "@/assets/certificateImages.js";
+import { certificateImages } from "../../assets/certificateImages.js";
 
 export default function About() {
     const title = "About Me | Yared Coding School";

@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { dataAnalysis } from "@/assets/newCourses";
+import { dataAnalysis } from "../../../../assets/newCourses.js";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
