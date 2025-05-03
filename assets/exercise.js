@@ -1,23 +1,18 @@
 import {
-    ArrowRight,
-    ArrowLeft,
-    Clock,
-    BarChart,
     Video,
     Sparkles,
     Share2,
     TrendingUp,
     Mic,
-    Layers,
-    X,
+    Layers
 } from "lucide-react";
 
 export const exercises = [
     {
         id: 1,
-        title: "AI Video Script Generation",
+        title: "Content Development with AI & Design Tools",
         description:
-            "Learn how to use AI tools to generate compelling scripts for social media videos.",
+            "A comprehensive course for digital marketing students to master content creation using modern AI and design tools.",
         difficulty: "Beginner",
         duration: "45 minutes",
         bgColor: "bg-blue-100",
