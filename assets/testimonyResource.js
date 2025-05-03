@@ -7,9 +7,9 @@ export const workImages = [
 ];
 
 export const certificateImages = [
-    "https://res.cloudinary.com/dlomcic7f/image/upload/v1729169513/fu%20project%20data/Prog_klnuxf.png",
-    "https://res.cloudinary.com/dlomcic7f/image/upload/v1729169513/fu%20project%20data/harvard_g4auuj.png",
-    "https://res.cloudinary.com/dlomcic7f/image/upload/v1729169512/fu%20project%20data/DA_bpsvme.png",
+    "https://res.cloudinary.com/dlomcic7f/image/upload/v1727543352/fu%20project%20data/exceed1_qkacwz.jpg",
+    "https://res.cloudinary.com/dlomcic7f/image/upload/v1729168726/fu%20project%20data/459162548_122203543706027223_3131811754534631937_n_crtm7t.jpg",
+    "https://res.cloudinary.com/dlomcic7f/image/upload/v1729168726/fu%20project%20data/448405826_7864782363561023_3659804103625772327_n_p9mqpa.jpg",
 ];
 
 export const testimonials = [

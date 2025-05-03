@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { ChevronDown, ChevronUp, Download, User } from "lucide-react";
-import { modules } from "@/assets/resources";
+
+import { modules } from "../../assets/resources.js";
 
 export default function Component() {
     const [openModule, setOpenModule] = useState(null);

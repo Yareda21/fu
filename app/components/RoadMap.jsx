@@ -1,8 +1,6 @@
 "use client";
 
 import React from "react";
-import { roadMap } from "@/assets/newCourses";
-
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -10,7 +8,7 @@ import {
     programmingCourses,
     aiAndMachineLearning,
     dataAnalysis,
-} from "@/assets/newCourses";
+} from "../../assets/newCourses.js";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
 import Image from "next/image";

@@ -1,8 +1,13 @@
 {
     "compilerOptions": {
+        "baseUrl": ".",
         "paths": {
-            "@/*": ["./*"]
+            "@/*": ["./*"],
+            "@/assets/*": ["./assets/*"],
+            "@/firebase/*": ["./firebase/*"],
+            "@/app/*": ["./app/*"]
         },
         "types": ["node"]
-    }
+    },
+    "exclude": ["node_modules"]
 }

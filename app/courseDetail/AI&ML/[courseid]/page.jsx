@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { aiAndMachineLearning } from "@/assets/newCourses";
+import { aiAndMachineLearning } from "../../../../assets/newCourses.js";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";

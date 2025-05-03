@@ -3,12 +3,11 @@
 import React, { useEffect } from "react";
 
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Rating, Card, CardContent, Typography, Avatar } from "@mui/material";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import Head from "next/head";
+
 import { Carousel } from "react-responsive-carousel";
-import { certificateImages } from "@/assets/testimonyResource";
+import { certificateImages } from "../../assets/certificateImages.js";
 
 export default function About() {
     const title = "About Me | Yared Coding School";
@@ -183,7 +182,7 @@ export default function About() {
                                             Tailored Content:
                                         </span>{" "}
                                         I customize my teaching to match the
-                                        student’s skill level, whether they are
+                                        student's skill level, whether they are
                                         complete beginners or looking to expand
                                         their expertise.
                                     </li>

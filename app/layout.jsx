@@ -5,7 +5,7 @@ import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import { ReactQueryProvider } from "./ReactQueryProvider";
 import Head from "next/head";
-
+import { Analytics } from "@vercel/analytics/react";
 const inter = Outfit({ subsets: ["latin"] });
 
 export const metadata = {
@@ -69,6 +69,7 @@ export default function RootLayout({ children }) {
                 <ReactQueryProvider>
                     <Nav />
                     {children}
+                    <Analytics />
                     <Footer />
                 </ReactQueryProvider>
             </body>

@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
-import tenor from "@/public/logo.png";
+import logo from "../../public/logo.png";
 import { motion } from "framer-motion";
 
 const Nav = () => {
@@ -29,7 +29,7 @@ const Nav = () => {
             <div className="mx-auto shadow-md flex h-16 max-w-screen-xl items-center gap-8 px-4 sm:px-6 lg:px-8">
                 <a className="block text-teal-600 dark:text-teal-300" href="/">
                     <Image
-                        src={tenor}
+                        src={logo}
                         alt="Yared Coding School"
                         width={100}
                         height={100}
@@ -92,12 +92,12 @@ const Nav = () => {
 
                     <div className="flex items-center gap-4">
                         <div className="hidden md:flex sm:gap-4">
-                            {/* <a
+                            <a
                                 className="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700 dark:hover:bg-teal-500"
-                                href="/login"
+                                href="/dm"
                             >
-                                Admin Login
-                            </a> */}
+                                DM Exercise
+                            </a>
                             <a
                                 className="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700 dark:hover:bg-teal-500"
                                 href="/loginStudent"
