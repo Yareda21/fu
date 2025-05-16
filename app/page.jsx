@@ -1,17 +1,17 @@
 import RoadMap from "./components/RoadMap";
 import Hero from "./components/Hero";
 import Intro from "./components/Intro";
-import Head from "next/head";
+
 
 export const metadata = {
     title: "Home | Yared Coding School",
     description:
-        "Welcome to Ethio Infinity Coding School. Learn coding with our easy-to-follow courses.",
+        "Welcome to Yared Coding School. Learn coding with our easy-to-follow courses.",
     openGraph: {
         title: "Home | Yared Coding School",
         description:
-            "Welcome to Ethio Infinity Coding School. Learn coding with our easy-to-follow courses.",
-        url: "https://yared-school.vercel.app/",
+            "Welcome to Yared Coding School. Learn coding with our easy-to-follow courses.",
+        url: "https://yared-coding.vercel.app/",
         images: [
             {
                 url: "/logo.png",
