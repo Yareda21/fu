@@ -5,6 +5,7 @@ import Intro from "./components/Intro";
 
 export const metadata = {
     title: "Home | Yared Coding School",
+    
     description:
         "Welcome to Yared Coding School. Learn coding with our easy-to-follow courses.",
     openGraph: {

@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://www.yared-coding.vercel.app
+Host: https://yared-coding.vercel.app
 
 # Sitemaps
-Sitemap: https://www.yared-coding.vercel.app/sitemap.xml
+Sitemap: https://yared-coding.vercel.app/sitemap.xml
