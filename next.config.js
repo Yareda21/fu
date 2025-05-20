@@ -3,9 +3,9 @@ const nextConfig = {
     async redirects() {
         return [
             {
-                source: "/(.*)",
+                source: "/:path*",
                 has: [{ type: "host", value: "www.yared-coding.vercel.app" }],
-                destination: "https://yared-coding.vercel.app/:1",
+                destination: "https://yared-coding.vercel.app/:path*",
                 permanent: true,
             },
         ];

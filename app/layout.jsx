@@ -13,6 +13,7 @@ export const metadata = {
         "Amharic, yared kebede,Yared coding school, Ethiopia, Digital Marketing, Data Analysis and Analytics, learn to code, web development, JavaScript, React, HTML, CSS, software development",
 
     image: "/logo.png",
+    url: "https://yared-coding.vercel.app/",
     youtubeChannel: "https://www.youtube.com/@infinityCode-21",
     linkedinProfile: "https://www.linkedin.com/in/yared-kebede/",
     tiktokProfile: "https://www.tiktok.com/@yared.kebede",
