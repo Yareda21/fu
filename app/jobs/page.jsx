@@ -9,7 +9,7 @@ export default function JobResourcePage() {
     const title = "Online Jobs - Opportunities for Developers and Students";
     const description =
         "Explore job opportunities at Yared Coding School! We connect developers and students with top companies looking for talent in programming, software development, and more.";
-    const url = "https://www.yared-coding.vercel.app/jobs";
+    const url = "https://yared-coding.vercel.app/jobs";
 
     // Meta data
     useEffect(() => {
