@@ -13,7 +13,7 @@ export default function About() {
     const title = "About Me | Yared Coding School";
     const description =
         "Learn about Yared Coding School, our mission, vision, and the team behind our courses.";
-    const url = "https://yaredcoding.vercel.app/about";
+    const url = "https://yared-coding.vercel.app/about";
 
     const containerVariants = {
         hidden: { opacity: 0 },
