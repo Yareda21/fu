@@ -3,6 +3,9 @@ import LanguageIcon from "@mui/icons-material/Language";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import YouTubeIcon from "@mui/icons-material/YouTube";
+import EmailIcon from "@mui/icons-material/Email";
+import PhoneIcon from "@mui/icons-material/Phone";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
 
 const TikTokIcon = ({ color = "#000000" }) => {
     return (
@@ -51,71 +54,170 @@ const Footer = () => {
             color: "bg-red-600 hover:bg-red-700",
         },
     ];
+
+    const quickLinks = [
+        { name: "Home", href: "/" },
+        { name: "About", href: "/About" },
+        { name: "Courses", href: "/dm" },
+        { name: "Testimonials", href: "/testimonials" },
+        { name: "Register", href: "/register" },
+    ];
+
+    const contactInfo = [
+        {
+            icon: PhoneIcon,
+            text: "+251 922 76 15 94",
+            href: "tel:+251922761594",
+        },
+        {
+            icon: EmailIcon,
+            text: "ykebed40@gmail.com",
+            href: "mailto:yaredkebede21@gmail.com",
+        },
+        {
+            icon: LocationOnIcon,
+            text: "Megenagna, Addis Ababa, Ethiopia",
+            href: "https://maps.google.com/?q=Megenagna,Addis+Ababa",
+        },
+    ];
+
     return (
-        //
-        <footer className=" bg-gray-900 ">
-            <div className="mx-auto max-w-screen-xl px-4 pb-4 pt-8 sm:px-6 lg:px-8">
-                <div className="mx-auto max-w-md">
-                    <strong className="block text-center text-lg font-bold text-gray-900 dark:text-white sm:text-3xl">
-                        Leave Us Your Phone Number, We Can Call You
-                    </strong>
-
-                    <form className="mt-6">
-                        <div className="relative max-w-lg">
-                            <label className="sr-only" htmlFor="email">
-                                {" "}
-                                Phone{" "}
-                            </label>
-
-                            <input
-                                className="w-full rounded-full p-4 pe-32 text-sm font-medium border-gray-700  bg-gray-800 text-white"
-                                id="phone"
-                                type="tel"
-                                placeholder="+251922761594"
-                            />
-
-                            <button className="absolute end-1 top-1/2 -translate-y-1/2 rounded-full bg-blue-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-blue-700">
-                                Connect
-                            </button>
-                        </div>
-                    </form>
-                </div>
-
-                <div className="mt-4 p-3 bg-background rounded-lg shadow-md">
-                    <h2 className="text-2xl text-center font-bold mb-4 text-foreground">
-                        Connect with me on my Socail Media
-                    </h2>
-                    <ul className="flex justify-around items-center">
-                        {socialMediaPlatforms.map((platform) => (
-                            <li key={platform.name}>
+        <footer className="bg-gradient-to-b from-gray-900 to-gray-950 text-gray-300">
+            <div className="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8">
+                {/* Main Footer Content */}
+                <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
+                    {/* Brand Section */}
+                    <div className="space-y-4">
+                        <h2 className="text-2xl font-bold text-white">
+                            Yared Coding School
+                        </h2>
+                        <p className="text-sm text-gray-400">
+                            Empowering the next generation of developers through
+                            quality education and practical experience.
+                        </p>
+                        <div className="flex space-x-4">
+                            {socialMediaPlatforms.map((platform) => (
                                 <a
+                                    key={platform.name}
                                     href={platform.url}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className={`flex items-center px-4 py-2 rounded-full text-white transition-colors duration-300 ${platform.color}`}
+                                    className={`p-2 rounded-full text-white transition-all duration-300 ${platform.color} hover:scale-110`}
                                 >
-                                    <platform.icon className="md:mr-2 h-4 w-4" />
-                                    <span className="hidden md:flex">
-                                        {platform.name}
-                                    </span>
+                                    <platform.icon className="h-5 w-5" />
                                 </a>
-                            </li>
-                        ))}
-                    </ul>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Quick Links */}
+                    <div>
+                        <h3 className="text-lg font-semibold text-white mb-4">
+                            Quick Links
+                        </h3>
+                        <ul className="space-y-2">
+                            {quickLinks.map((link) => (
+                                <li key={link.name}>
+                                    <a
+                                        href={link.href}
+                                        className="text-gray-400 hover:text-white transition-colors duration-300"
+                                    >
+                                        {link.name}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Contact Info */}
+                    <div>
+                        <h3 className="text-lg font-semibold text-white mb-4">
+                            Contact Info
+                        </h3>
+                        <ul className="space-y-3">
+                            {contactInfo.map((item, index) => (
+                                <li
+                                    key={index}
+                                    className="flex items-center space-x-3"
+                                >
+                                    <item.icon className="h-5 w-5 text-amber-500" />
+                                    <a
+                                        href={item.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-gray-400 hover:text-white transition-colors duration-300"
+                                    >
+                                        {item.text}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Newsletter Section */}
+                    <div>
+                        <h3 className="text-lg font-semibold text-white mb-4">
+                            Stay Updated
+                        </h3>
+                        <p className="text-sm text-gray-400 mb-4">
+                            Subscribe to our newsletter for the latest updates
+                            and course offerings.
+                        </p>
+                        <form className="space-y-4">
+                            <div className="relative">
+                                <input
+                                    type="email"
+                                    placeholder="Enter your email"
+                                    className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                                />
+                            </div>
+                            <button
+                                type="submit"
+                                className="w-full px-4 py-3 bg-gradient-to-r from-amber-500 to-amber-600 text-white rounded-lg hover:from-amber-600 hover:to-amber-700 transition-all duration-300 font-medium"
+                            >
+                                Subscribe
+                            </button>
+                        </form>
+                    </div>
                 </div>
 
-                <div className="mt-8 border-t border-gray-100 pt-4 dark:border-gray-800">
-                    <p className="text-center text-md/relaxed text-gray-500 dark:text-gray-400">
-                        © Infinity 2024. All rights reserved.
-                        <br />
+                {/* Bottom Bar */}
+                <div className="mt-12 pt-8 border-t border-gray-800">
+                    <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                        <p className="text-sm text-gray-400">
+                            © {new Date().getFullYear()} Infinity. All rights
+                            reserved.
+                        </p>
+                        <div className="flex space-x-6">
+                            <a
+                                href="/privacy"
+                                className="text-sm text-gray-400 hover:text-white transition-colors duration-300"
+                            >
+                                Privacy Policy
+                            </a>
+                            <a
+                                href="/terms"
+                                className="text-sm text-gray-400 hover:text-white transition-colors duration-300"
+                            >
+                                Terms of Service
+                            </a>
+                            <a
+                                href="/faq"
+                                className="text-sm text-gray-400 hover:text-white transition-colors duration-300"
+                            >
+                                FAQ
+                            </a>
+                        </div>
+                    </div>
+                    <div className="mt-4 text-center text-sm text-gray-500">
                         Created by{" "}
                         <a
                             href="https://yared21.netlify.app/"
-                            className="text-gray-700 underline transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
+                            className="text-amber-500 hover:text-amber-400 transition-colors duration-300"
                         >
-                            Yared Kebede.
+                            Yared Kebede
                         </a>
-                    </p>
+                    </div>
                 </div>
             </div>
         </footer>

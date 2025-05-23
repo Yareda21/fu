@@ -10,12 +10,12 @@ import {
 
 const CustomAlert = ({ message, onClose }) => {
     return (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-            <div className="bg-white text-black p-6 rounded-lg shadow-lg">
-                <p className="text-lg">{message}</p>
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+            <div className="bg-white text-black p-6 rounded-lg shadow-lg max-w-md w-full mx-4">
+                <p className="text-lg mb-4">{message}</p>
                 <button
                     onClick={onClose}
-                    className="mt-4 px-4 py-2 bg-blue-600 text-white rounded"
+                    className="w-full px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
                 >
                     Close
                 </button>
@@ -110,197 +110,245 @@ const Page = ({ searchParams }) => {
     }, [title, description, url]);
 
     return (
-        <section className="bg-white">
-            <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
-                <section className="hidden lg:relative lg:flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6">
-                    <iframe
-                        className="w-full h-full rounded-lg shadow-lg"
-                        src="https://www.youtube.com/embed/VoRz7xfF9m0"
-                        title="Final Intro"
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerPolicy="strict-origin-when-cross-origin"
-                        allowFullScreen
-                    ></iframe>
-                </section>
+        <section className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800">
+            <div className="container mx-auto px-4 py-8">
+                <div className="max-w-6xl mx-auto">
+                    <div className="bg-white/10 backdrop-blur-lg rounded-2xl overflow-hidden shadow-2xl">
+                        <div className="grid lg:grid-cols-12">
+                            {/* Video Section */}
+                            <div className="lg:col-span-5 p-6 lg:p-8 bg-slate-900/50">
+                                <div className="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden shadow-lg">
+                                    <iframe
+                                        className="w-full h-full"
+                                        src="https://www.youtube.com/embed/VoRz7xfF9m0"
+                                        title="Final Intro"
+                                        frameBorder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerPolicy="strict-origin-when-cross-origin"
+                                        allowFullScreen
+                                    ></iframe>
+                                </div>
+                                <div className="mt-6 text-center">
+                                    <h2 className="text-2xl font-bold text-amber-500 mb-2">
+                                        Welcome to Yared Coding School
+                                    </h2>
+                                    <p className="text-gray-300">
+                                        Join our community of learners and start
+                                        your journey to success
+                                    </p>
+                                </div>
+                            </div>
 
-                <main className="flex items-center bg-slate-800 text-white justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6">
-                    {showAlert && (
-                        <CustomAlert
-                            message={alertMessage}
-                            onClose={() => setShowAlert(false)}
-                        />
-                    )}
-                    <div className="max-w-xl lg:max-w-3xl">
-                        <h1 className="text-center text-amber-500 text-2xl">
-                            Registration <br />{" "}
-                            {searchParams && searchParams.title}
-                        </h1>
-                        <form
-                            method="post"
-                            className="mt-8 grid grid-cols-6 gap-6"
-                            onSubmit={addText}
-                        >
-                            {/* Full Name */}
-                            <div className="col-span-6 sm:col-span-3">
-                                <label
-                                    htmlFor="FirstName"
-                                    className="block text-sm font-medium text-white"
-                                >
-                                    Full Name
-                                </label>
-                                <input
-                                    type="text"
-                                    id="FirstName"
-                                    name="first_name"
-                                    autoCapitalize="on"
-                                    value={name}
-                                    onChange={(e) => setName(e.target.value)}
-                                    required
-                                    autoComplete="off"
-                                    className="mt-1 px-3 py-2 w-full rounded-md border-gray bg-white text-sm text-gray-700 shadow-sm"
-                                />
-                            </div>
-                            {/* Subject */}
-                            <div className="col-span-6 sm:col-span-3">
-                                <label
-                                    htmlFor="Subject"
-                                    className="block text-sm font-medium text-white"
-                                >
-                                    Subject
-                                </label>
-                                <input
-                                    type="text"
-                                    id="subject"
-                                    name="subject"
-                                    className="mt-1 px-3 py-2 w-full rounded-md border-gray bg-white text-sm text-gray-700 shadow-sm"
-                                    value={searchParams.title || ""}
-                                    readOnly
-                                />
-                            </div>
-                            {/* Email */}
-                            <div className="col-span-6">
-                                <label
-                                    htmlFor="email"
-                                    className="block text-sm font-medium text-white"
-                                >
-                                    Email
-                                </label>
-                                <input
-                                    type="email"
-                                    id="email"
-                                    autoCapitalize="none"
-                                    name="email"
-                                    autoComplete="off"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    required
-                                    className="mt-1 px-3 py-2 w-full rounded-md border-gray bg-white text-sm text-gray-700 shadow-sm"
-                                />
-                            </div>
-                            {/* Password */}
-                            <div className="col-span-6">
-                                <label
-                                    htmlFor="password"
-                                    className="block text-sm font-medium text-white"
-                                >
-                                    Password
-                                </label>
-                                <input
-                                    type="password"
-                                    id="password"
-                                    name="password"
-                                    autoComplete="off"
-                                    value={password}
-                                    onChange={(e) =>
-                                        setPassword(e.target.value)
-                                    }
-                                    required
-                                    className="mt-1 px-3 py-2 w-full rounded-md border-gray bg-white text-sm text-gray-700 shadow-sm"
-                                />
-                            </div>
-                            {/* Phone Number */}
-                            <div className="col-span-6">
-                                <label
-                                    htmlFor="phone"
-                                    className="block text-sm font-medium text-white"
-                                >
-                                    Phone Number
-                                </label>
-                                <input
-                                    type="tel"
-                                    id="phone"
-                                    inputMode="numeric"
-                                    value={phone}
-                                    onChange={(e) => setPhone(e.target.value)}
-                                    name="phone"
-                                    autoComplete="off"
-                                    className="mt-1 px-3 py-2 w-full rounded-md border-gray bg-white text-sm text-gray-700 shadow-sm"
-                                />
-                            </div>
-                            {/* Marketing Consent */}
-                            <div className="col-span-6">
-                                <label
-                                    htmlFor="MarketingAccept"
-                                    className="flex gap-4"
-                                >
-                                    <input
-                                        type="checkbox"
-                                        id="MarketingAccept"
-                                        name="marketing_accept"
-                                        className="size-5 rounded-md border-gray-200 bg-white shadow-sm"
-                                        defaultChecked
+                            {/* Registration Form */}
+                            <div className="lg:col-span-7 p-6 lg:p-8">
+                                {showAlert && (
+                                    <CustomAlert
+                                        message={alertMessage}
+                                        onClose={() => setShowAlert(false)}
                                     />
-                                    <span className="text-sm text-white">
-                                        Please Call and Remind Me at +251 922 76
-                                        15 94
-                                    </span>
-                                </label>
-                            </div>
-                            {/* Terms of Use */}
-                            <div className="col-span-6">
-                                <p className="text-sm text-white">
-                                    By creating an account, you agree to our
-                                    <a
-                                        href="#"
-                                        className="text-white underline"
+                                )}
+                                <div className="max-w-xl mx-auto">
+                                    <h1 className="text-3xl font-bold text-center text-amber-500 mb-2">
+                                        Registration
+                                    </h1>
+                                    {searchParams?.title && (
+                                        <p className="text-center text-gray-300 mb-8">
+                                            Course: {searchParams.title}
+                                        </p>
+                                    )}
+                                    <form
+                                        onSubmit={addText}
+                                        className="space-y-6"
                                     >
-                                        {" "}
-                                        terms and conditions{" "}
-                                    </a>
-                                    and
-                                    <a
-                                        href="#"
-                                        className="text-white underline"
-                                    >
-                                        privacy policy
-                                    </a>
-                                    .
-                                </p>
-                            </div>
-                            {/* Create Account Button */}
-                            <div className="flex-col col-span-6 items-center gap-4">
-                                <button
-                                    type="submit"
-                                    className="inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
-                                >
-                                    Register For Class
-                                </button>
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                            <div>
+                                                <label
+                                                    htmlFor="FirstName"
+                                                    className="block text-sm font-medium text-gray-300 mb-2"
+                                                >
+                                                    Full Name
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    id="FirstName"
+                                                    value={name}
+                                                    onChange={(e) =>
+                                                        setName(e.target.value)
+                                                    }
+                                                    required
+                                                    className="w-full px-4 py-2 rounded-lg bg-white/10 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                                                    placeholder="Enter your full name"
+                                                />
+                                            </div>
+                                            <div>
+                                                <label
+                                                    htmlFor="subject"
+                                                    className="block text-sm font-medium text-gray-300 mb-2"
+                                                >
+                                                    Subject
+                                                </label>
+                                                <input
+                                                    type="text"
+                                                    id="subject"
+                                                    value={
+                                                        searchParams.title || ""
+                                                    }
+                                                    readOnly
+                                                    className="w-full px-4 py-2 rounded-lg bg-white/10 border border-gray-600 text-gray-400 cursor-not-allowed"
+                                                />
+                                            </div>
+                                        </div>
 
-                                <ul className="mt-4 text-sm text-gray-500 sm:mt-0">
-                                    <li>
-                                        Go to head office in Megenagna Metebaber
-                                        Building for class Schedule
-                                    </li>
-                                    <li>
-                                        Classes will be arranged with your
-                                        specific Instructor
-                                    </li>
-                                </ul>
+                                        <div>
+                                            <label
+                                                htmlFor="email"
+                                                className="block text-sm font-medium text-gray-300 mb-2"
+                                            >
+                                                Email
+                                            </label>
+                                            <input
+                                                type="email"
+                                                id="email"
+                                                value={email}
+                                                onChange={(e) =>
+                                                    setEmail(e.target.value)
+                                                }
+                                                required
+                                                className="w-full px-4 py-2 rounded-lg bg-white/10 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                                                placeholder="Enter your email"
+                                            />
+                                        </div>
+
+                                        <div>
+                                            <label
+                                                htmlFor="password"
+                                                className="block text-sm font-medium text-gray-300 mb-2"
+                                            >
+                                                Password
+                                            </label>
+                                            <input
+                                                type="password"
+                                                id="password"
+                                                value={password}
+                                                onChange={(e) =>
+                                                    setPassword(e.target.value)
+                                                }
+                                                required
+                                                className="w-full px-4 py-2 rounded-lg bg-white/10 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                                                placeholder="Create a password"
+                                            />
+                                        </div>
+
+                                        <div>
+                                            <label
+                                                htmlFor="phone"
+                                                className="block text-sm font-medium text-gray-300 mb-2"
+                                            >
+                                                Phone Number
+                                            </label>
+                                            <input
+                                                type="tel"
+                                                id="phone"
+                                                value={phone}
+                                                onChange={(e) =>
+                                                    setPhone(e.target.value)
+                                                }
+                                                className="w-full px-4 py-2 rounded-lg bg-white/10 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                                                placeholder="Enter your phone number"
+                                            />
+                                        </div>
+
+                                        <div className="flex items-center space-x-3">
+                                            <input
+                                                type="checkbox"
+                                                id="MarketingAccept"
+                                                defaultChecked
+                                                className="w-4 h-4 rounded border-gray-600 bg-white/10 text-amber-500 focus:ring-amber-500"
+                                            />
+                                            <label
+                                                htmlFor="MarketingAccept"
+                                                className="text-sm text-gray-300"
+                                            >
+                                                Please Call and Remind Me at
+                                                +251 922 76 15 94
+                                            </label>
+                                        </div>
+
+                                        <div className="text-sm text-gray-400">
+                                            By creating an account, you agree to
+                                            our{" "}
+                                            <a
+                                                href="#"
+                                                className="text-amber-500 hover:text-amber-400"
+                                            >
+                                                terms and conditions
+                                            </a>{" "}
+                                            and{" "}
+                                            <a
+                                                href="#"
+                                                className="text-amber-500 hover:text-amber-400"
+                                            >
+                                                privacy policy
+                                            </a>
+                                            .
+                                        </div>
+
+                                        <button
+                                            type="submit"
+                                            className="w-full py-3 px-6 text-white font-medium bg-amber-500 rounded-lg hover:bg-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 focus:ring-offset-slate-900 transition-colors"
+                                        >
+                                            Register For Class
+                                        </button>
+
+                                        <div className="mt-6 space-y-2 text-sm text-gray-400">
+                                            <p className="flex items-center">
+                                                <svg
+                                                    className="w-4 h-4 mr-2"
+                                                    fill="none"
+                                                    stroke="currentColor"
+                                                    viewBox="0 0 24 24"
+                                                >
+                                                    <path
+                                                        strokeLinecap="round"
+                                                        strokeLinejoin="round"
+                                                        strokeWidth="2"
+                                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                                                    />
+                                                    <path
+                                                        strokeLinecap="round"
+                                                        strokeLinejoin="round"
+                                                        strokeWidth="2"
+                                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                                                    />
+                                                </svg>
+                                                Go to head office in Megenagna
+                                                Metebaber Building for class
+                                                Schedule
+                                            </p>
+                                            <p className="flex items-center">
+                                                <svg
+                                                    className="w-4 h-4 mr-2"
+                                                    fill="none"
+                                                    stroke="currentColor"
+                                                    viewBox="0 0 24 24"
+                                                >
+                                                    <path
+                                                        strokeLinecap="round"
+                                                        strokeLinejoin="round"
+                                                        strokeWidth="2"
+                                                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                                                    />
+                                                </svg>
+                                                Classes will be arranged with
+                                                your specific Instructor
+                                            </p>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
-                        </form>
+                        </div>
                     </div>
-                </main>
+                </div>
             </div>
         </section>
     );
