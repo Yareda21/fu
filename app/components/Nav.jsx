@@ -3,15 +3,30 @@ import Image from "next/image";
 import React, { useState } from "react";
 import logo from "../../public/logo.png";
 import { motion } from "framer-motion";
+import MyUser from "@/firebase/MyUser";
+import { signOut } from "firebase/auth";
+import { auth } from "@/firebase/firebase";
+import { useRouter } from "next/navigation";
 
 const Nav = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const user = MyUser();
+    const router = useRouter();
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
     const closeMenu = () => {
         setIsMenuOpen(false);
+    };
+
+    const handleLogout = async () => {
+        try {
+            await signOut(auth);
+            router.push("/");
+        } catch (error) {
+            console.error("Error signing out:", error);
+        }
     };
 
     const containerVariants = {
@@ -79,31 +94,51 @@ const Nav = () => {
                                 variants={itemVariants}
                                 className="md:hidden"
                             >
-                                <a
-                                    className="block my-1 rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700 dark:hover:bg-teal-500"
-                                    href="/loginStudent"
-                                    onClick={closeMenu}
-                                >
-                                    Student Login
-                                </a>
+                                {user ? (
+                                    <button
+                                        onClick={handleLogout}
+                                        className="block my-1 rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700 dark:hover:bg-teal-500"
+                                    >
+                                        Logout
+                                    </button>
+                                ) : (
+                                    <a
+                                        className="block my-1 rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700 dark:hover:bg-teal-500"
+                                        href="/loginStudent"
+                                        onClick={closeMenu}
+                                    >
+                                        Login
+                                    </a>
+                                )}
                             </motion.li>
                         </motion.ul>
                     </nav>
 
                     <div className="flex items-center gap-4">
                         <div className="hidden md:flex sm:gap-4">
-                            <a
-                                className="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700 dark:hover:bg-teal-500"
-                                href="/dm"
-                            >
-                                DM Exercise
-                            </a>
-                            <a
-                                className="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700 dark:hover:bg-teal-500"
-                                href="/loginStudent"
-                            >
-                                Student Login
-                            </a>
+                            {user && (
+                                <a
+                                    className="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700 dark:hover:bg-teal-500"
+                                    href="/dm"
+                                >
+                                    DM Exercise
+                                </a>
+                            )}
+                            {user ? (
+                                <button
+                                    onClick={handleLogout}
+                                    className="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700 dark:hover:bg-teal-500"
+                                >
+                                    Logout
+                                </button>
+                            ) : (
+                                <a
+                                    className="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700 dark:hover:bg-teal-500"
+                                    href="/loginStudent"
+                                >
+                                    Login
+                                </a>
+                            )}
                         </div>
 
                         <div>
