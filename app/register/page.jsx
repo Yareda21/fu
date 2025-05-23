@@ -1,12 +1,16 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { doc, setDoc } from "firebase/firestore";
-
 import { db, auth } from "@/firebase/firebase";
 import {
     createUserWithEmailAndPassword,
     sendEmailVerification,
 } from "firebase/auth";
+import {
+    programmingCourses,
+    aiAndMachineLearning,
+    dataAnalysis,
+} from "../../assets/newCourses.js";
 
 const CustomAlert = ({ message, onClose }) => {
     return (
@@ -29,8 +33,22 @@ const Page = ({ searchParams }) => {
     const [phone, setPhone] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [selectedCourse, setSelectedCourse] = useState(
+        searchParams?.title || ""
+    );
     const [showAlert, setShowAlert] = useState(false);
     const [alertMessage, setAlertMessage] = useState("");
+
+    // Combine all courses into a single array
+    const allCourses = [
+        ...programmingCourses,
+        ...aiAndMachineLearning,
+        ...dataAnalysis,
+    ].map((course) => ({
+        title: course.title,
+        short: course.short,
+        price: course.price,
+    }));
 
     const addText = async (e) => {
         e.preventDefault();
@@ -51,7 +69,7 @@ const Page = ({ searchParams }) => {
                 name: name,
                 phone: phone,
                 email: email,
-                subject: searchParams.title,
+                subject: selectedCourse,
                 registrationDate: new Date(),
             });
 
@@ -61,12 +79,13 @@ const Page = ({ searchParams }) => {
             setPhone("");
             setEmail("");
             setPassword("");
+            setSelectedCourse("");
             setAlertMessage(
                 "Registration Successful! A verification email has been sent to your email address. Please verify your email to complete the registration."
             );
             setShowAlert(true);
 
-            // Redirect to the homepage after 4 seconds (optional)
+            // Redirect to the homepage after 4 seconds
             setTimeout(() => {
                 window.location.href = "/";
             }, 4000);
@@ -151,11 +170,6 @@ const Page = ({ searchParams }) => {
                                     <h1 className="text-3xl font-bold text-center text-amber-500 mb-2">
                                         Registration
                                     </h1>
-                                    {searchParams?.title && (
-                                        <p className="text-center text-gray-300 mb-8">
-                                            Course: {searchParams.title}
-                                        </p>
-                                    )}
                                     <form
                                         onSubmit={addText}
                                         className="space-y-6"
@@ -185,24 +199,48 @@ const Page = ({ searchParams }) => {
                                                     htmlFor="subject"
                                                     className="block text-sm font-medium text-gray-300 mb-2"
                                                 >
-                                                    Subject
+                                                    Select Course
                                                 </label>
-                                                <input
-                                                    type="text"
+                                                <select
                                                     id="subject"
-                                                    value={
-                                                        searchParams.title || ""
+                                                    value={selectedCourse}
+                                                    onChange={(e) =>
+                                                        setSelectedCourse(
+                                                            e.target.value
+                                                        )
                                                     }
-                                                    readOnly
-                                                    className="w-full px-4 py-2 rounded-lg bg-white/10 border border-gray-600 text-gray-400 cursor-not-allowed"
-                                                />
+                                                    required
+                                                    className="w-full px-4 py-2 rounded-lg bg-gray-600 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                                                >
+                                                    <option value="">
+                                                        Select a course
+                                                    </option>
+                                                    {allCourses.map(
+                                                        (course, index) => (
+                                                            <option
+                                                                key={index}
+                                                                value={
+                                                                    course.title
+                                                                }
+                                                            >
+                                                                {course.title} -{" "}
+                                                                {/* enable price later */}
+                                                                {/* {
+                                                                    course.price
+                                                                        .individual
+                                                                }{" "}
+                                                                ETB */}
+                                                            </option>
+                                                        )
+                                                    )}
+                                                </select>
                                             </div>
                                         </div>
 
                                         <div>
                                             <label
                                                 htmlFor="email"
-                                                className="block text-sm font-medium text-gray-300 mb-2"
+                                                className="block text-sm font-medium  text-gray-300 mb-2"
                                             >
                                                 Email
                                             </label>
@@ -214,7 +252,7 @@ const Page = ({ searchParams }) => {
                                                     setEmail(e.target.value)
                                                 }
                                                 required
-                                                className="w-full px-4 py-2 rounded-lg bg-white/10 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                                                className="w-full px-4 py-2 rounded-lg bg-gray-600 border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent"
                                                 placeholder="Enter your email"
                                             />
                                         </div>
