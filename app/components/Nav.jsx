@@ -99,6 +99,36 @@ const Nav = () => {
                                 </a>
                             </motion.li>
 
+                            {/* Mobile-only user links */}
+                            {user && (
+                                <>
+                                    <motion.li
+                                        variants={itemVariants}
+                                        className="md:hidden"
+                                    >
+                                        <a
+                                            className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
+                                            href="/dm"
+                                            onClick={closeMenu}
+                                        >
+                                            DM Exercise
+                                        </a>
+                                    </motion.li>
+                                    <motion.li
+                                        variants={itemVariants}
+                                        className="md:hidden"
+                                    >
+                                        <a
+                                            className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
+                                            href="/access"
+                                            onClick={closeMenu}
+                                        >
+                                            Dashboard
+                                        </a>
+                                    </motion.li>
+                                </>
+                            )}
+
                             <motion.li
                                 variants={itemVariants}
                                 className="md:hidden"
