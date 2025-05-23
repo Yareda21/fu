@@ -2,12 +2,26 @@
 
 import { useRouter } from "next/navigation";
 import { exercises } from "@/assets/exercise";
-import { ArrowRight } from "lucide-react";
-import { useState } from "react";
+import { ArrowRight, Menu, X } from "lucide-react";
+import { useState, useEffect } from "react";
 
 export default function Home() {
     const router = useRouter();
     const [selectedCategory, setSelectedCategory] = useState("All");
+    const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+    const [isInitialLoad, setIsInitialLoad] = useState(true);
+
+    useEffect(() => {
+        // After 3 seconds, collapse the sidebar on mobile
+        const timer = setTimeout(() => {
+            setIsInitialLoad(false);
+            if (window.innerWidth < 768) {
+                setIsSidebarOpen(false);
+            }
+        }, 3000);
+
+        return () => clearTimeout(timer);
+    }, []);
 
     const handleCardClick = (exercise) => {
         router.push(`/dm/${exercise.id}`);
@@ -23,18 +37,50 @@ export default function Home() {
               );
 
     return (
-        <div className="flex min-h-screen">
+        <div className="flex min-h-screen relative">
+            {/* Mobile Sidebar Toggle Button */}
+            <button
+                onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+                className={`fixed top-4 left-4 z-50 md:hidden p-2 rounded-full transition-all duration-300 ${
+                    isSidebarOpen
+                        ? "bg-white shadow-lg"
+                        : "bg-transparent hover:bg-white/20"
+                }`}
+            >
+                {isSidebarOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+
             {/* Side Navigation */}
-            <div className="w-64 bg-gray-50 border-r border-gray-200 p-4">
-                <h2 className="text-lg font-semibold mb-4 text-gray-800">
+            <div
+                className={`fixed md:static w-64 bg-gray-50 border-r border-gray-200 transition-all duration-300 ease-in-out z-40
+                    ${
+                        isInitialLoad
+                            ? "top-0 left-0 shadow-lg"
+                            : isSidebarOpen
+                            ? "top-0 left-0 shadow-lg"
+                            : "-left-64"
+                    }
+                    md:translate-x-0 h-full
+                    ${isInitialLoad ? "p-4" : "md:p-4 p-2"}`}
+            >
+                <h2
+                    className={`text-lg font-semibold mb-4 text-gray-800 ${
+                        isInitialLoad ? "" : "md:block hidden"
+                    }`}
+                >
                     Categories
                 </h2>
-                <nav className="space-y-2">
+                <nav className="space-y-1 md:space-y-2">
                     {categories.map((category) => (
                         <button
                             key={category}
-                            onClick={() => setSelectedCategory(category)}
-                            className={`w-full text-left px-4 py-2 rounded-md transition-colors ${
+                            onClick={() => {
+                                setSelectedCategory(category);
+                                if (window.innerWidth < 768) {
+                                    setIsSidebarOpen(false);
+                                }
+                            }}
+                            className={`w-full text-left px-3 md:px-4 py-1.5 md:py-2 rounded-md transition-colors text-sm md:text-base ${
                                 selectedCategory === category
                                     ? "bg-blue-100 text-blue-700"
                                     : "text-gray-600 hover:bg-gray-100"
@@ -47,7 +93,7 @@ export default function Home() {
             </div>
 
             {/* Main Content */}
-            <div className="flex-1 p-8">
+            <div className="flex-1 p-8 md:ml-0">
                 <header className="mb-8">
                     <h1 className="text-3xl font-bold mb-3">
                         Digital Marketing AI Exercises
