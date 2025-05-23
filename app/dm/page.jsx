@@ -25,7 +25,7 @@ export default function Home() {
     return (
         <div className="flex min-h-screen">
             {/* Side Navigation */}
-            {/* <div className="w-64 bg-gray-50 border-r border-gray-200 p-4">
+            <div className="w-64 bg-gray-50 border-r border-gray-200 p-4">
                 <h2 className="text-lg font-semibold mb-4 text-gray-800">
                     Categories
                 </h2>
@@ -44,7 +44,7 @@ export default function Home() {
                         </button>
                     ))}
                 </nav>
-            </div> */}
+            </div>
 
             {/* Main Content */}
             <div className="flex-1 p-8">
