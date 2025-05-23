@@ -190,6 +190,78 @@ export const exercises = [
     },
     {
         id: 6,
+        title: "Social Media Marketing",
+        description:
+            "Master using AI tools to optimize your video distribution across social media platforms.",
+        difficulty: "Beginner",
+        duration: "45 minutes",
+        bgColor: "bg-teal-100",
+        icon: <Share2 className="h-24 w-24 text-teal-500" />,
+        objectives: [
+            "Learn how AI can optimize posting schedules and content formats",
+            "Understand platform-specific AI optimization techniques",
+            "Create an automated distribution workflow with AI assistance",
+        ],
+        instructions: [
+            "Set up an AI social media management tool like Buffer or Hootsuite",
+            "Use AI to analyze your best performing content",
+            "Generate platform-specific captions and hashtags with AI",
+            "Create a posting schedule based on AI recommendations",
+            "Set up automated performance tracking and reporting",
+        ],
+        resources: [
+            {
+                title: "Platform-Specific Video Requirements",
+                url: "https://example.com/requirements",
+            },
+            {
+                title: "AI Caption Writing Guide",
+                url: "https://example.com/captions",
+            },
+            {
+                title: "Social Media Analytics Basics",
+                url: "https://example.com/analytics",
+            },
+        ],
+    },
+    {
+        id: 7,
+        title: "Content Creation",
+        description:
+            "Master using AI tools to optimize your video distribution across social media platforms.",
+        difficulty: "Beginner",
+        duration: "45 minutes",
+        bgColor: "bg-teal-100",
+        icon: <Share2 className="h-24 w-24 text-teal-500" />,
+        objectives: [
+            "Learn how AI can optimize posting schedules and content formats",
+            "Understand platform-specific AI optimization techniques",
+            "Create an automated distribution workflow with AI assistance",
+        ],
+        instructions: [
+            "Set up an AI social media management tool like Buffer or Hootsuite",
+            "Use AI to analyze your best performing content",
+            "Generate platform-specific captions and hashtags with AI",
+            "Create a posting schedule based on AI recommendations",
+            "Set up automated performance tracking and reporting",
+        ],
+        resources: [
+            {
+                title: "Platform-Specific Video Requirements",
+                url: "https://example.com/requirements",
+            },
+            {
+                title: "AI Caption Writing Guide",
+                url: "https://example.com/captions",
+            },
+            {
+                title: "Social Media Analytics Basics",
+                url: "https://example.com/analytics",
+            },
+        ],
+    },
+    {
+        id: 8,
         title: "AI Social Media Distribution",
         description:
             "Master using AI tools to optimize your video distribution across social media platforms.",

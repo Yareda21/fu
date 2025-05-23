@@ -67,6 +67,14 @@ const Nav = () => {
                             <motion.li variants={itemVariants}>
                                 <a
                                     className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
+                                    href="/"
+                                >
+                                    Home
+                                </a>
+                            </motion.li>
+                            <motion.li variants={itemVariants}>
+                                <a
+                                    className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
                                     href="/About"
                                 >
                                     About Me
@@ -89,8 +97,8 @@ const Nav = () => {
                                 >
                                     Online Jobs
                                 </a>
-                                
                             </motion.li>
+
                             <motion.li
                                 variants={itemVariants}
                                 className="md:hidden"
@@ -98,13 +106,13 @@ const Nav = () => {
                                 {user ? (
                                     <button
                                         onClick={handleLogout}
-                                        className="block my-1 rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700 dark:hover:bg-teal-500"
+                                        className="block w-full rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700 dark:hover:bg-teal-500"
                                     >
                                         Logout
                                     </button>
                                 ) : (
                                     <a
-                                        className="block my-1 rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700 dark:hover:bg-teal-500"
+                                        className="block w-full rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700 dark:hover:bg-teal-500"
                                         href="/loginStudent"
                                         onClick={closeMenu}
                                     >
@@ -116,14 +124,22 @@ const Nav = () => {
                     </nav>
 
                     <div className="flex items-center gap-4">
-                        <div className="hidden md:flex sm:gap-4">
+                        <div className="hidden md:flex items-center gap-4">
                             {user && (
-                                <a
-                                    className="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700 dark:hover:bg-teal-500"
-                                    href="/dm"
-                                >
-                                    DM Exercise
-                                </a>
+                                <>
+                                    <a
+                                        className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
+                                        href="/dm"
+                                    >
+                                        DM Exercise
+                                    </a>
+                                    <a
+                                        className="text-gray-500 transition hover:text-gray-500/75 dark:text-white dark:hover:text-white/75"
+                                        href="/access"
+                                    >
+                                        Dashboard
+                                    </a>
+                                </>
                             )}
                             {user ? (
                                 <button
