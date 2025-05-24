@@ -70,58 +70,58 @@ export default function TestimonialPage() {
         }
     };
 
-    const handleFacebookConnect = async () => {
-        // Initialize Facebook SDK
-        window.FB.init({
-            appId: process.env.NEXT_PUBLIC_FACEBOOK_APP_ID,
-            cookie: true,
-            xfbml: true,
-            version: "v18.0",
-        });
+    // const handleFacebookConnect = async () => {
+    //     // Initialize Facebook SDK
+    //     window.FB.init({
+    //         appId: process.env.NEXT_PUBLIC_FACEBOOK_APP_ID,
+    //         cookie: true,
+    //         xfbml: true,
+    //         version: "v18.0",
+    //     });
 
-        try {
-            const response = await new Promise((resolve, reject) => {
-                window.FB.login(
-                    (response) => {
-                        if (response.authResponse) {
-                            resolve(response);
-                        } else {
-                            reject(
-                                "User cancelled login or did not fully authorize."
-                            );
-                        }
-                    },
-                    { scope: "public_profile,email" }
-                );
-            });
+    //     try {
+    //         const response = await new Promise((resolve, reject) => {
+    //             window.FB.login(
+    //                 (response) => {
+    //                     if (response.authResponse) {
+    //                         resolve(response);
+    //                     } else {
+    //                         reject(
+    //                             "User cancelled login or did not fully authorize."
+    //                         );
+    //                     }
+    //                 },
+    //                 { scope: "public_profile,email" }
+    //             );
+    //         });
 
-            // Get user profile data
-            const profileData = await new Promise((resolve, reject) => {
-                window.FB.api(
-                    "/me",
-                    { fields: "name,email,picture" },
-                    (response) => {
-                        if (response && !response.error) {
-                            resolve(response);
-                        } else {
-                            reject(response.error);
-                        }
-                    }
-                );
-            });
+    //         // Get user profile data
+    //         const profileData = await new Promise((resolve, reject) => {
+    //             window.FB.api(
+    //                 "/me",
+    //                 { fields: "name,email,picture" },
+    //                 (response) => {
+    //                     if (response && !response.error) {
+    //                         resolve(response);
+    //                     } else {
+    //                         reject(response.error);
+    //                     }
+    //                 }
+    //             );
+    //         });
 
-            setUserData({
-                name: profileData.name,
-                email: profileData.email,
-                picture: profileData.picture?.data?.url,
-            });
-            setIsConnected(true);
-            setAuthProvider("facebook");
-        } catch (error) {
-            console.error("Facebook login error:", error);
-            alert("Failed to connect with Facebook. Please try again.");
-        }
-    };
+    //         setUserData({
+    //             name: profileData.name,
+    //             email: profileData.email,
+    //             picture: profileData.picture?.data?.url,
+    //         });
+    //         setIsConnected(true);
+    //         setAuthProvider("facebook");
+    //     } catch (error) {
+    //         console.error("Facebook login error:", error);
+    //         alert("Failed to connect with Facebook. Please try again.");
+    //     }
+    // };
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-white py-12 px-4 sm:px-6 lg:px-8">
@@ -286,7 +286,7 @@ export default function TestimonialPage() {
                                     <Button
                                         variant="contained"
                                         startIcon={<FacebookIcon />}
-                                        onClick={handleFacebookConnect}
+                                        // onClick={handleFacebookConnect}
                                         className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-md transition duration-300 transform hover:scale-105"
                                     >
                                         Connect with Facebook
