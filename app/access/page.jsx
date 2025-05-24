@@ -18,12 +18,13 @@ import {
 } from "lucide-react";
 import { modules } from "../../assets/resources.js";
 
-export default function Component() {
+export default function StudentDashboard() {
     const [openModule, setOpenModule] = useState(null);
     const [completedResources, setCompletedResources] = useState(new Set());
     const [user, setUser] = useState({});
     const [activeTab, setActiveTab] = useState("resources");
     const [showUserMenu, setShowUserMenu] = useState(false);
+
 
     useEffect(() => {
         const searchParams = new URLSearchParams(window.location.search);
@@ -56,6 +57,7 @@ export default function Component() {
     const progressPercentage = (completedResources.size / totalResources) * 100;
 
     return (
+
         <div className="min-h-screen bg-gray-900">
             {/* Top Navigation Bar */}
             <nav className="bg-gray-800 border-b border-gray-700">
@@ -134,6 +136,7 @@ export default function Component() {
                         <div className="hidden md:block">
                             <div className="w-24 h-24 rounded-full bg-gray-700 flex items-center justify-center">
                                 <BookOpen className="h-12 w-12 text-blue-400" />
+
                             </div>
                         </div>
                     </div>
@@ -198,11 +201,11 @@ export default function Component() {
                                 <p className="text-lg font-semibold text-white">
                                     12h 30m
                                 </p>
+
                             </div>
                         </div>
                     </div>
                 </div>
-
                 {/* Progress Bar */}
                 <div className="bg-gray-800 rounded-xl shadow-md p-6 mb-8 border border-gray-700">
                     <div className="flex justify-between items-center mb-4">
@@ -338,17 +341,21 @@ export default function Component() {
                                                                                 ? "bg-green-900 text-green-400 hover:bg-green-800"
                                                                                 : "bg-blue-900 text-blue-400 hover:bg-blue-800"
                                                                         }`}
+
                                                                         onClick={() =>
                                                                             handleResourceComplete(
                                                                                 resource.title
                                                                             )
                                                                         }
+
                                                                     >
                                                                         <Download className="w-4 h-4 mr-1" />
+
                                                                         {completedResources.has(
                                                                             resource.title
                                                                         )
                                                                             ? "Completed"
+
                                                                             : "Start"}
                                                                     </button>
                                                                 </a>
@@ -454,6 +461,7 @@ export default function Component() {
                         </div>
                     </div>
                 )}
+
             </div>
         </div>
     );
