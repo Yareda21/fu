@@ -67,6 +67,19 @@ export default function RootLayout({ children }) {
                     href={metadata.tiktokProfile}
                     title="Visit our TikTok Profile"
                 />
+
+                <meta charSet="utf-8" />
+                <script
+                    async
+                    defer
+                    crossOrigin="anonymous"
+                    src="https://connect.facebook.net/en_US/sdk.js"
+                ></script>
+                <script
+                    async
+                    defer
+                    src="https://accounts.google.com/gsi/client"
+                ></script>
             </Head>
             <body className={inter.className}>
                 <ReactQueryProvider>

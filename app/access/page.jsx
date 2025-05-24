@@ -23,7 +23,7 @@ import { signOut } from "firebase/auth";
 import { auth } from "@/firebase/firebase";
 import { useRouter } from "next/navigation";
 
-export default function Component() {
+export default function StudentDashboard() {
     const [openModule, setOpenModule] = useState(null);
     const [completedResources, setCompletedResources] = useState(new Set());
     const [activeTab, setActiveTab] = useState("resources");
