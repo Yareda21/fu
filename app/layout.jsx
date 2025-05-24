@@ -6,6 +6,8 @@ import Footer from "./components/Footer";
 import { ReactQueryProvider } from "./ReactQueryProvider";
 import Head from "next/head";
 import { Analytics } from "@vercel/analytics/react";
+import { AuthProvider } from "./context/AuthContext";
+
 const inter = Outfit({ subsets: ["latin"] });
 
 export const metadata = {
@@ -68,10 +70,12 @@ export default function RootLayout({ children }) {
             </Head>
             <body className={inter.className}>
                 <ReactQueryProvider>
-                    <Nav />
-                    {children}
-                    <Analytics />
-                    <Footer />
+                    <AuthProvider>
+                        <Nav />
+                        {children}
+                        <Analytics />
+                        <Footer />
+                    </AuthProvider>
                 </ReactQueryProvider>
             </body>
         </html>
